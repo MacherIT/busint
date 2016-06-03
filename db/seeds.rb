@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 User.create!(name:  "Example User",
              email: "example@railstutorial.org",
              password:              "foobar",
@@ -16,4 +17,15 @@ User.create!(name:  "Example User",
                password_confirmation: password,
                activated: true,
                activated_at: Time.zone.now)
+end
+
+users = User.order(:created_at).take(5)
+estados = ["Ganado", "Perdido", "En espera de respuesta"]
+productos = ["Web", "App", "Consultoría", "Neuromarketing"]
+50.times do
+  empresa = Faker::Name.name
+  estado = estados.sample
+  fuente = Faker::Lorem.sentence(1)
+  producto = productos.sample
+  users.sample.deals.create!(empresa: empresa, estado: estado, fuente: fuente, producto: producto)
 end

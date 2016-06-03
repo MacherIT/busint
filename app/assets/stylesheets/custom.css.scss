@@ -220,3 +220,27 @@ input {
   margin-top: 45px;
   @include box_sizing;
 }
+
+/* Deals */
+.deal {
+    line-height: 150%;
+}
+.deal-fechas {
+    margin-bottom: 1em;
+}
+.empresa {
+    font-family: Multicolore;
+    font-size: 150%;
+}
+.estado {
+    font-style: oblique;
+}
+.estado-ganado {
+    color: green;
+}
+.estado-perdido {
+    color: red;
+}
+.estado-en_espera_de_respuesta {
+    color: blue;
+}

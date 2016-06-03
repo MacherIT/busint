@@ -1,0 +1,31 @@
+nextel:
+        fuente:         "Amigo"
+        producto:       "Web"
+        probabilidad:   10
+        estado:         "En espera de aprobación"
+        empresa:        "Nextel"
+        updated_at:     <%= 10.minutes.ago %>
+
+claro:
+        fuente:         "Referencia"
+        producto:       "App"
+        probabilidad:   0
+        estado:         "Perdido"
+        empresa:        "claro"
+        updated_at:     <%= 1.weeks.ago %>
+
+personal:
+        fuente:         "Formulario Web"
+        producto:       "Cosultoría"
+        probabilidad:   60
+        estado:         "En espera de aprobación"
+        empresa:        "Personal"
+        updated_at:     <%= 3.days.ago %>
+
+movistar:
+        fuente:         "Llamada"
+        producto:       "Web"
+        probabilidad:   100
+        estado:         "Ganado"
+        empresa:        "Movistar"
+        updated_at:     <%= Time.zone.now %>

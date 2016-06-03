@@ -1,0 +1,11 @@
+<li id="deal-<%= deal.id %>">
+  <div class="deal deal-contenido">
+    <span class="empresa"><%= deal.empresa %></span>
+    <span class="producto"> - <%= deal.producto %></span>
+    <span class="estado estado-<%= deal.estado.parameterize('_') %>"><%= deal.estado %></span>
+  </div>
+  <div class="deal deal-fechas">
+    <span class="creacion">Creado: <%= deal.created_at.to_formatted_s(:short) %></span>
+    <span class="modificado"> - Última modificación: <%= deal.updated_at.to_formatted_s(:short) %></span>
+  </div>
+</li>

@@ -1,0 +1,8 @@
+<li id="deal-<%= deal.id %>">
+  <%= link_to gravatar_for(deal.user, size: 50), deal.user %>
+  <span class="user"><%= link_to micropost.user.name, micropost.user %></span>
+  <span class="empresa"><%= deal.empresa %></span>
+  <span class="estado estado-<%= deal.estado.parameterize('_') %>"><%= deal.estado %></span>
+  <span class="creacion">Creado: <%= deal.created_at %></span>
+  <span class="modificado">Última modificación: <%= deal.updated_at %></span>
+</li>
