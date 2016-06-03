@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  responsable_id: 
+  fuente: MyText
+  producto: MyText
+  probabilidad: 1
+  estado: MyText
+  empresa: MyText
+
+two:
+  responsable_id: 
+  fuente: MyText
+  producto: MyText
+  probabilidad: 1
+  estado: MyText
+  empresa: MyText

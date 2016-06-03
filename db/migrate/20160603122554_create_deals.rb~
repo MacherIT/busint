@@ -1,0 +1,14 @@
+class CreateDeals < ActiveRecord::Migration
+  def change
+    create_table :deals do |t|
+      t.references :responsable, index: true, foreign_key: true
+      t.text :fuente
+      t.text :producto
+      t.integer :probabilidad
+      t.text :estado
+      t.text :empresa
+
+      t.timestamps null: false
+    end
+  end
+end
