@@ -1,4 +1,5 @@
 nextel:
+        user:           michael
         fuente:         "Amigo"
         producto:       "Web"
         probabilidad:   10
@@ -7,6 +8,7 @@ nextel:
         updated_at:     <%= 10.minutes.ago %>
 
 claro:
+        user:           archer
         fuente:         "Referencia"
         producto:       "App"
         probabilidad:   0
@@ -15,6 +17,7 @@ claro:
         updated_at:     <%= 1.weeks.ago %>
 
 personal:
+        user:           lana
         fuente:         "Formulario Web"
         producto:       "Cosultoría"
         probabilidad:   60
@@ -23,9 +26,22 @@ personal:
         updated_at:     <%= 3.days.ago %>
 
 movistar:
+        user:           malory
         fuente:         "Llamada"
         producto:       "Web"
         probabilidad:   100
         estado:         "Ganado"
         empresa:        "Movistar"
         updated_at:     <%= Time.zone.now %>
+
+<% estados = ["Ganado", "Perdido", "En espera de respuesta"] %>
+<% productos = ["Web", "App", "Consultoría", "Neuromarketing"] %>
+<% 50.times do |n| %>
+deal_<%= n %>:
+  empresa:    <%= Faker::Name.name %>
+  estado:     <%= estados.sample %>
+  fuente:     <%= Faker::Lorem.sentence(1) %>
+  producto:   <%= productos.sample %>
+  user:       michael
+  updated_at: <%= 40.hours.ago %>
+<% end %>

@@ -1,0 +1,524 @@
+Run options: --seed 13393
+
+# Running:
+
+EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+
+Finished in 2.117807s, 22.1928 runs/s, 0.0000 assertions/s.
+
+  1) Error:
+SiteLayoutTest#test_layout_links:
+SyntaxError: (erb):47: syntax error, unexpected end-of-input, expecting keyword_end
+; _erbout.force_encoding(__ENCODING__)
+                                      ^
+    
+
+Error:
+SiteLayoutTest#test_layout_links:
+NoMethodError: undefined method `each' for nil:NilClass
+    
+
+
+  2) Error:
+SessionsHelperTest#test_current_user_devuelve_nil_cuendo_el_remember_digest_es_incorrecto:
+SyntaxError: (erb):47: syntax error, unexpected end-of-input, expecting keyword_end
+; _erbout.force_encoding(__ENCODING__)
+                                      ^
+    
+
+Error:
+SessionsHelperTest#test_current_user_devuelve_nil_cuendo_el_remember_digest_es_incorrecto:
+NoMethodError: undefined method `each' for nil:NilClass
+    
+
+
+  3) Error:
+SessionsHelperTest#test_current_user_devuelveel_usuario_correcto_cuando_session_es_nil:
+SyntaxError: (erb):47: syntax error, unexpected end-of-input, expecting keyword_end
+; _erbout.force_encoding(__ENCODING__)
+                                      ^
+    
+
+Error:
+SessionsHelperTest#test_current_user_devuelveel_usuario_correcto_cuando_session_es_nil:
+NoMethodError: undefined method `each' for nil:NilClass
+    
+
+
+  4) Error:
+PasswordResetsTest#test_Reseteo_de_contraseña_con_todo:
+SyntaxError: (erb):47: syntax error, unexpected end-of-input, expecting keyword_end
+; _erbout.force_encoding(__ENCODING__)
+                                      ^
+    
+
+Error:
+PasswordResetsTest#test_Reseteo_de_contraseña_con_todo:
+NoMethodError: undefined method `each' for nil:NilClass
+    
+
+
+  5) Error:
+UsersEditTest#test_successful_edit_with_friendly_forwarding:
+SyntaxError: (erb):47: syntax error, unexpected end-of-input, expecting keyword_end
+; _erbout.force_encoding(__ENCODING__)
+                                      ^
+    
+
+Error:
+UsersEditTest#test_successful_edit_with_friendly_forwarding:
+NoMethodError: undefined method `each' for nil:NilClass
+    
+
+
+  6) Error:
+UsersEditTest#test_unsuccessful_edit:
+SyntaxError: (erb):47: syntax error, unexpected end-of-input, expecting keyword_end
+; _erbout.force_encoding(__ENCODING__)
+                                      ^
+    
+
+Error:
+UsersEditTest#test_unsuccessful_edit:
+NoMethodError: undefined method `each' for nil:NilClass
+    
+
+
+  7) Error:
+UsersLoginTest#test_logueo_con_parametros_correctos_seguido_de_deslogueo:
+SyntaxError: (erb):47: syntax error, unexpected end-of-input, expecting keyword_end
+; _erbout.force_encoding(__ENCODING__)
+                                      ^
+    
+
+Error:
+UsersLoginTest#test_logueo_con_parametros_correctos_seguido_de_deslogueo:
+NoMethodError: undefined method `each' for nil:NilClass
+    
+
+
+  8) Error:
+UsersLoginTest#test_login_recordando:
+SyntaxError: (erb):47: syntax error, unexpected end-of-input, expecting keyword_end
+; _erbout.force_encoding(__ENCODING__)
+                                      ^
+    
+
+Error:
+UsersLoginTest#test_login_recordando:
+NoMethodError: undefined method `each' for nil:NilClass
+    
+
+
+  9) Error:
+UsersLoginTest#test_login_sin_recordar:
+SyntaxError: (erb):47: syntax error, unexpected end-of-input, expecting keyword_end
+; _erbout.force_encoding(__ENCODING__)
+                                      ^
+    
+
+Error:
+UsersLoginTest#test_login_sin_recordar:
+NoMethodError: undefined method `each' for nil:NilClass
+    
+
+
+ 10) Error:
+UsersLoginTest#test_logueo_con_parametros_incorrectos:
+SyntaxError: (erb):47: syntax error, unexpected end-of-input, expecting keyword_end
+; _erbout.force_encoding(__ENCODING__)
+                                      ^
+    
+
+Error:
+UsersLoginTest#test_logueo_con_parametros_incorrectos:
+NoMethodError: undefined method `each' for nil:NilClass
+    
+
+
+ 11) Error:
+UsersIndexTest#test_index_as_non-admin:
+SyntaxError: (erb):47: syntax error, unexpected end-of-input, expecting keyword_end
+; _erbout.force_encoding(__ENCODING__)
+                                      ^
+    
+
+Error:
+UsersIndexTest#test_index_as_non-admin:
+NoMethodError: undefined method `each' for nil:NilClass
+    
+
+
+ 12) Error:
+UsersIndexTest#test_index_including_pagination:
+SyntaxError: (erb):47: syntax error, unexpected end-of-input, expecting keyword_end
+; _erbout.force_encoding(__ENCODING__)
+                                      ^
+    
+
+Error:
+UsersIndexTest#test_index_including_pagination:
+NoMethodError: undefined method `each' for nil:NilClass
+    
+
+
+ 13) Error:
+UsersControllerTest#test_should_redirect_edit_when_logged_in_as_wrong_user:
+SyntaxError: (erb):47: syntax error, unexpected end-of-input, expecting keyword_end
+; _erbout.force_encoding(__ENCODING__)
+                                      ^
+    
+
+Error:
+UsersControllerTest#test_should_redirect_edit_when_logged_in_as_wrong_user:
+NoMethodError: undefined method `each' for nil:NilClass
+    
+
+
+ 14) Error:
+UsersControllerTest#test_should_redirect_index_when_not_logged_in:
+SyntaxError: (erb):47: syntax error, unexpected end-of-input, expecting keyword_end
+; _erbout.force_encoding(__ENCODING__)
+                                      ^
+    
+
+Error:
+UsersControllerTest#test_should_redirect_index_when_not_logged_in:
+NoMethodError: undefined method `each' for nil:NilClass
+    
+
+
+ 15) Error:
+UsersControllerTest#test_should_get_new:
+SyntaxError: (erb):47: syntax error, unexpected end-of-input, expecting keyword_end
+; _erbout.force_encoding(__ENCODING__)
+                                      ^
+    
+
+Error:
+UsersControllerTest#test_should_get_new:
+NoMethodError: undefined method `each' for nil:NilClass
+    
+
+
+ 16) Error:
+UsersControllerTest#test_should_redirect_edit_when_not_logged_in:
+SyntaxError: (erb):47: syntax error, unexpected end-of-input, expecting keyword_end
+; _erbout.force_encoding(__ENCODING__)
+                                      ^
+    
+
+Error:
+UsersControllerTest#test_should_redirect_edit_when_not_logged_in:
+NoMethodError: undefined method `each' for nil:NilClass
+    
+
+
+ 17) Error:
+UsersControllerTest#test_should_redirect_destroy_when_not_logged_in:
+SyntaxError: (erb):47: syntax error, unexpected end-of-input, expecting keyword_end
+; _erbout.force_encoding(__ENCODING__)
+                                      ^
+    
+
+Error:
+UsersControllerTest#test_should_redirect_destroy_when_not_logged_in:
+NoMethodError: undefined method `each' for nil:NilClass
+    
+
+
+ 18) Error:
+UsersControllerTest#test_should_redirect_update_when_not_logged_in:
+SyntaxError: (erb):47: syntax error, unexpected end-of-input, expecting keyword_end
+; _erbout.force_encoding(__ENCODING__)
+                                      ^
+    
+
+Error:
+UsersControllerTest#test_should_redirect_update_when_not_logged_in:
+NoMethodError: undefined method `each' for nil:NilClass
+    
+
+
+ 19) Error:
+UsersControllerTest#test_should_redirect_update_when_logged_in_as_wrong_user:
+SyntaxError: (erb):47: syntax error, unexpected end-of-input, expecting keyword_end
+; _erbout.force_encoding(__ENCODING__)
+                                      ^
+    
+
+Error:
+UsersControllerTest#test_should_redirect_update_when_logged_in_as_wrong_user:
+NoMethodError: undefined method `each' for nil:NilClass
+    
+
+
+ 20) Error:
+UsersControllerTest#test_should_redirect_destroy_when_logged_in_as_a_non-admin:
+SyntaxError: (erb):47: syntax error, unexpected end-of-input, expecting keyword_end
+; _erbout.force_encoding(__ENCODING__)
+                                      ^
+    
+
+Error:
+UsersControllerTest#test_should_redirect_destroy_when_logged_in_as_a_non-admin:
+NoMethodError: undefined method `each' for nil:NilClass
+    
+
+
+ 21) Error:
+UsersProfileTest#test_profile_display:
+SyntaxError: (erb):47: syntax error, unexpected end-of-input, expecting keyword_end
+; _erbout.force_encoding(__ENCODING__)
+                                      ^
+    
+
+Error:
+UsersProfileTest#test_profile_display:
+NoMethodError: undefined method `each' for nil:NilClass
+    
+
+
+ 22) Error:
+SessionsControllerTest#test_should_get_new:
+SyntaxError: (erb):47: syntax error, unexpected end-of-input, expecting keyword_end
+; _erbout.force_encoding(__ENCODING__)
+                                      ^
+    
+
+Error:
+SessionsControllerTest#test_should_get_new:
+NoMethodError: undefined method `each' for nil:NilClass
+    
+
+
+ 23) Error:
+StaticPagesControllerTest#test_should_get_ayuda:
+SyntaxError: (erb):47: syntax error, unexpected end-of-input, expecting keyword_end
+; _erbout.force_encoding(__ENCODING__)
+                                      ^
+    
+
+Error:
+StaticPagesControllerTest#test_should_get_ayuda:
+NoMethodError: undefined method `each' for nil:NilClass
+    
+
+
+ 24) Error:
+StaticPagesControllerTest#test_should_get_form_visita:
+SyntaxError: (erb):47: syntax error, unexpected end-of-input, expecting keyword_end
+; _erbout.force_encoding(__ENCODING__)
+                                      ^
+    
+
+Error:
+StaticPagesControllerTest#test_should_get_form_visita:
+NoMethodError: undefined method `each' for nil:NilClass
+    
+
+
+ 25) Error:
+StaticPagesControllerTest#test_should_get_inicio:
+SyntaxError: (erb):47: syntax error, unexpected end-of-input, expecting keyword_end
+; _erbout.force_encoding(__ENCODING__)
+                                      ^
+    
+
+Error:
+StaticPagesControllerTest#test_should_get_inicio:
+NoMethodError: undefined method `each' for nil:NilClass
+    
+
+
+ 26) Error:
+StaticPagesControllerTest#test_should_get_cliente:
+SyntaxError: (erb):47: syntax error, unexpected end-of-input, expecting keyword_end
+; _erbout.force_encoding(__ENCODING__)
+                                      ^
+    
+
+Error:
+StaticPagesControllerTest#test_should_get_cliente:
+NoMethodError: undefined method `each' for nil:NilClass
+    
+
+
+ 27) Error:
+UserMailerTest#test_account_activation:
+SyntaxError: (erb):47: syntax error, unexpected end-of-input, expecting keyword_end
+; _erbout.force_encoding(__ENCODING__)
+                                      ^
+    
+
+
+ 28) Error:
+UserMailerTest#test_password_reset:
+SyntaxError: (erb):47: syntax error, unexpected end-of-input, expecting keyword_end
+; _erbout.force_encoding(__ENCODING__)
+                                      ^
+    
+
+
+ 29) Error:
+UsersSignupTest#test_valid_signup_information_with_account_activation:
+SyntaxError: (erb):47: syntax error, unexpected end-of-input, expecting keyword_end
+; _erbout.force_encoding(__ENCODING__)
+                                      ^
+    
+
+Error:
+UsersSignupTest#test_valid_signup_information_with_account_activation:
+NoMethodError: undefined method `each' for nil:NilClass
+    
+
+
+ 30) Error:
+UsersSignupTest#test_invalid_signup_information:
+SyntaxError: (erb):47: syntax error, unexpected end-of-input, expecting keyword_end
+; _erbout.force_encoding(__ENCODING__)
+                                      ^
+    
+
+Error:
+UsersSignupTest#test_invalid_signup_information:
+NoMethodError: undefined method `each' for nil:NilClass
+    
+
+
+ 31) Error:
+UserTest#test_name_should_be_present:
+SyntaxError: (erb):47: syntax error, unexpected end-of-input, expecting keyword_end
+; _erbout.force_encoding(__ENCODING__)
+                                      ^
+    
+
+
+ 32) Error:
+UserTest#test_email_addresses_should_be_unique:
+SyntaxError: (erb):47: syntax error, unexpected end-of-input, expecting keyword_end
+; _erbout.force_encoding(__ENCODING__)
+                                      ^
+    
+
+
+ 33) Error:
+UserTest#test_password_should_be_present_(nonblank):
+SyntaxError: (erb):47: syntax error, unexpected end-of-input, expecting keyword_end
+; _erbout.force_encoding(__ENCODING__)
+                                      ^
+    
+
+
+ 34) Error:
+UserTest#test_password_should_have_a_minimum_length:
+SyntaxError: (erb):47: syntax error, unexpected end-of-input, expecting keyword_end
+; _erbout.force_encoding(__ENCODING__)
+                                      ^
+    
+
+
+ 35) Error:
+UserTest#test_email_should_be_present:
+SyntaxError: (erb):47: syntax error, unexpected end-of-input, expecting keyword_end
+; _erbout.force_encoding(__ENCODING__)
+                                      ^
+    
+
+
+ 36) Error:
+UserTest#test_email_should_not_be_too_long:
+SyntaxError: (erb):47: syntax error, unexpected end-of-input, expecting keyword_end
+; _erbout.force_encoding(__ENCODING__)
+                                      ^
+    
+
+
+ 37) Error:
+UserTest#test_name_should_not_be_too_long:
+SyntaxError: (erb):47: syntax error, unexpected end-of-input, expecting keyword_end
+; _erbout.force_encoding(__ENCODING__)
+                                      ^
+    
+
+
+ 38) Error:
+UserTest#test_email_validation_should_accept_valid_addresses:
+SyntaxError: (erb):47: syntax error, unexpected end-of-input, expecting keyword_end
+; _erbout.force_encoding(__ENCODING__)
+                                      ^
+    
+
+
+ 39) Error:
+UserTest#test_authenticated?_should_return_false_for_a_user_with_nil_digest:
+SyntaxError: (erb):47: syntax error, unexpected end-of-input, expecting keyword_end
+; _erbout.force_encoding(__ENCODING__)
+                                      ^
+    
+
+
+ 40) Error:
+UserTest#test_should_be_valid:
+SyntaxError: (erb):47: syntax error, unexpected end-of-input, expecting keyword_end
+; _erbout.force_encoding(__ENCODING__)
+                                      ^
+    
+
+
+ 41) Error:
+DealTest#test_tiene_que_mostrar_el_ultimo_deal_modificado,_primero:
+SyntaxError: (erb):47: syntax error, unexpected end-of-input, expecting keyword_end
+; _erbout.force_encoding(__ENCODING__)
+                                      ^
+    
+
+
+ 42) Error:
+DealTest#test_debe_tener_una_fuente:
+SyntaxError: (erb):47: syntax error, unexpected end-of-input, expecting keyword_end
+; _erbout.force_encoding(__ENCODING__)
+                                      ^
+    
+
+
+ 43) Error:
+DealTest#test_debe_tener_un_producto:
+SyntaxError: (erb):47: syntax error, unexpected end-of-input, expecting keyword_end
+; _erbout.force_encoding(__ENCODING__)
+                                      ^
+    
+
+
+ 44) Error:
+DealTest#test_debe_tener_una_empresa_valida:
+SyntaxError: (erb):47: syntax error, unexpected end-of-input, expecting keyword_end
+; _erbout.force_encoding(__ENCODING__)
+                                      ^
+    
+
+
+ 45) Error:
+DealTest#test_debe_ser_valido:
+SyntaxError: (erb):47: syntax error, unexpected end-of-input, expecting keyword_end
+; _erbout.force_encoding(__ENCODING__)
+                                      ^
+    
+
+
+ 46) Error:
+DealTest#test_debe_tener_una_probabilidad_del_0_al_100:
+SyntaxError: (erb):47: syntax error, unexpected end-of-input, expecting keyword_end
+; _erbout.force_encoding(__ENCODING__)
+                                      ^
+    
+
+
+ 47) Error:
+DealTest#test_debe_ser_invalido:
+SyntaxError: (erb):47: syntax error, unexpected end-of-input, expecting keyword_end
+; _erbout.force_encoding(__ENCODING__)
+                                      ^
+    
+
+47 runs, 0 assertions, 0 failures, 47 errors, 0 skips

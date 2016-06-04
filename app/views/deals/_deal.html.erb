@@ -2,12 +2,12 @@
   <div class="deal deal-empresa">
     <span class="empresa"><%= deal.empresa %></span></div>
   <div class="deal deal-contenido">
-    <span class="producto"> - <%= deal.producto %></span>
+    <span class="producto"><%= deal.producto %></span>
+    <span class="probabilidad"> - <%= deal.probabilidad %>%</span>
     <span class="estado estado-<%= deal.estado.parameterize('_') %>"><%= deal.estado %></span>
   </div>
   <div class="deal deal-fechas">
     <span class="creacion">Creado: <%= deal.created_at.to_formatted_s(:short) %></span>
     <span class="modificado"> - Últimos cambios: <%= deal.updated_at.to_formatted_s(:short) %></span>
   </div>
-  <hr>
 </li>
