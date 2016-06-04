@@ -54,15 +54,6 @@ class UsersController < ApplicationController
       params.require(:user).permit(:name, :email, :password, :password_confirmation)
     end
 
-    # Confirma que el usuario esta logueado
-    def logged_in_user
-      unless logged_in?
-        store_location
-        flash[:danger] = "Por favor, logueate."
-        redirect_to loguearse_url
-      end
-    end
-
     # Confirma que es el usuario correcto
     def correct_user
       @user = User.find(params[:id])
