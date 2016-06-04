@@ -225,6 +225,13 @@ input {
 .deal {
     line-height: 150%;
 }
+li.deal {
+    margin-top: 1em;
+
+    &:first-child {
+	margin-top: 2em;
+    }
+}
 .deal-fechas {
     margin-bottom: 1em;
 }
