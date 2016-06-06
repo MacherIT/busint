@@ -108,8 +108,7 @@ textarea {
 	max-width: 70px;
 }
 
-
-#bot_registrarse {
+.btn-primary {
     margin-top: 1em;
     margin-bottom: 1em;
 }
@@ -251,4 +250,8 @@ li.deal {
 }
 .estado-en_espera_de_respuesta {
     color: blue;
+}
+
+.verde {
+    color: $verde_logo1;
 }

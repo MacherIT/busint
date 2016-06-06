@@ -6,7 +6,11 @@
         <%= gravatar_for @user %>
         <%= @user.name %>
       </h1>
-    </section>
+      </section>
+      <section class="deal_form">
+	<h3 class="verde">Nuevo deal</h3>
+        <%= render 'shared/deal_form' %>
+      </section>
   </aside>
   <div class="col-md-8">
     <% if @user.deals.any? %>

@@ -1,0 +1,26 @@
+<%= form_for(@deal) do |f| %>
+
+  <div class="form-group"> 
+    <%= f.label :empresa, "Empresa"%>
+    <%= f.text_field :empresa, class: 'form-control'  %>
+  </div>
+  <div class="form-group"> 
+    <%= f.label :fuente, "Fuente del contacto" %>
+    <%= f.text_field :fuente, class: 'form-control'  %>
+  </div>
+  <div class="form-group"> 
+    <%= f.label :producto, "Producto" %>
+    <%= f.text_field :producto, class: 'form-control'  %>
+  </div>
+  <div class="form-group"> 
+    <%= f.label :estado, "Estado" %>
+    <%= f.text_field :estado, class: 'form-control' %>
+  </div>
+  <div class="form-group"> 
+    <%= f.label :probabilidad, "Probabilidad" %>
+    <%= f.numeric_field :probabilidad, class: 'form-control' %>
+  </div>
+
+  <%= f.submit "Guardar el deal", class: "btn btn-primary" %>
+  
+<% end %>

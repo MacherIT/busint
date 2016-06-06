@@ -1,10 +1,14 @@
 class DealsController < ApplicationController
   before_action :logged_in_user
 
-  def new
-  end
-
   def create
+    @deal = current_user.deals.build(deal_params)
+    if @deal.save
+      flash[:succcess] = "Tu deal fue guardado"
+    else
+      flash[:danger] = "Tu deal no pudo ser guardado"
+    end
+    redirect_to current_user
   end
   
   def edit
@@ -22,5 +26,10 @@ class DealsController < ApplicationController
   def update
   end
   
+  private
+  
+    def deal_params
+      params.require(:deal).permit(:fuente, :producto, :empresa, :probabilidad)
+    end
 
 end

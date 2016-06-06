@@ -45,5 +45,6 @@ productos = ["Web", "App", "Consultoría", "Neuromarketing"]
   estado = estados.sample
   fuente = Faker::Lorem.sentence(1)
   producto = productos.sample
-  users.sample.deals.create!(empresa: empresa, estado: estado, fuente: fuente, producto: producto)
+  probabilidad = rand(0..10)*10
+  users.sample.deals.create!(empresa: empresa, estado: estado, fuente: fuente, producto: producto, probabilidad: probabilidad)
 end
