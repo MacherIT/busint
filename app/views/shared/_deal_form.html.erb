@@ -1,6 +1,7 @@
 <%= form_for(@deal) do |f| %>
 
   <%= render 'shared/error_messages', object: f.object %>
+  <% debugger %>
 
   <div class="form-group"> 
     <%= f.label :empresa, "Empresa"%>
@@ -12,15 +13,15 @@
   </div>
   <div class="form-group"> 
     <%= f.label :producto, "Producto" %>
-    <%= f.text_field :producto, class: 'form-control'  %>
+    <%= f.select :producto, ["Web", "App", "Mktg Dig", "Neuro", "Consultoría"], class: 'form_control' %>
   </div>
   <div class="form-group"> 
     <%= f.label :estado, "Estado" %>
-    <%= f.text_field :estado, class: 'form-control' %>
+    <%= f.select :estado, ["Ganado", "Perdido", "En espera", "Trabajo contratado"], class: 'form-control' %>
   </div>
   <div class="form-group"> 
     <%= f.label :probabilidad, "Probabilidad" %>
-    <%= f.number_field :probabilidad, class: 'form-control' %>
+    <%= f.number_field :probabilidad, value: 50, step:10 , class: 'form-control' %>
   </div>
 
   <%= f.submit "Guardar el deal", class: "btn btn-primary" %>

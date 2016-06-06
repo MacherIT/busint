@@ -47,5 +47,15 @@ class DealTest < ActiveSupport::TestCase
   test "tiene que mostrar el ultimo deal modificado, primero" do
     assert_equal deals(:movistar), Deal.first
   end
+
+  test "producto tiene que ser uno de los existentes" do
+    @deal.producto = "Manzanas"
+    assert_not @deal.valid?
+  end
+
+  test "estado tiene que ser uno de los exstentes" do
+    @deal.estado = "Congelado"
+    assert_not @deal.valid?
+  end
   
 end
