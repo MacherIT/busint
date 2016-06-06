@@ -1,7 +1,7 @@
 <li id="deal-<%= deal.id %>" class="deal">
   <div class="deal deal-empresa">
     <span class="empresa"><%= deal.empresa %></span>
-    <% if not @user %><span class="deal-user"> - <%= deal.user.name %></span><% end %>
+    <span class="deal-user"><%= deal.user %></span>
   </div>
   <div class="deal deal-contenido">
     <span class="producto"><%= link_to deal.producto.nombre, producto_path(deal.producto.id) %></span>

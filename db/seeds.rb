@@ -50,8 +50,8 @@ users = User.order(:created_at).take(3)
   empresa = Faker::Name.name
   estado = estados.sample
   fuente = Faker::Lorem.sentence(1)
-  rand_id = rand(0..Producto.count)
-  producto = Producto.where("id >= ?", rand_id).first
+  contador += 1
+  producto = Producto.find(contador)
   probabilidad = rand(0..10)*10
   users.sample.deals.create!(empresa: empresa, estado: estado, fuente: fuente, producto: producto, probabilidad: probabilidad)
 end

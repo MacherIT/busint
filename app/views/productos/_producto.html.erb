@@ -1,0 +1,4 @@
+<li id="producto-<%= producto.id %>" class="producto">
+  <span class="producto-nombre"><%= link_to producto.nombre, producto_path(producto.id) %></span>
+  <span class="producto-deals"><%= producto.deals.count %> deals.</span>
+</li>
