@@ -14,7 +14,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @deal = @user.deals.build if logged_in?
+    @deal = @user.deals.build #if logged_in?
     @deals = @user.deals.paginate(page: params[:page])
   end
 

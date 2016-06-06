@@ -4,7 +4,7 @@ class DealsController < ApplicationController
   def create
     @deal = current_user.deals.build(deal_params)
     if @deal.save
-      flash[:succcess] = "Tu deal fue guardado"
+      flash[:success] = "Tu deal fue guardado"
     else
       flash[:danger] = "Tu deal no pudo ser guardado"
     end
@@ -29,7 +29,7 @@ class DealsController < ApplicationController
   private
   
     def deal_params
-      params.require(:deal).permit(:fuente, :producto, :empresa, :probabilidad)
+      params.require(:deal).permit(:fuente, :producto, :empresa, :probabilidad, :estado)
     end
 
 end

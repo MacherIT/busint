@@ -7,7 +7,7 @@
     <span class="estado estado-<%= deal.estado.parameterize('_') %>"><%= deal.estado %></span>
   </div>
   <div class="deal deal-fechas">
-    <span class="creacion">Creado: <%= deal.created_at.to_formatted_s(:short) %></span>
-    <span class="modificado"> - Últimos cambios: <%= deal.updated_at.to_formatted_s(:short) %></span>
+    <span class="creacion">Creado: <%= deal.created_at.to_formatted_s(:d_m_y) %></span>
+    <span class="modificado"> - Últimos cambios: <%= deal.updated_at.to_formatted_s(:d_m_y) %></span>
   </div>
 </li>

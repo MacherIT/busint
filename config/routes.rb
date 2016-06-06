@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
   root 'static_pages#inicio'
-  get 'visita' => 'static_pages#form_visita'
-  get 'cliente' => 'static_pages#form_cliente'
   get 'ayuda' => 'static_pages#ayuda'
   get 'registrarse' => 'users#new'
   get 'loguearse' => 'sessions#new'

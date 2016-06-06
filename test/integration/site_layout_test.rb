@@ -8,8 +8,6 @@ class SiteLayoutTest < ActionDispatch::IntegrationTest
     assert_select "a[href=?]", root_path, count: 2
     assert_select "a[href=?]", "http://macherit.com", count: 2
     assert_select "a[href=?]", ayuda_path, count: 2
-    assert_select "a[href=?]", visita_path
-    assert_select "a[href=?]", cliente_path
   end
 
 end
