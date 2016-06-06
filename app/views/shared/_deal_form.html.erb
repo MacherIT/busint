@@ -12,7 +12,7 @@
   </div>
   <div class="form-group"> 
     <%= f.label :producto, "Producto" %>
-    <%= f.select :producto, ["Web", "App", "Mktg Dig", "Neuro", "Consultoría"], class: 'form_control' %>
+    <%= f.select :producto, Producto.all.collect { |p| p.nombre }, class: 'form_control' %>
   </div>
   <div class="form-group"> 
     <%= f.label :estado, "Estado" %>

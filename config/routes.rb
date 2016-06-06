@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :account_activations, only: [:edit]
   resources :password_resets, only: [:edit, :new, :update, :create]
   resources :deals, only: [:create, :edit, :destroy, :update, :index, :show]
+  resources :productos, only: [:show, :index]
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

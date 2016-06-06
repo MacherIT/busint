@@ -235,9 +235,15 @@ li.deal {
 .deal-fechas {
     margin-bottom: 1em;
 }
-.empresa {
+.deal-empresa {
     font-family: Multicolore;
+}
+.empresa {
     font-size: 150%;
+}
+.deal-user {
+    color: gray;
+    font-size: 120%;
 }
 .estado {
     font-style: oblique;
@@ -248,10 +254,21 @@ li.deal {
 .estado-perdido {
     color: red;
 }
-.estado-en_espera_de_respuesta {
+.estado-en_espera {
     color: blue;
+}
+.estado-trabajo_contratado {
+    color: orange;
 }
 
 .verde {
     color: $verde_logo1;
+}
+
+/* Productos */
+li.producto {
+    line-height: 200%;
+}
+.producto-nombre {
+    font-family: Multicolore;
 }
