@@ -1,7 +1,16 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  nombre: MyString
+web:
+    nombre: Web
 
-two:
-  nombre: MyString
+app:
+    nombre: App
+
+consultoría:
+    nombre: Consultoría
+
+neuro:
+    nombre: Neuro
+
+mktg_dig:
+    nombre: Mktg Dig

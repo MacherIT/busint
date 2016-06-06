@@ -4,7 +4,8 @@ class DealTest < ActiveSupport::TestCase
 
   def setup
     @user = users(:michael)
-    @deal = @user.deals.build(fuente:"Amigo", producto: "Web", probabilidad: 50, estado: "Ganado", empresa: "Movistar")
+    @producto = productos(:web)
+    @deal = @user.deals.build(fuente:"Amigo", producto: @producto, probabilidad: 50, estado: "Ganado", empresa: "Movistar")
   end
 
   test "debe ser valido" do
@@ -18,11 +19,6 @@ class DealTest < ActiveSupport::TestCase
   
   test "debe tener una fuente" do
     @deal.fuente = ""
-    assert_not @deal.valid?
-  end
-
-  test "debe tener un producto" do
-    @deal.producto = ""
     assert_not @deal.valid?
   end
 
@@ -46,11 +42,6 @@ class DealTest < ActiveSupport::TestCase
 
   test "tiene que mostrar el ultimo deal modificado, primero" do
     assert_equal deals(:movistar), Deal.first
-  end
-
-  test "producto tiene que ser uno de los existentes" do
-    @deal.producto = "Manzanas"
-    assert_not @deal.valid?
   end
 
   test "estado tiene que ser uno de los exstentes" do

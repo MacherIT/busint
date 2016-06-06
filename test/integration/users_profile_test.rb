@@ -20,7 +20,7 @@ class UsersProfileTest < ActionDispatch::IntegrationTest
       assert_match deal.empresa[0], response.body   # Se hace así por problemas de comparación 
       assert_match deal.empresa[-1], response.body  # de encodings con apóstrofes.
       assert_match deal.estado, response.body
-      assert_match deal.producto, response.body
+      assert_match deal.producto.nombre, response.body
       assert_match deal.probabilidad.to_s, response.body
     end
   end
