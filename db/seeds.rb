@@ -1,4 +1,8 @@
 # -*- coding: utf-8 -*-
+estados = ["Ganado", "Perdido", "En espera", "Trabajo contratado"]
+productos = ["Web", "App", "Consultoría", "Neuro", "Mktg Dig"]
+
+# Users
 User.create!(name:  "Bruno Calmels",
              email: "bruno.calmels@macherit.com",
              password:              "foobar",
@@ -23,8 +27,6 @@ User.create!(name:  "Pedro Porma",
              activated: true,
              activated_at: Time.zone.now)
 
-
-
 #99.times do |n|
 #  name  = Faker::Name.name
 #  email = "example-#{n+1}@railstutorial.org"
@@ -37,14 +39,20 @@ User.create!(name:  "Pedro Porma",
 #               activated_at: Time.zone.now)
 #end
 
+# Productos
+productos.each do |p|
+  Producto.create!(nombre: p)
+end
+
+# Deals
 users = User.order(:created_at).take(3)
-estados = ["Ganado", "Perdido", "En espera de respuesta"]
-productos = ["Web", "App", "Consultoría", "Neuromarketing"]
 10.times do
   empresa = Faker::Name.name
   estado = estados.sample
   fuente = Faker::Lorem.sentence(1)
-  producto = productos.sample
+  rand_id = rand(0..Producto.count)
+  producto = Producto.where("id >= ?", rand_id).first
   probabilidad = rand(0..10)*10
   users.sample.deals.create!(empresa: empresa, estado: estado, fuente: fuente, producto: producto, probabilidad: probabilidad)
 end
+

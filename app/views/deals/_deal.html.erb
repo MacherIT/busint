@@ -2,7 +2,7 @@
   <div class="deal deal-empresa">
     <span class="empresa"><%= deal.empresa %></span></div>
   <div class="deal deal-contenido">
-    <span class="producto"><%= deal.producto %></span>
+    <span class="producto"><%= deal.producto.nombre %></span>
     <span class="probabilidad"> - <%= deal.probabilidad %>%</span>
     <span class="estado estado-<%= deal.estado.parameterize('_') %>"><%= deal.estado %></span>
   </div>
