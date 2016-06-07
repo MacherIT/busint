@@ -5,7 +5,7 @@ class DealTest < ActiveSupport::TestCase
   def setup
     @user = users(:michael)
     @producto = productos(:web)
-    @deal = @user.deals.build(fuente:"Amigo", producto: @producto, probabilidad: 50, estado: "Ganado", empresa: "Movistar")
+    @deal = deals(:nextel)
   end
 
   test "debe ser valido" do
@@ -44,9 +44,31 @@ class DealTest < ActiveSupport::TestCase
     assert_equal deals(:movistar), Deal.first
   end
 
-  test "estado tiene que ser uno de los exstentes" do
+  test "estado tiene que ser uno de los existentes" do
     @deal.estado = "Congelado"
     assert_not @deal.valid?
   end
+
+  test "prueba invitar a un usuario al deal" do
+    archer = users(:archer)
+    assert_not @deal.cousers.include?(archer)
+    @deal.invitar(archer)
+    assert @deal.cousers.include?(archer)
+  end
+
+  test "prueba echar a un usuario del deal" do
+    archer = users(:archer)
+    @deal.invitar(archer)
+    assert @deal.cousers.include?(archer)
+    @deal.echar(archer)
+    assert_not @deal.cousers.include?(archer)
+  end
+
+  test "prueba que participa? funcione" do
+    archer = users(:archer)
+    @deal.invitar(archer)
+    assert @deal.cousers.include?(archer)
+    assert @deal.participa?(archer)
+  end    
   
 end

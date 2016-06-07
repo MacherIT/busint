@@ -16,11 +16,23 @@
   </aside>
   <div class="col-md-8">
     <% if @user.deals.any? %>
-      <h3>Deals (<%= @user.deals.count %>)</h3>
+      <h3>Deals propios (<%= @user.deals.count %>)</h3>
       <ol class="deals list-group">
         <%= render @deals %>
       </ol>
       <%= will_paginate @deals %>
     <% end %>
+
+    <% if false %>
+    <% if @user.participacions.any? %>
+      <h3>Participaciones (<%= @user.participacions.count %>)</h3>
+      <ol class="deals list-group">
+        <%= render 'shared/deal', collection: @participacions %>
+      </ol>
+      <%= will_paginate @participacions %>
+    <% end %>
+<% end %>
+
+
   </div>
 </div>

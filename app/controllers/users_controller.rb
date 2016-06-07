@@ -16,6 +16,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @deal = @user.deals.build
     @deals = @user.deals.paginate(page: params[:page])
+    @participacions = @user.participacions(page: params[:page])
   end
 
   def create

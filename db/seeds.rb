@@ -45,16 +45,31 @@ productos.each do |p|
 end
 
 # Deals
-users = User.order(:created_at).take(3)
+users = User.all
 contador = 0
 10.times do
   empresa = Faker::Name.name
   estado = estados.sample
   fuente = Faker::Lorem.sentence(1)
-  contador = contador % 4 + 1
-  producto = Producto.find(contador)
-  contador += 1
+  producto = Producto.all.sample
   probabilidad = rand(0..10)*10
-  users.sample.deals.create!(empresa: empresa, estado: estado, fuente: fuente, producto: producto, probabilidad: probabilidad)
+  user = users.sample
+  deal = user.deals.create!(empresa: empresa, estado: estado, fuente: fuente, producto: producto, probabilidad: probabilidad)
 end
 
+# Participaciones
+10.times do
+  user = User.all.sample
+  deal = user.deals.sample
+  otro_user = User.all.sample
+  while otro_user == user
+    otro_user = User.all.sample
+  end
+  if not deal.participa?(otro_user)
+    deal.invitar(User.find_by(id: otro_user.id))
+  end
+end
+Deal.first.invitar(User.second) if !Deal.first.participa?(User.second)
+Deal.first.invitar(User.third)  if !Deal.first.participa?(User.third)
+Deal.second.invitar(User.first) if !Deal.second.participa?(User.first)
+Deal.third.invitar(User.first)  if !Deal.third.participa?(User.first)

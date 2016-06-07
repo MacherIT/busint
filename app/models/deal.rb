@@ -1,12 +1,37 @@
 # -*- coding: utf-8 -*-
 class Deal < ActiveRecord::Base
-  belongs_to :user
+  belongs_to :user 
   belongs_to :producto
+  has_many :participacions, class_name: "Participacion", 
+                            foreign_key: "deal_id",
+                            dependent: :destroy
+  has_many :cousers, through: :participacions, source: :user
   default_scope -> { order(updated_at: :desc) }
   validates :user_id, presence: true
   validates :fuente, presence: true
-  #validates :producto, presence: true, inclusion: { in: ["Web", "App", "Mktg Dig", "Neuro", "Consultoría"], message: "El producto tiene que ser uno de: 'Web', 'App', 'Mktg Dig', 'Neuro', 'Consultoría'" }
   validates :probabilidad, numericality: { only_integer: true, greater_than_or_equal_to: 0, less_than_or_equal_to: 100 }, allow_nil: true
   validates :empresa, presence: true
   validates :estado, inclusion: { in: ["Ganado", "Perdido", "En espera", "Trabajo contratado"], message: "El estado tiene que ser uno de los siguentes: 'Ganado', 'Perdido', 'En espera' o 'Trabajo contratado'."}
+  
+  # Invita a un companero al deal
+  def invitar(otro_user)
+    if user != otro_user
+      participacions.create(user_id: otro_user.id)
+    end
+  end
+  
+  # Saca a un companero del deal
+  def echar(otro_user)
+    participacions.find_by(user_id: otro_user.id).destroy
+  end
+  
+  # Devuelve true si el deal tiene a un usuario trabajando en el
+  def participa?(otro_user)
+    cousers.include?(otro_user)
+  end
+
+  private
+
 end
+
+

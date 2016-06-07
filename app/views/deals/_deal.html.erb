@@ -22,8 +22,16 @@
       <% end %>
     <span class="estado estado-<%= deal.estado.parameterize('_') %>"><%= deal.estado %></span>
   </div>
+  <% if deal.participacions.any? %>
+    <div class="deal deal-companeros">
+      <span class="etiqueta">Compañeros:</span>
+      <% deal.participacions.each do |p| %>
+        <span class="companero"><%= p.user.name %> - </span>
+      <% end %>
+    </div>
+  <% end %>
   <div class="deal deal-fechas">
-    <span class="creacion">Creado: <%= deal.created_at.to_formatted_s(:d_m_y) %></span>
-    <span class="modificado"> - Últimos cambios: <%= deal.updated_at.to_formatted_s(:d_m_y) %></span>
+    <span class="creacion"><span class="etiqueta">Creado: </span><%= deal.created_at.to_formatted_s(:d_m_y) %></span>
+    <span class="modificado"><span class="etiqueta"> - Últimos cambios: </span><%= deal.updated_at.to_formatted_s(:d_m_y) %></span>
   </div>
 </li>

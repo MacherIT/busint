@@ -1,6 +1,10 @@
 # -*- coding: utf-8 -*-
 class User < ActiveRecord::Base
   has_many :deals
+  has_many :participacions, class_name: "Participacion", 
+                            foreign_key: "user_id",
+                            dependent: :destroy
+  has_many :codeals, through: :participacions, source: :deal
   attr_accessor :remember_token, :activation_token, :reset_token
   before_save :downcase_email
   before_create :create_activation_digest
