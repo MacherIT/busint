@@ -1,8 +1,8 @@
 <div class="col-md-4">
   <%= link_to gravatar_for(current_user, size:300), current_user %>
 </div>
-<div class="col-md-8">
+<div class="col-md-8 user_info">
   <h3><%= current_user.name %></h3>
   <div><%= pluralize(current_user.deals.count, "deals") %></div>
-  <div><%= link_to "Ir a Mi Perfil", current_user %></div>
+  <div><%= link_to "Ir a Mi Perfil", current_user, class: "btn btn-primary" %></div>
 </div>
