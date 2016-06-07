@@ -45,6 +45,9 @@ textarea {
 	margin: 10px; 
     }
 }
+.extra-width {
+    width: 150%;
+}
 
 .tareas {
     text-align: left;
@@ -75,7 +78,7 @@ textarea {
 
 .footer {
 	text-align: center;
-	background: $verde_logo1;
+	background: $verde_logo2;
 	margin-top: 45px;
 	padding-top: 20px;
 	padding-bottom: 20px;
@@ -215,17 +218,26 @@ input {
   }
 }
 
-/* Sidebar */
-#sidebar {
-    background: #eee;
+/* Sidebar users */
+#users_sidebar {
+    margin-top: 60px;
+}
+.sidebar-menu {
+    list-style: none;
     border: 1px solid #333;
     border-radius: 5px;
-    margin-top: 50px;
-}
-ul.sidebar-menu {
-    list-style: none;
-    li {
-	margin: 0.5em;
+    padding: 0;
+    text-align: center;
+    a {
+	margin: 0;
+	background: #ccc;
+	text-decoration: none;
+	color: black;
+	&:hover {
+	    background: $verde_logo1;
+	    font-weight: bold;
+	    color: $azul_mktg;
+	}
     }
 }
 
@@ -245,6 +257,14 @@ ul.sidebar-menu {
 }
 .deal_form {
     margin-top: 0px;
+    background: #eee;
+    h1, h2, h3, h4, h5 {
+	margin-left: 10px;
+    }
+}
+#new_deal {
+    margin-left: 10px;
+    margin-right: 10px;
 }
 li.deal {
     margin-top: 1em;

@@ -4,8 +4,16 @@
     <% if not @user %><span class="deal-user"> - <%= deal.user.name %></span><% end %>
   </div>
   <div class="deal deal-contenido">
-    <span class="producto"><%= link_to deal.producto.nombre, producto_path(deal.producto.id) %></span>
-    <span class="probabilidad"> - <%= deal.probabilidad %>%</span>
+    <span class="producto">
+      <% if @user %>
+        <%= link_to deal.producto.nombre, producto_path(deal.producto.id) %>
+      <% end %>
+    </span>
+    <span class="probabilidad">
+      <% if p = deal.probabilidad %>
+        <% if @user %> - <% end %>
+	<%= deal.probabilidad %>%
+      <% end %>
     <span class="estado estado-<%= deal.estado.parameterize('_') %>"><%= deal.estado %></span>
   </div>
   <div class="deal deal-fechas">
