@@ -6,16 +6,18 @@
         <%= gravatar_for(@user, size:300, class:"gravatar-100px") %>
         <%= @user.name %>
       </h1>
-      </section>
+    </section>
+    <% if @user == current_user %>
       <section class="deal_form">
 	<h3 class="verde">Nuevo deal</h3>
-        <%= render 'shared/deal_form' %>
+	<%= render 'shared/deal_form' %>
       </section>
+    <% end %>
   </aside>
   <div class="col-md-8">
     <% if @user.deals.any? %>
       <h3>Deals (<%= @user.deals.count %>)</h3>
-      <ol class="deals">
+      <ol class="deals list-group">
         <%= render @deals %>
       </ol>
       <%= will_paginate @deals %>

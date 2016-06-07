@@ -25,4 +25,13 @@ class UsersProfileTest < ActionDispatch::IntegrationTest
     end
   end
   
+  test "si no es el propio no debe aparecer Nuevo Deal" do
+    log_in_as(@user)
+    get user_path(@user)
+    assert_select 'form#new_deal'
+    assert_select 'h3', 'Nuevo deal'
+    get user_path(users(:archer))
+    assert_select 'form#new_deal', count: 0
+  end    
+
 end

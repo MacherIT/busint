@@ -1,6 +1,12 @@
 <li id="deal-<%= deal.id %>" class="deal">
   <div class="deal deal-empresa">
-    <span class="empresa"><%= deal.empresa %></span>
+    <span class="empresa">
+      <% if current_user && deal.user_id == current_user.id %>
+        <%= link_to deal.empresa, edit_deal_url(deal.id) %>
+      <% else %>
+        <%= deal.empresa %>
+      <% end %>
+    </span>
     <% if not @user %><span class="deal-user"> - <%= deal.user.name %></span><% end %>
   </div>
   <div class="deal deal-contenido">

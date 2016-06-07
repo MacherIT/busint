@@ -1,0 +1,33 @@
+<% provide(:title, "Editar Deal") %>
+<h1>Deal con <%= @deal.empresa %></h1>
+<div class="row edit">
+  <div class="col-md-6 col-md-offset-3">
+
+    <%= form_for(@deal) do |f| %>
+    
+    <%= render 'shared/error_messages', object: f.object %>
+    
+    <div class="form-group"> 
+      <%= f.label :fuente, "Fuente del contacto" %>
+      <%= f.text_field :fuente, class: 'form-control'  %>
+    </div>
+    <div class="form-group"> 
+      <%= f.label :producto, "Producto" %>
+      <%= f.select :producto, Producto.all.collect { |p| p.nombre }, class: 'form_control' %>
+    </div>
+    <div class="form-group"> 
+      <%= f.label :estado, "Estado" %>
+      <%= f.select :estado, ["Ganado", "Perdido", "En espera", "Trabajo contratado"], class: 'form-control' %>
+    </div>
+    <div class="form-group"> 
+      <%= f.label :probabilidad, "Probabilidad" %>
+      <%= f.number_field :probabilidad, step:10 , class: 'form-control' %>
+    </div>
+    
+    <%= f.submit "Guardar", class: "btn btn-primary" %>
+    <% end %>
+    
+    <%= button_to "Eliminar deal", @deal, method: :delete, data: { confirm: "¿Seguro?" }, class: "btn btn-danger" %>
+  </div>
+</div>
+

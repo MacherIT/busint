@@ -10,7 +10,7 @@
   <body>
     <%= render 'layouts/header'%>
     <div class="container" id="cuerpo">
-      <div class="col-md-8 main-body">
+      <div class="col-md-10 main-body">
 	<% flash.each do |message_type, message| %>
           <div class="alert alert-<%= message_type %>">
 	    <%= message %>
@@ -19,7 +19,7 @@
 	<%= yield %>
       </div>
       <% if logged_in? %>
-        <div class="col-md-4" id="users_sidebar">
+        <div class="col-md-2" id="users_sidebar">
           <%= render 'layouts/users_sidebar' %>
 	</div>
       <% end %>

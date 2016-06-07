@@ -3,7 +3,7 @@ nextel:
         fuente:         "Amigo"
         producto:       web
         probabilidad:   10
-        estado:         "En espera de aprobación"
+        estado:         "En espera"
         empresa:        "Nextel"
         updated_at:     <%= 10.minutes.ago %>
 
@@ -11,7 +11,6 @@ claro:
         user:           archer
         fuente:         "Referencia"
         producto:       app
-        producto:       "App"
         probabilidad:   0
         estado:         "Perdido"
         empresa:        "claro"
@@ -21,9 +20,8 @@ personal:
         user:           lana
         fuente:         "Formulario Web"
         producto:       mktg_dig
-        producto:       "Cosultoría"
         probabilidad:   60
-        estado:         "En espera de aprobación"
+        estado:         "Trabajo contratado"
         empresa:        "Personal"
         updated_at:     <%= 3.days.ago %>
 
@@ -31,13 +29,12 @@ movistar:
         user:           malory
         fuente:         "Llamada"
         producto:       neuro
-        producto:       "Web"
         probabilidad:   100
         estado:         "Ganado"
         empresa:        "Movistar"
         updated_at:     <%= Time.zone.now %>
 
-<% estados = ["Ganado", "Perdido", "En espera de respuesta"] %>
+<% estados = ["Ganado", "Perdido", "En espera", "Trabajo contratado"] %>
 <% contador = 1 %>
 <% 50.times do |n| %>
 deal_<%= n %>:
