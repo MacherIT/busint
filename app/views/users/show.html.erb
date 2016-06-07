@@ -3,7 +3,7 @@
   <aside class="col-md-4">
     <section class="user_info">
       <h1>
-        <%= gravatar_for @user %>
+        <%= gravatar_for(@user, size:300, class:"gravatar-100px") %>
         <%= @user.name %>
       </h1>
       </section>
@@ -12,7 +12,7 @@
         <%= render 'shared/deal_form' %>
       </section>
   </aside>
-  <div class="col-md-6">
+  <div class="col-md-8">
     <% if @user.deals.any? %>
       <h3>Deals (<%= @user.deals.count %>)</h3>
       <ol class="deals">
@@ -20,8 +20,5 @@
       </ol>
       <%= will_paginate @deals %>
     <% end %>
-  </div>
-  <div class="col-md-6">
-    <%= link_to "Productos", productos_path, class: "btn btn-primary" %>
   </div>
 </div>

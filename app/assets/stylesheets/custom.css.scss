@@ -123,7 +123,7 @@ textarea {
 
 aside {
   section.user_info {
-    margin-top: 20px;
+    margin-top: 40px !important;
   }
   section {
     padding: 10px 0;
@@ -150,8 +150,13 @@ aside {
 .gravatar {
   float: left;
   margin-right: 10px;
+    width: 90%;
+    border: 2px solid #333;
+    border-radius: 47.5%;
 }
-
+.gravatar-100px {
+    max-width: 100px;
+}
 .gravatar_edit {
   margin-top: 15px;
 }
@@ -210,8 +215,22 @@ input {
   }
 }
 
-/* miscellaneous */
+/* Sidebar */
+#sidebar {
+    background: #eee;
+    border: 1px solid #333;
+    border-radius: 5px;
+    margin-top: 50px;
+}
+ul.sidebar-menu {
+    list-style: none;
+    li {
+	margin: 0.5em;
+    }
+}
 
+
+/* miscellaneous */
 .debug_dump {
   clear: both;
   float: left;
@@ -223,6 +242,9 @@ input {
 /* Deals */
 .deal {
     line-height: 150%;
+}
+.deal_form {
+    margin-top: 0px;
 }
 li.deal {
     margin-top: 1em;
