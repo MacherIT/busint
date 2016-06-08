@@ -271,15 +271,19 @@ li.deal {
     padding-right: 1em;
 }
 .deal_form {
+    border-radius: 5px;
     margin-top: 0px;
     background: #eee;
     h1, h2, h3, h4, h5 {
-	margin-left: 10px;
+	margin-left: 15px;
+	color: $verde_logo1;
+	margin-top: 10px;
+	margin-bottom: 15px;
     }
 }
 #new_deal {
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-left: 15px;
+    margin-right: 15px;
 }
 li.deal {
     margin-top: 1em;
@@ -317,9 +321,15 @@ li.deal {
 .estado-trabajo_contratado {
     color: orange;
 }
+.deals-propios {
+    margin-top: 60px;
+}
+.codeals {
+    margin-top: 60px;
+}
+
 
 .verde {
-    color: $verde_logo1;
 }
 
 /* Productos */

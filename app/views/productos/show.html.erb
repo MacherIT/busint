@@ -2,5 +2,5 @@
 <h1>Deals <%= @producto.nombre %></h1>
 
 <ul class="deals">
-  <%= render @deals %>
+  <%= render partial: 'shared/deal', collection: @deals, as: :deal %>
 </ul>

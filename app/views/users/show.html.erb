@@ -16,23 +16,22 @@
   </aside>
   <div class="col-md-8">
     <% if @user.deals.any? %>
-      <h3>Deals propios (<%= @user.deals.count %>)</h3>
-      <ol class="deals list-group">
-        <%= render @deals %>
-      </ol>
-      <%= will_paginate @deals %>
+      <div class="deals-propios">
+	<h3>Deals propios (<%= @user.deals.count %>)</h3>
+	<ol class="deals list-group">
+          <%= render partial: 'shared/deal', collection: @deals, as: :deal, locals: {role: :dueno} %>
+	</ol>
+	<%= will_paginate @deals %>
+      </div>
     <% end %>
-
-    <% if false %>
-    <% if @user.participacions.any? %>
-      <h3>Participaciones (<%= @user.participacions.count %>)</h3>
-      <ol class="deals list-group">
-        <%= render 'shared/deal', collection: @participacions %>
-      </ol>
-      <%= will_paginate @participacions %>
+    <% if @codeals.any? %>
+      <div class="codeals">
+	<h3>Participaciones (<%= @codeals.count %>)</h3>
+	<ol class="deals list-group">
+          <%= render partial: 'shared/deal', collection: @codeals, as: :deal, locals: {role: :companero} %>
+	</ol>
+	<%= will_paginate @codeals %>
+      </div>
     <% end %>
-<% end %>
-
-
   </div>
 </div>

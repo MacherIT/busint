@@ -1,13 +1,16 @@
 <li id="deal-<%= deal.id %>" class="deal">
   <div class="deal deal-empresa">
     <span class="empresa">
-      <% if current_user && deal.user_id == current_user.id %>
+      <% if current_user && ( deal.user == current_user or
+	                      deal.cousers.include?(current_user) )%>
         <%= link_to deal.empresa, edit_deal_url(deal.id) %>
       <% else %>
         <%= deal.empresa %>
       <% end %>
     </span>
-    <% if not @user %><span class="deal-user"> - <%= deal.user.name %></span><% end %>
+    <% if not @user or deal.cousers.include?(current_user) %>
+      <span class="deal-user"> - <%= deal.user.name %></span>
+    <% end %>
   </div>
   <div class="deal deal-contenido">
     <span class="producto">
@@ -26,7 +29,7 @@
     <div class="deal deal-companeros">
       <span class="etiqueta">Compañeros:</span>
       <% deal.participacions.each do |p| %>
-        <span class="companero"><%= p.user.name %> - </span>
+        <% if @user != p.user %><span class="companero"><%= p.user.name %> - </span><% end %>
       <% end %>
     </div>
   <% end %>
