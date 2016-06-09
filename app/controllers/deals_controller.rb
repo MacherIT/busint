@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 class DealsController < ApplicationController
   before_action :logged_in_user
   before_action :correct_user, only: [:destroy, :edit, :update]
@@ -21,15 +22,18 @@ class DealsController < ApplicationController
   def destroy
     @deal.destroy
     flash[:success] = "El deal fue borrado."
-    redirect_to request.referrer || root_url
+    redirect_to root_url
   end
 
   def show
+    @deal = Deal.find_by(id: params[:id])
   end
 
   def update
     if @deal.update_attributes(deal_params)
       flash[:success] = "Deal actualizado."
+    else
+      flash[:danger] = "Tu deal no pudo ser guardado"
     end
     render 'edit'
   end
@@ -37,7 +41,7 @@ class DealsController < ApplicationController
   private
   
     def deal_params
-      params.require(:deal).permit(:fuente, :producto_id, :empresa, :probabilidad, :estado)
+      params.require(:deal).permit(:fuente, :producto_id, :empresa, :probabilidad, :estado, cousers: []).slice(:fuente, :producto_id, :empresa, :probabilidad, :estado)
     end
 
     def correct_user
@@ -49,5 +53,16 @@ class DealsController < ApplicationController
       end
       redirect_to root_url if @deal.nil?
     end
+
+    def actualizar_participantes(cousers)
+      cousers.each do |part|
+        if compa = User.find_by(id: part)
+          if @deal.invitar(compa)
+            #flash[:danger] = "Un compañero no pudo ser añadido"
+          end
+        end
+      end
+    end
+
 
 end

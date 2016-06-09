@@ -12,8 +12,8 @@
       <%= f.text_field :fuente, class: 'form-control'  %>
     </div>
     <div class="form-group"> 
-      <%= f.label :producto, "Producto" %>
-      <%= f.select :producto, Producto.all.collect { |p| p.nombre }, class: 'form_control' %>
+      <%= f.label :producto_id, "Producto" %>
+      <%= f.select :producto_id, Producto.all.collect { |p| [p.nombre, p.id] }, class: 'form_control' %>
     </div>
     <div class="form-group"> 
       <%= f.label :estado, "Estado" %>
@@ -23,11 +23,28 @@
       <%= f.label :probabilidad, "Probabilidad" %>
       <%= f.number_field :probabilidad, step:10 , class: 'form-control' %>
     </div>
-    
     <%= f.submit "Guardar", class: "btn btn-primary" %>
     <% end %>
-    
     <%= button_to "Eliminar deal", @deal, method: :delete, data: { confirm: "¿Seguro?" }, class: "btn btn-danger" %>
+
+    <div> 
+      <div id="companeros-edit" class="full-width">
+	<span class="titulo-compa">Participan</span>
+	<span class="titulo-compa">No participan</span>
+      </div>
+      <% User.where('id != ?', @deal.user.id).each do |u| %>
+        <% if not @deal.cousers.include?(u) %>
+          <%= form_for(@deal.participacions.build) do |f| %>
+	    <div><%= hidden_field_tag :user_id, u.id %></div>
+	    <div><%= hidden_field_tag :deal_id, @deal.id %></div>
+	    <%= f.submit u.name, class: "btn btn-invitar btn-compa no_participa" %>
+	  <% end %>
+	<% else %>  
+	  <%= form_for(@deal.participacions.find_by(user_id: u.id), html: { method: :delete } ) do |f| %>
+	    <%= f.submit u.name, class: "btn btn-echar btn-compa participa" %>
+	  <% end %>
+	<% end %>
+      <% end %>
+    </div>
   </div>
 </div>
-

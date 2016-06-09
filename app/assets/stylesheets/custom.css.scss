@@ -180,6 +180,9 @@ input, textarea, select, .uneditable-input {
   margin-bottom: 15px;
   @include box_sizing;
 }
+.full-width {
+    width: 100%;
+}
 
 input {
   height: auto !important;
@@ -327,10 +330,41 @@ li.deal {
 .codeals {
     margin-top: 60px;
 }
-
-
-.verde {
+.btn-compa {
+    width: 50%;
+    position: relative;
 }
+.btn-echar {
+    background: #eee;
+    &:hover {
+	background: #d9534f;
+    }
+}
+.btn-invitar {
+    background: #eee;
+    &:hover {
+	background: #428bca;
+    }
+}
+.titulo-compa {
+    width: 50%;
+    font-weight: bold;
+    font-size: 120%;
+    text-align: center;
+}
+.participa {
+    position: relative;
+    left: 0;
+}
+.no_participa {
+    position: relative;
+    left: 50%;
+}
+#companeros-edit {
+    margin-top: 40px;
+    display: flex;
+}
+
 
 /* Productos */
 li.producto {

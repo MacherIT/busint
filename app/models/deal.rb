@@ -8,6 +8,7 @@ class Deal < ActiveRecord::Base
   has_many :cousers, through: :participacions, source: :user
   default_scope -> { order(updated_at: :desc) }
   validates :user_id, presence: true
+  validates :producto_id, presence: true
   validates :fuente, presence: true
   validates :probabilidad, numericality: { only_integer: true, greater_than_or_equal_to: 0, less_than_or_equal_to: 100 }, allow_nil: true
   validates :empresa, presence: true
@@ -15,7 +16,7 @@ class Deal < ActiveRecord::Base
   
   # Invita a un companero al deal
   def invitar(otro_user)
-    if user != otro_user
+    if user != otro_user and not cousers.include?(otro_user)
       participacions.create(user_id: otro_user.id)
     end
   end
