@@ -1,5 +1,6 @@
 <div class="sidebar-menu list-group">
-  <%= link_to "Agentes", users_path, class:"list-group-item" %>
-  <%= link_to "Productos", productos_path, class:"list-group-item"%>
-  <%= link_to "Empresas", root_path, class:"list-group-item" %>
+  <%= link_to "Agentes", users_path, class:"list-group-item nav-item-gral" %>
+  <%= link_to "Productos", productos_path, class:"list-group-item nav-item-gral"%>
+  <%= link_to "Empresas", root_path, class:"list-group-item nav-item-gral" %>
+  <%= link_to "Mi perfil", current_user, class:"list-group-item nav-item-propio" %>
 </div>
