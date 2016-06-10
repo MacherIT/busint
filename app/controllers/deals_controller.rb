@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 class DealsController < ApplicationController
   before_action :logged_in_user
-  before_action :correct_user, only: [:destroy, :edit, :update]
+  before_action :correct_user, only: [:destroy, :update]
+  before_action :user_editable, only: [:edit]
 
   def create
     @deal = current_user.deals.build(deal_params)
@@ -47,9 +48,23 @@ class DealsController < ApplicationController
     def correct_user
       if current_user.admin?
         @deal = Deal.find_by(id: params[:id])
-        flash[:danger] = "No existe ese Deal" if @deal.nil?
+        flash[:danger] = "No existe ese deal" if @deal.nil?
       else
-        @deal = current_user.deals.find_by(id: params[:id])
+        @deal = current_user.deals.find_by(id: params[:id]) || current_user.codeals.find_by(id: params[:id])
+      end
+      redirect_to root_url if @deal.nil?
+    end
+
+    def user_editable
+      if current_user.admin?
+        @deal = Deal.find_by(id: params[:id])
+        flash[:danger] = "No existe ese deal" if @deal.nil?
+      else
+        if not @deal = current_user.deals.find_by(id: params[:id]) || current_user.codeals.find_by(id: params[:id])
+          if deal = Deal.find_by(id: params[:id])
+            redirect_to deal and return
+          end
+        end
       end
       redirect_to root_url if @deal.nil?
     end

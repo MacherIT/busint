@@ -1,0 +1,19 @@
+mic_en_claro:
+    user: michael
+    deal: claro
+
+mal_en_claro:
+    user: malory
+    deal: claro
+
+arc_en_nextel:
+    user: archer
+    deal: nextel
+
+<% if false %>
+<% 30.times do |n| %>
+participacion_<%= n %>:
+    user_id: <%= rand(1..30) %>
+    deal_id: deal_<%= rand(1..50) %>
+<% end %>
+<% end %>

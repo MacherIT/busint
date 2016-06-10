@@ -8,7 +8,6 @@ class DealsControllerTest < ActionController::TestCase
 
   test "debe redireccionar un create no logueado" do
     assert_no_difference 'Deal.count' do
-      #post :create, deal: { fuente: "fuente", producto: "producto", empresa: "empresa", estado: "estado" }
       post :create, deal: @deal
     end
     assert_redirected_to loguearse_url
@@ -73,6 +72,12 @@ class DealsControllerTest < ActionController::TestCase
     deal2 = deal.dup
     patch :update, id: deal, deal: deal2
     assert_redirected_to root_url
+  end
+
+  test "debe redireccionar un edit al show si no participa ni es admin" do
+    log_in_as(users(:archer))
+    get :edit, id: @deal
+    assert_redirected_to deal_path(@deal)
   end
 
 end

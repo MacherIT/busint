@@ -50,10 +50,10 @@ class DealTest < ActiveSupport::TestCase
   end
 
   test "prueba invitar a un usuario al deal" do
-    archer = users(:archer)
-    assert_not @deal.cousers.include?(archer)
-    @deal.invitar(archer)
-    assert @deal.cousers.include?(archer)
+    lana = users(:lana)
+    assert_not @deal.cousers.include?(lana)
+    @deal.invitar(lana)
+    assert @deal.cousers.include?(lana)
   end
 
   test "prueba echar a un usuario del deal" do
