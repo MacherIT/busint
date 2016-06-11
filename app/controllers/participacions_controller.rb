@@ -18,7 +18,10 @@ class ParticipacionsController < ApplicationController
     @deal = Participacion.find(params[:id]).deal
     if particip_propia?
       flash[:info] = "No podés eliminarte de un deal vos mismo."
-      redirect_to edit_deal_path(@deal) and return
+      respond_to do |format|
+        format.html { redirect_to edit_deal_path(@deal) and return }
+        format.js
+      end
     end
     redirect_to root_url and return unless (usuario_participa? or current_user.admin?)
     @deal.echar(@user)

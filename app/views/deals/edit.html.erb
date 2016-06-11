@@ -1,5 +1,5 @@
 <% provide(:title, "Editar Deal") %>
-<h1>Deal con <span class="titulo-empresa"><%= @deal.empresa %></span></h1>
+<h1>Deal con <span class="titulo-empresa"><%= @deal.empresa %></span><% if current_user != @deal.user %> de <%= @deal.user.name %><% end %></h1>
 <div class="row edit">
   <div class="col-md-6 col-md-offset-3">
 

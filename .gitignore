@@ -19,3 +19,4 @@
 # Ignora todos los temporales del emacs
 *~
 \#*\#
+\.#*
