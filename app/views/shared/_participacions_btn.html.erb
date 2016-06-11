@@ -1,0 +1,13 @@
+<div id="particip-user-<%= user.id %>">
+  <% if not deal.cousers.include?(user) %>
+    <%= form_for(deal.participacions.build, remote: true) do |f| %>
+    <div><%= hidden_field_tag :user_id, user.id %></div>
+    <div><%= hidden_field_tag :deal_id, deal.id %></div>
+    <%= f.submit user.name, class: "btn btn-invitar btn-compa no_participa" %>
+  <% end %>
+  <% else %>  
+    <%= form_for(deal.participacions.find_by(user_id: user.id), html: { method: :delete }, remote: true ) do |f| %>
+      <%= f.submit user.name, class: "btn btn-echar btn-compa participa" %>
+    <% end %>
+  <% end %>
+</div>

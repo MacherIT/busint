@@ -5,8 +5,12 @@ class ParticipacionsController < ApplicationController
   def create
     @deal = Deal.find(params[:deal_id])
     redirect_to root_url and return unless (usuario_participa? or current_user.admin?)
-    @deal.invitar(User.find(params[:user_id]))
-    redirect_to edit_deal_path(@deal)
+    @user_id = params[:user_id]
+    @deal.invitar(User.find(@user_id))
+    respond_to do |format|
+      format.html { redirect_to edit_deal_path(@deal) }
+      format.js
+    end
   end
 
   def destroy
@@ -18,7 +22,10 @@ class ParticipacionsController < ApplicationController
     end
     redirect_to root_url and return unless (usuario_participa? or current_user.admin?)
     @deal.echar(@user)
-    redirect_to edit_deal_path(@deal)
+    respond_to do |format|
+      format.html { redirect_to edit_deal_path(@deal) }
+      format.js
+    end
   end
 
   private

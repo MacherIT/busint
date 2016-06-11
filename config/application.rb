@@ -25,5 +25,8 @@ module Busint
 
     # Para que reconozca las fuentes en la carpeta app/assets/fonts
     config.assets.paths << Rails.root.join("app", "assets", "fonts")
+
+    # Incluye los authenticity tokens en formularios remote
+    config.action_view.embed_authenticity_token_in_remote_forms = true
   end
 end

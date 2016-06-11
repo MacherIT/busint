@@ -33,17 +33,7 @@
 	<span class="titulo-compa">No participan</span>
       </div>
       <% User.where('id != ?', @deal.user.id).each do |u| %>
-        <% if not @deal.cousers.include?(u) %>
-          <%= form_for(@deal.participacions.build) do |f| %>
-	    <div><%= hidden_field_tag :user_id, u.id %></div>
-	    <div><%= hidden_field_tag :deal_id, @deal.id %></div>
-	    <%= f.submit u.name, class: "btn btn-invitar btn-compa no_participa" %>
-	  <% end %>
-	<% else %>  
-	  <%= form_for(@deal.participacions.find_by(user_id: u.id), html: { method: :delete } ) do |f| %>
-	    <%= f.submit u.name, class: "btn btn-echar btn-compa participa" %>
-	  <% end %>
-	<% end %>
+        <%= render partial: 'shared/participacions_btn', locals: { deal: @deal, user: u } %>
       <% end %>
     </div>
   </div>

@@ -1,0 +1,1 @@
+$("#particip-user-<%= @user.id %>").html("<%= escape_javascript(render partial: 'shared/participacions_btn', locals: { deal: @deal, user: @user } ) %>");
