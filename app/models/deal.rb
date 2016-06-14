@@ -6,6 +6,9 @@ class Deal < ActiveRecord::Base
                             foreign_key: "deal_id",
                             dependent: :destroy
   has_many :cousers, through: :participacions, source: :user
+  has_many :accions, class_name: "Accion",
+                     foreign_key: "deal_id",
+                     dependent: :destroy
   default_scope -> { order(updated_at: :desc) }
   validates :user_id, presence: true
   validates :producto_id, presence: true

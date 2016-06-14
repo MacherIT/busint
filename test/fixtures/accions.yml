@@ -1,0 +1,23 @@
+accion1:
+  deal: michael
+  medio: Llamada
+  salida: true
+  efect: Exitosa
+  causa: 
+  updated_at: <%= 10.minutes.ago %>
+
+accion2:
+  deal: archer
+  medio: Email
+  salida: false
+  efect: Final
+  causa: Ya tiene un sitio web.
+  updated_at: <%= 20.minutes.ago %>
+
+accion3:
+  deal: lana
+  medio: Social Media
+  salida: true
+  efect: Neutra
+  causa:
+  updated_at: <%= 5.minutes.ago %>

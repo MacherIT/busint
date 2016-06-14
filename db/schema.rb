@@ -11,7 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160607200452) do
+ActiveRecord::Schema.define(version: 20160614125324) do
+
+  create_table "accions", force: :cascade do |t|
+    t.integer  "deal_id"
+    t.string   "medio"
+    t.boolean  "salida",     default: true
+    t.string   "efect"
+    t.text     "causa"
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+  end
+
+  add_index "accions", ["deal_id"], name: "index_accions_on_deal_id"
 
   create_table "deals", force: :cascade do |t|
     t.integer  "user_id"

@@ -73,3 +73,13 @@ Deal.first.invitar(User.second) if !Deal.first.participa?(User.second)
 Deal.first.invitar(User.third)  if !Deal.first.participa?(User.third)
 Deal.second.invitar(User.first) if !Deal.second.participa?(User.first)
 Deal.third.invitar(User.first)  if !Deal.third.participa?(User.first)
+
+# Accions
+Deal.all.each do |d|
+  a = d.accions.create!(medio: "Llamada", salida: true, efect: "Exitosa")
+  a = d.accions.create!(medio: "Social Media", salida: false, efect: "Exitosa")
+  a = d.accions.create!(medio: "Visita", salida: true, efect: "Neutra")
+  a = d.accions.create!(medio: "Visita", salida: true, efect: "Exitosa")
+  a = d.accions.create!(medio: "Email", salida: true, efect: "Final", causa: "Contrató Pack Mi Sitio Web Full.")
+
+end
