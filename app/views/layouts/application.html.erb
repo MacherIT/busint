@@ -18,11 +18,15 @@
 	<% end %>
 	<%= yield %>
       </div>
+
+<% if false %>
       <% if logged_in? %>
         <div class="col-md-2" id="users_sidebar">
           <%= render 'layouts/users_sidebar' %>
 	</div>
       <% end %>
+<% end %>
+
     </div>
     <%= render 'layouts/footer' %>
     <%= debug(params) if Rails.env.development? %>

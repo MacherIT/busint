@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resources :users
   resources :account_activations, only: [:edit]
   resources :password_resets, only: [:edit, :new, :update, :create]
-  resources :deals, only: [:create, :edit, :destroy, :update, :index, :show]
+  resources :deals#, only: [:create, :edit, :destroy, :update, :index, :show, :new]
   resources :productos, only: [:show, :index]
   resources :participacions, only: [:create, :destroy]
 

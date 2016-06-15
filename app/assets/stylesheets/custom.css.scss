@@ -130,6 +130,10 @@ div.user_info {
     padding-top: 30px;
     text-align: center;
 }
+.user_btns {
+    float: right;
+    margin-top: 40px !important;
+}
 aside {
   section.user_info {
     margin-top: 40px !important;
@@ -297,6 +301,9 @@ li.deal {
 	margin-top: 10px;
 	margin-bottom: 15px;
     }
+}
+.form-solo {
+    margin-top: 40px;
 }
 #new_deal {
     margin-left: 15px;

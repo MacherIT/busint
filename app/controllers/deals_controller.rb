@@ -14,6 +14,10 @@ class DealsController < ApplicationController
     redirect_to current_user
   end
   
+  def new
+    @deal = current_user.deals.build
+  end
+
   def edit
   end
 
