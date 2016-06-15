@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 class User < ActiveRecord::Base
   has_many :deals
+  has_many :accions
   has_many :participacions, class_name: "Participacion", 
                             foreign_key: "user_id",
                             dependent: :destroy

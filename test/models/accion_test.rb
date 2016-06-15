@@ -13,6 +13,12 @@ class AccionTest < ActiveSupport::TestCase
     assert_not @acc.valid?
   end
 
+  test "debe tener user_id" do
+    @acc.user_id = nil
+    assert_not @acc.valid?
+  end
+
+
   test "debe tener efect" do
     @acc.efect = nil
     assert_not @acc.valid?

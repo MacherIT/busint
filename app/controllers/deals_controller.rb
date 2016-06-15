@@ -1,8 +1,17 @@
 # -*- coding: utf-8 -*-
 class DealsController < ApplicationController
   before_action :logged_in_user
-  before_action :correct_user, only: [:destroy, :update]
+  before_action :correct_user, only: [:destroy, :update, :historial, :nueva_accion]
   before_action :user_editable, only: [:edit]
+
+  def historial
+  end
+
+  def nueva_accion
+    @deal = Deal.find(params[:id])
+    @accion = @deal.accions.build
+    render 'accions/new'
+  end
 
   def create
     @deal = current_user.deals.build(deal_params)
@@ -32,6 +41,7 @@ class DealsController < ApplicationController
 
   def show
     @deal = Deal.find_by(id: params[:id])
+    @accion = @deal.accions.new
   end
 
   def update
@@ -49,6 +59,7 @@ class DealsController < ApplicationController
       params.require(:deal).permit(:fuente, :producto_id, :empresa, :probabilidad, :estado, cousers: []).slice(:fuente, :producto_id, :empresa, :probabilidad, :estado)
     end
 
+    # Pasa si el usuario es admin, owner o participante del deal.
     def correct_user
       if current_user.admin?
         @deal = Deal.find_by(id: params[:id])
@@ -59,6 +70,7 @@ class DealsController < ApplicationController
       redirect_to root_url if @deal.nil?
     end
 
+    # Pasa si el usuario puede editar el deal.
     def user_editable
       if current_user.admin?
         @deal = Deal.find_by(id: params[:id])

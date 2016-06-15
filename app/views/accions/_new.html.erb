@@ -1,0 +1,21 @@
+<%= form_for(@accion) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <div><%= hidden_field_tag :deal_id, @accion.deal.id %></div>
+  <div class="form-group"> 
+    <%= f.label :medio, "Medio"%>
+    <%= f.select :medio, ["Llamada", "Visita", "Social Media", "Email"], class: 'form-control'  %>
+  </div>
+  <div class="form-group"> 
+    <%= f.label :salida, "¿Quién la inició?"%>
+    <%= f.select :salida, options_for_select([['Usuario', true], ['Cliente', false]], 1), class: 'form-control'  %>
+  </div>
+  <div class="form-group"> 
+    <%= f.label :efect, "Efectividad"%>
+    <%= f.select :efect, ['Exitosa', 'Neutra', 'Final'], class: 'form-control'  %>
+  </div>
+  <div class="form-group"> 
+    <%= f.label :causa, "Comentario"%>
+    <%= f.text_field :causa, class: 'form-control'  %>
+  </div>
+  <%= f.submit "Guardar", class: "btn btn-primary" %>
+<% end %>

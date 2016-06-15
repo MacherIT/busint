@@ -1,0 +1,24 @@
+<% if accion.id %>
+<tr class="accion" id="accion-<%= accion.id %>">
+  <td class="usuario">
+    <%= @deal.user.name.split.first %>
+  </td>
+  <td class="direccion">
+    <% if accion.salida? %>Salida
+    <% else %>Entrada
+    <% end %>
+  </td>
+  <td class="medio">
+    <%= accion.medio %>
+  </td>
+  <td class="efecto">
+    <%= accion.efect %>
+  </td>
+  <td class="comentario">
+    <%= accion.causa %>
+  </td>
+  <td class="fecha">
+    <%= accion.created_at.to_formatted_s(:d_m) %>
+  </td>
+</tr>
+<% end %>

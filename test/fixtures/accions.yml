@@ -1,5 +1,6 @@
 accion1:
-  deal: michael
+  deal: nextel
+  user: michael
   medio: Llamada
   salida: true
   efect: Exitosa
@@ -7,7 +8,8 @@ accion1:
   updated_at: <%= 10.minutes.ago %>
 
 accion2:
-  deal: archer
+  deal: claro
+  user: archer
   medio: Email
   salida: false
   efect: Final
@@ -15,7 +17,8 @@ accion2:
   updated_at: <%= 20.minutes.ago %>
 
 accion3:
-  deal: lana
+  deal: personal
+  user: lana
   medio: Social Media
   salida: true
   efect: Neutra
