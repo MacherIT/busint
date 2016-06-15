@@ -13,6 +13,13 @@ class DealsControllerTest < ActionController::TestCase
     assert_redirected_to loguearse_url
   end
 
+  test "debe redireccionar un new no logueado" do
+    assert_no_difference 'Deal.count' do
+      get :new
+    end
+    assert_redirected_to loguearse_url
+  end
+
   test "debe redireccionar un destroy no logueado" do
     assert_no_difference 'Deal.count' do
       delete :destroy, id: @deal.id

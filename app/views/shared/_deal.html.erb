@@ -28,9 +28,15 @@
     <%= deal.estado %>
   </td>
   <td class="deal deal-fechas creacion">
-    <%= deal.created_at.to_formatted_s(:d_m_y) %>
+    <%= deal.created_at.to_formatted_s(:d_m) %>
   </td>
   <td class="deal deal-fechas modificado">
-    <%= deal.updated_at.to_formatted_s(:d_m_y) %>
+    <%= deal.updated_at.to_formatted_s(:d_m) %>
+  </td>
+  <td class="deal deal_edit">
+    <%= link_to "Editar", edit_deal_path(deal), class: "btn btn-secondary btn-edit_deal" %>
+  </td>
+  <td class="deal new_accion">
+    <%= link_to "+ Acción", '#' , class: "btn btn-secondary btn-new_accion" %>
   </td>
 </tr>

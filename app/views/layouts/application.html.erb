@@ -10,7 +10,7 @@
   <body>
     <%= render 'layouts/header'%>
     <div class="container" id="cuerpo">
-      <div class="col-md-10 main-body">
+      <div class="main-body">
 	<% flash.each do |message_type, message| %>
           <div class="alert alert-<%= message_type %>">
 	    <%= message %>

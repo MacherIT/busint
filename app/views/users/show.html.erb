@@ -28,7 +28,7 @@
 <% if @user.deals.any? %>
   <div class="deals-propios">
     <h3>Deals propios (<%= @user.deals.count %>)</h3>
-    <table class="table table-condensed">
+    <table class="table table-condensed tabla-deals">
       <theader></theader>
 	<%= render partial: 'shared/deal', collection: @deals, as: :deal, locals: {role: :dueno} %>
     </table>
@@ -45,7 +45,7 @@
 <% if @codeals.any? %>
   <div class="codeals">
     <h3>Participaciones (<%= @codeals.count %>)</h3>
-    <table class="table table-condensed">
+    <table class="table table-condensed tabla-codeals">
       <theader></theader>
 	<%= render partial: 'shared/deal', collection: @codeals, as: :deal, locals: {role: :companero} %>
     </table>
