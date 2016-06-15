@@ -1,4 +1,4 @@
-<tr id="deal-<%= deal.id %>" class="deal">
+<tr id="deal-<%= deal.id %>" class="deal clickable-row" data-href="<%= deal_url(deal) %>">
   <td class="deal deal-empresa empresa">
       <% if current_user && ( deal.user == current_user or
 	                      deal.cousers.include?(current_user) )%>

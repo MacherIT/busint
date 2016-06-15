@@ -299,9 +299,6 @@ input {
 }
 
 /* Deals */
-/*.deal {
-    line-height: 150%;
-}*/
 .deal_edit_btns {
     margin: 0;
     float: right;
@@ -309,6 +306,10 @@ input {
 .btn-new_deal {
     background: $rojo_web;
     border-color: #333;
+}
+.back-verde-linkable {
+    background: rgba(131, 170, 48, 0.75) !important;
+    cursor: pointer;
 }
 li.deal {
     padding-left: 1em;
