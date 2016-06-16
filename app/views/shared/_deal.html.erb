@@ -37,7 +37,9 @@
     <% end %>
   </td>
   <td class="deal deal-fechas modificado">
-    <%= deal.accions.first.fecha.to_formatted_s(:d_m) %>
+    <% if deal.accions.any? %>
+      <%= deal.accions.first.fecha.to_formatted_s(:d_m) %>
+    <% end %>
   </td>
 
 <% if false %>
