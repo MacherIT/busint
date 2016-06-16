@@ -18,9 +18,8 @@ class AccionTest < ActiveSupport::TestCase
     assert_not @acc.valid?
   end
 
-
   test "debe tener efect" do
-    @acc.efect = nil
+    @acc.resultado = nil
     assert_not @acc.valid?
   end
 
@@ -29,8 +28,13 @@ class AccionTest < ActiveSupport::TestCase
     assert_not @acc.valid?
   end
 
-  test "debe tener efect valido" do
-    @acc.efect = "No valido"
+  test "debe tener fecha" do
+    @acc.fecha = ""
+    assert_not @acc.valid?
+  end
+
+  test "debe tener resultado valido" do
+    @acc.resultado = "No valido"
     assert_not @acc.valid?
   end
 

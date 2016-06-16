@@ -11,14 +11,17 @@
   <td class="medio">
     <%= accion.medio %>
   </td>
-  <td class="efecto">
-    <%= accion.efect %>
+  <td class="resultado">
+    <%= accion.resultado %>
+  </td>
+  <td class="hecha">
+    <% if accion.hecha %>Hecha<% else %>No hecha<% end %>
   </td>
   <td class="comentario">
-    <%= accion.causa %>
+    <%= accion.comentario %>
   </td>
   <td class="fecha">
-    <%= accion.created_at.to_formatted_s(:d_m) %>
+    <%= accion.fecha.to_formatted_s(:d_m) %>
   </td>
 </tr>
 <% end %>

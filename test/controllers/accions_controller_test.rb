@@ -1,3 +1,4 @@
+
 require 'test_helper'
 
 class AccionsControllerTest < ActionController::TestCase
@@ -30,7 +31,7 @@ class AccionsControllerTest < ActionController::TestCase
   end
 
   test "debe redireccionar un update no logueado" do
-    patch :update, id: @acc, accion: { deal: @deal, medio: @acc.medio, salida: @acc.salida, causa: "", efect: @acc.efect }
+    patch :update, id: @acc, accion: { deal: @deal, medio: @acc.medio, salida: @acc.salida, comentario: "", resultado: @acc.resultado }
     assert_not flash.empty?
     assert_redirected_to loguearse_url
   end

@@ -3,8 +3,9 @@ accion1:
   user: michael
   medio: Llamada
   salida: true
-  efect: Exitosa
-  causa: 
+  resultado: Sigue
+  hecha: true
+  fecha: <%= 30.minutes.ago %>
   updated_at: <%= 10.minutes.ago %>
 
 accion2:
@@ -12,8 +13,10 @@ accion2:
   user: archer
   medio: Email
   salida: false
-  efect: Final
-  causa: Ya tiene un sitio web.
+  resultado: Sigue
+  hecha: true
+  fecha: <%= 2.days.ago %>
+  comentario: Ya tiene un sitio web.
   updated_at: <%= 20.minutes.ago %>
 
 accion3:
@@ -21,6 +24,8 @@ accion3:
   user: lana
   medio: Social Media
   salida: true
-  efect: Neutra
-  causa:
+  resultado: Posterga
+  hecha: true
+  fecha: <%= 20.minutes.ago %>
+  comentario: No podia juntarse.
   updated_at: <%= 5.minutes.ago %>

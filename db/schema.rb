@@ -17,10 +17,12 @@ ActiveRecord::Schema.define(version: 20160615173916) do
     t.integer  "deal_id"
     t.string   "medio"
     t.boolean  "salida",     default: true
-    t.string   "efect"
-    t.text     "causa"
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
+    t.string   "resultado"
+    t.text     "comentario"
+    t.datetime "fecha"
+    t.boolean  "hecha",      default: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
     t.integer  "user_id"
   end
 

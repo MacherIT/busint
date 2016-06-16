@@ -4,8 +4,10 @@ class CreateAccions < ActiveRecord::Migration
       t.integer :deal_id
       t.string :medio
       t.boolean :salida, default: true
-      t.string :efect
-      t.text :causa
+      t.string :resultado
+      t.text :comentario
+      t.datetime :fecha
+      t.boolean :hecha, default: false
 
       t.timestamps null: false
     end

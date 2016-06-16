@@ -10,12 +10,12 @@
     <%= f.select :salida, options_for_select([['Usuario', true], ['Cliente', false]], 1), class: 'form-control'  %>
   </div>
   <div class="form-group"> 
-    <%= f.label :efect, "Efectividad"%>
-    <%= f.select :efect, ['Exitosa', 'Neutra', 'Final'], class: 'form-control'  %>
+    <%= f.label :resultado, "Resultado"%>
+    <%= f.select :resultado, ["Sigue", "Posterga", "Cancela", "Contrata"], class: 'form-control'  %>
   </div>
   <div class="form-group"> 
-    <%= f.label :causa, "Comentario"%>
-    <%= f.text_field :causa, class: 'form-control'  %>
+    <%= f.label :comentario, "Comentario"%>
+    <%= f.text_field :comentario, class: 'form-control'  %>
   </div>
   <%= f.submit "Guardar", class: "btn btn-primary" %>
 <% end %>

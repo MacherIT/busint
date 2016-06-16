@@ -76,10 +76,11 @@ Deal.third.invitar(User.first)  if !Deal.third.participa?(User.first)
 
 # Accions
 Deal.all.each do |d|
-  a = d.accions.create!(user: d.user, medio: "Llamada", salida: true, efect: "Exitosa")
-  a = d.accions.create!(user: d.user, medio: "Social Media", salida: false, efect: "Exitosa")
-  a = d.accions.create!(user: d.user, medio: "Visita", salida: true, efect: "Neutra")
-  a = d.accions.create!(user: d.user, medio: "Visita", salida: true, efect: "Exitosa")
-  a = d.accions.create!(user: d.user, medio: "Email", salida: true, efect: "Final", causa: "Contrató Pack Mi Sitio Web Full.")
+  fs = rand(60).days.ago
+  a = d.accions.create!(fecha: fs,          hecha: true, user: d.user, medio: "Llamada", salida: true, resultado: "Sigue")
+  a = d.accions.create!(fecha: fs + 1.days, hecha: true, user: d.user, medio: "Social Media", salida: false, resultado: "Posterga")
+  a = d.accions.create!(fecha: fs + 2.days, hecha: true, user: d.user, medio: "Visita", salida: true, resultado: "Posterga")
+  a = d.accions.create!(fecha: fs + 3.days, hecha: true, user: d.user, medio: "Visita", salida: true, resultado: "Sigue")
+  a = d.accions.create!(fecha: fs + 4.days, hecha: true, user: d.user, medio: "Email", salida: true, resultado: "Contrata", comentario: "Contrató Pack Mi Sitio Web Full.")
 
 end
