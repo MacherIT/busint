@@ -1,7 +1,7 @@
 <% if accion.id %>
 <tr class="accion" id="accion-<%= accion.id %>">
   <td class="usuario">
-    <%= @deal.user.name.split.first %>
+    <%= accion.user.name.split.first %>
   </td>
   <td class="direccion">
     <% if accion.salida? %>Salida

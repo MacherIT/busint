@@ -3,7 +3,7 @@ nextel:
         fuente:         "Amigo"
         producto:       web
         probabilidad:   10
-        estado:         "En espera"
+        estado:         "En progreso"
         empresa:        "Nextel"
         updated_at:     <%= 10.minutes.ago %>
 
@@ -21,7 +21,7 @@ personal:
         fuente:         "Formulario Web"
         producto:       mktg_dig
         probabilidad:   60
-        estado:         "Trabajo contratado"
+        estado:         "En progreso"
         empresa:        "Personal"
         updated_at:     <%= 3.days.ago %>
 
@@ -34,7 +34,7 @@ movistar:
         empresa:        "Movistar"
         updated_at:     <%= Time.zone.now %>
 
-<% estados = ["Ganado", "Perdido", "En espera", "Trabajo contratado"] %>
+<% estados = ["Ganado", "Perdido", "En progreso"] %>
 <% contador = 1 %>
 <% 50.times do |n| %>
 deal_<%= n %>:

@@ -41,7 +41,7 @@ class DealsController < ApplicationController
 
   def show
     @deal = Deal.find_by(id: params[:id])
-    @accion = @deal.accions.new
+    @accion = @deal.accions.build
   end
 
   def update

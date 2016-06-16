@@ -6,12 +6,12 @@ class AccionsController < ApplicationController
   end
 
   def create
-    if not @deal = Deal.find_by(params[:deal_id])
+    if not @deal = Deal.find_by(id: params[:deal_id])
       flash[:danger] = "No existe ese deal."
       redirect_to root_url and return
     end
     @acc = @deal.accions.build(acciones_params)
-    @acc.user = current_user
+    @acc.user = User.find_by(id: params[:user_id])
     if @acc.save
       flash[:success] = "Acción guardada"
       actualizar_deal
@@ -40,9 +40,6 @@ class AccionsController < ApplicationController
 
     # Actualiza el estado del deal correspondiente
     def actualizar_deal
-      if @acc.nil?
-        return
-      end
       @acc.deal.actualizar_estado
       flash[:info] = "Estado del deal actualizado."
     end

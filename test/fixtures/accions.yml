@@ -1,9 +1,9 @@
 accion1:
   deal: nextel
   user: michael
-  medio: Llamada
+  medio: "Llamada"
   salida: true
-  resultado: Sigue
+  resultado: "Sigue"
   hecha: true
   fecha: <%= 30.minutes.ago %>
   updated_at: <%= 10.minutes.ago %>
@@ -11,21 +11,21 @@ accion1:
 accion2:
   deal: claro
   user: archer
-  medio: Email
+  medio: "Email"
   salida: false
-  resultado: Sigue
+  resultado: "Sigue"
   hecha: true
   fecha: <%= 2.days.ago %>
-  comentario: Ya tiene un sitio web.
+  comentario: "Ya tiene un sitio web."
   updated_at: <%= 20.minutes.ago %>
 
 accion3:
   deal: personal
   user: lana
-  medio: Social Media
+  medio: "Social Media"
   salida: true
-  resultado: Posterga
+  resultado: "Posterga"
   hecha: true
   fecha: <%= 20.minutes.ago %>
-  comentario: No podia juntarse.
+  comentario: "No podia juntarse."
   updated_at: <%= 5.minutes.ago %>

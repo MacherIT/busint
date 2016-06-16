@@ -208,9 +208,9 @@ input, textarea, select, .uneditable-input {
 label {
     margin-right: 20px;
 }
-input, select, .uneditable-input {
+/*input, select, .uneditable-input {
   max-width: 150px;
-}
+}*/
 .full-width {
     width: 100%;
 }
@@ -401,11 +401,8 @@ li.deal {
 .estado-perdido {
     color: red;
 }
-.estado-en_espera {
+.estado-en_progreso {
     color: blue;
-}
-.estado-trabajo_contratado {
-    color: orange;
 }
 .deals-propios {
     clear: both;

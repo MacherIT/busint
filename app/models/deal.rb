@@ -37,12 +37,13 @@ class Deal < ActiveRecord::Base
   # Acomoda el estado del deal de acuerdo a la ultima accion
   def actualizar_estado
     last_accion = accions.first
-    estado = case last_accion.resultado
-               when "Sigue" then "En progreso"
-               when "Posterga" then "En progreso"
-               when "Cancela" then "Perdido"
-               when "Contrata" then "Ganado"
-             end
+    self.estado = case last_accion.resultado
+                    when "Sigue" then "En progreso"
+                    when "Posterga" then "En progreso"
+                    when "Cancela" then "Perdido"
+                    when "Contrata" then "Ganado"
+                  end
+    self.save
   end
 
   private

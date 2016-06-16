@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-estados = ["Ganado", "Perdido", "En espera", "Trabajo contratado"]
+estados = ["Ganado", "Perdido", "En progreso"]
 productos = ["Web", "App", "Consultoría", "Neuro", "Mktg Dig"]
 
 # Users
