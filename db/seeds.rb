@@ -48,13 +48,13 @@ end
 users = User.all
 contador = 0
 10.times do
+  posesion = rand(1..2).even?
   empresa = Faker::Name.name
-  estado = estados.sample
   fuente = Faker::Lorem.sentence(1)
   producto = Producto.all.sample
   probabilidad = rand(0..10)*10
   user = users.sample
-  deal = user.deals.create!(empresa: empresa, estado: estado, fuente: fuente, producto: producto, probabilidad: probabilidad)
+  deal = user.deals.create!(empresa: empresa, fuente: fuente, producto: producto, probabilidad: probabilidad)
 end
 
 # Participaciones
@@ -82,5 +82,6 @@ Deal.all.each do |d|
   a = d.accions.create!(fecha: fs + 2.days, hecha: true, user: d.user, medio: "Visita", salida: true, resultado: "Posterga")
   a = d.accions.create!(fecha: fs + 3.days, hecha: true, user: d.user, medio: "Visita", salida: true, resultado: "Sigue")
   a = d.accions.create!(fecha: fs + 4.days, hecha: true, user: d.user, medio: "Email", salida: true, resultado: "Contrata", comentario: "Contrató Pack Mi Sitio Web Full.")
-
 end
+
+Deal.all.each.map { |d| d.actualizar_estado }

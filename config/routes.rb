@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'posesion/update'
+
   root 'static_pages#inicio'
   get 'ayuda' => 'static_pages#ayuda'
   get 'registrarse' => 'users#new'

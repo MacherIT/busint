@@ -220,9 +220,9 @@ input {
 }
 
 #error_explanation {
-  color: red;
+  color: $rojo_web;
   ul {
-    color: red;
+    color: $rojo_web;
     margin: 0 0 30px 0;
   }
 }
@@ -352,11 +352,11 @@ li.deal {
     }
 }
 #deal-acciones {
-    margin-top: 50px;
+    margin-top: 65px;
 }
 #deal-main {
-    .titulo {
-	font-size: 120%;
+    #deal-estado, #deal-posesion {
+	font-size: 150%;
 	font-weight: bold;
     }
 }
@@ -392,17 +392,23 @@ li.deal {
     color: gray;
     font-size: 120%;
 }
+.posesion-true {
+    color: $rojo_web;
+}
+.posesion-false {
+    color: $azul_mktg;
+}
 .estado {
     font-weight: bold;
 }
 .estado-ganado {
-    color: green;
+    color: $verde_app;
 }
 .estado-perdido {
-    color: red;
+    color: $rojo_web;
 }
 .estado-en_progreso {
-    color: blue;
+    color: $azul_mktg;
 }
 .deals-propios {
     clear: both;

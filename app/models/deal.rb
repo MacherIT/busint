@@ -15,7 +15,7 @@ class Deal < ActiveRecord::Base
   validates :fuente, presence: true
   validates :probabilidad, numericality: { only_integer: true, greater_than_or_equal_to: 0, less_than_or_equal_to: 100 }, allow_nil: true
   validates :empresa, presence: true
-  validates :estado, inclusion: { in: ["Ganado", "Perdido", "En progreso"], message: "El estado tiene que ser uno de los siguentes: 'Ganado', 'Perdido' o 'En progreso'."}
+  validates :estado, inclusion: { in: ["Ganado", "Perdido", "En progreso"], message: "El estado tiene que ser uno de los siguentes: 'Ganado', 'Perdido' o 'En progreso'."}, allow_nil: true
   
   # Invita a un companero al deal
   def invitar(otro_user)

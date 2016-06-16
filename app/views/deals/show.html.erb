@@ -15,7 +15,13 @@
     </div>
     <div class="col-md-6" id="deal-posesion">
       <span class="titulo">Posesión: </span>
-      <span class="posesion posesión-<%= @deal.estado.parameterize('_') %>">@deal.posesion</span>
+      <span class="posesion posesion-<%= @deal.posesion %>">
+	<% if @deal.posesion %>
+	  <%= "Macher" %>
+	<% else %>
+	  <%= "Cliente" %>
+	<% end %>
+      </span>
     </div>
     <div id="deal-acciones">
       <h3>Acciones</h3>

@@ -4,7 +4,7 @@ class CreateDeals < ActiveRecord::Migration
       t.references :user, index: true, foreign_key: true
       t.text :fuente
       t.integer :probabilidad
-      t.text :estado
+      t.text :estado, default: "En progreso"
       t.text :empresa
 
       t.timestamps null: false
