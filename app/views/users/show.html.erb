@@ -9,21 +9,12 @@
     </section>
   </aside>
   <div class="col-md-8">
-    <section class="user_btns">
-      <%= render 'user_btns' %>
-    </section>
-  </div>
-
-<% if false %>
     <% if @user == current_user %>
-      <section class="deal_form">
-	<h3 class="verde">Nuevo deal</h3>
-	<%= render 'shared/deal_form' %>
+      <section class="user_btns">
+	<%= render 'user_btns' %>
       </section>
     <% end %>
-<% end %>
-  </aside>
-</div>
+  </div>
 
 <% if @user.deals.any? %>
   <div class="deals-propios">

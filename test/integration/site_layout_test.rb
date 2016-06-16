@@ -7,7 +7,7 @@ class SiteLayoutTest < ActionDispatch::IntegrationTest
     assert_template 'static_pages/inicio'
     assert_select "a[href=?]", root_path, count: 2
     assert_select "a[href=?]", "http://macherit.com", count: 2
-    assert_select "a[href=?]", ayuda_path, count: 2
+    assert_select "a[href=?]", ayuda_path, count: 1
   end
 
 end
