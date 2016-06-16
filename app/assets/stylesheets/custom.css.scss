@@ -196,11 +196,20 @@ aside {
 div.edit {
     margin-top: 30px;
 }
+.fecha-input select {
+    width: 70px;
+}
 input, textarea, select, .uneditable-input {
   border: 1px solid #bbb;
   width: 100%;
   margin-bottom: 15px;
   @include box_sizing;
+}
+label {
+    margin-right: 20px;
+}
+input, select, .uneditable-input {
+  max-width: 150px;
 }
 .full-width {
     width: 100%;

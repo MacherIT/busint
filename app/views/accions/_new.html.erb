@@ -13,6 +13,10 @@
     <%= f.label :resultado, "Resultado"%>
     <%= f.select :resultado, ["Sigue", "Posterga", "Cancela", "Contrata"], class: 'form-control'  %>
   </div>
+  <div class="form-group fecha-input"> 
+    <%= f.label :fecha, "Fecha"%>
+    <%= f.datetime_select :fecha, class: 'form-control' %>
+  </div>
   <div class="form-group"> 
     <%= f.label :comentario, "Comentario"%>
     <%= f.text_field :comentario, class: 'form-control'  %>

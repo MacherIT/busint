@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 class AccionsController < ApplicationController
   before_action :logged_in_user
-#  after_action  :actualizar_deal, only: [:create, :destroy, :update]
 
   def new
   end
@@ -11,13 +10,15 @@ class AccionsController < ApplicationController
       flash[:danger] = "No existe ese deal."
       redirect_to root_url and return
     end
-    @acc = @deal.accions.new(acciones_params)
+    @acc = @deal.accions.build(acciones_params)
+    @acc.user = current_user
     if @acc.save
       flash[:success] = "Acción guardada"
+      actualizar_deal
       redirect_to deal_path(@deal)
     else
       flash[:danger]= "No pudo ser guardada la acción."
-      redirect_to nueva_accions_deal_path(@deal)
+      redirect_to nueva_accion_deal_path(@deal)
     end
   end
 
@@ -34,7 +35,7 @@ class AccionsController < ApplicationController
   
     # Devuelve los parametros permitidos
     def acciones_params
-      params.require(:accion).permit(:medio, :salida, :efect, :causa)
+      params.require(:accion).permit(:medio, :salida, :resultado, :comentario, :fecha, :hecha)
     end
 
     # Actualiza el estado del deal correspondiente
@@ -42,7 +43,8 @@ class AccionsController < ApplicationController
       if @acc.nil?
         return
       end
-      actualizar_estado(@acc.deal)
+      @acc.deal.actualizar_estado
+      flash[:info] = "Estado del deal actualizado."
     end
       
 

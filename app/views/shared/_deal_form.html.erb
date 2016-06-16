@@ -16,13 +16,12 @@
   </div>
   <div class="form-group"> 
     <%= f.label :estado, "Estado" %>
-    <%= f.select :estado, ["Ganado", "Perdido", "En espera", "Trabajo contratado"], class: 'form-control' %>
+    <%= f.select :estado, ["Ganado", "Perdido", "En progreso"], class: 'form-control' %>
   </div>
   <div class="form-group"> 
     <%= f.label :probabilidad, "Probabilidad" %>
     <%= f.number_field :probabilidad, value: 50, step:10 , class: 'form-control' %>
   </div>
-
 
   <%= f.submit "Crear Deal", class: "btn btn-primary" %>
   
