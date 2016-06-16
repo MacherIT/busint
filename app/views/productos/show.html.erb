@@ -1,6 +1,7 @@
 <% provide(:title, 'Deals') %>
 <h1>Deals <%= @producto.nombre %></h1>
 
-<ul class="deals">
+<table class="table table-condensed tabla-deals">
+  <theader></theader>
   <%= render partial: 'shared/deal', collection: @deals, as: :deal %>
-</ul>
+</table>

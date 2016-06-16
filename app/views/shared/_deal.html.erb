@@ -20,9 +20,11 @@
     <% end %>
   </td>
   <td class="deal deal-companeros">
+    <% compas = [] %>
     <% deal.participacions.each do |p| %>
-      <%= p.user.name.split.first %> - 
+      <% if current_user != p.user then compas.append(p.user.name.split.first) end %>
     <% end %>
+  <span class="companero"><%= compas.join(", ") %></span>
   </td>
   <td class="deal deal-estado estado estado-<%= deal.estado.parameterize('_') %>">
     <%= deal.estado %>

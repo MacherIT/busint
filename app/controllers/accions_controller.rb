@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 class AccionsController < ApplicationController
   before_action :logged_in_user
+#  after_action  :actualizar_deal, only: [:create, :destroy, :update]
 
   def new
   end
@@ -35,5 +36,14 @@ class AccionsController < ApplicationController
     def acciones_params
       params.require(:accion).permit(:medio, :salida, :efect, :causa)
     end
+
+    # Actualiza el estado del deal correspondiente
+    def actualizar_deal
+      if @acc.nil?
+        return
+      end
+      actualizar_estado(@acc.deal)
+    end
+      
 
 end

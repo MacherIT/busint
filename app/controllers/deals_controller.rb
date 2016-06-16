@@ -55,6 +55,12 @@ class DealsController < ApplicationController
   
   private
   
+    # Acomoda el estado del deal de acuerdo a la ultima accion
+#    def actualizar_estado(deal)
+#      last_accion = deal.accions.first
+#      deal.estado = case last_accion.
+#    end
+
     def deal_params
       params.require(:deal).permit(:fuente, :producto_id, :empresa, :probabilidad, :estado, cousers: []).slice(:fuente, :producto_id, :empresa, :probabilidad, :estado)
     end

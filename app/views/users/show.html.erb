@@ -9,11 +9,11 @@
     </section>
   </aside>
   <div class="col-md-8">
+    <section class="user_btns">
     <% if @user == current_user %>
-      <section class="user_btns">
-	<%= render 'user_btns' %>
-      </section>
+      <%= render 'user_btns' %>
     <% end %>
+    </section>
   </div>
 
 <% if @user.deals.any? %>
@@ -21,12 +21,12 @@
     <h3>Deals propios (<%= @user.deals.count %>)</h3>
     <table class="table table-condensed tabla-deals">
       <theader></theader>
-	<%= render partial: 'shared/deal', collection: @deals, as: :deal, locals: {role: :dueno} %>
+	<%= render partial: 'shared/deal', collection: @deals, as: :deal %>
     </table>
 	
 <% if false %>
   <ol class="deals list-group">
-      <%= render partial: 'shared/deal', collection: @deals, as: :deal, locals: {role: :dueno} %>
+      <%= render partial: 'shared/deal', collection: @deals, as: :deal %>
     </ol>
 <% end %>
 

@@ -252,6 +252,7 @@ input {
 }
 .etiqueta {
     font-style: italic;
+    color: #999;
 }
 
 /* Sidebar users */
@@ -398,9 +399,11 @@ li.deal {
     color: orange;
 }
 .deals-propios {
+    clear: both;
     margin-top: 60px;
 }
 .codeals {
+    clear: both;
     margin-top: 60px;
 }
 .tabla-deals, .tabla-codeals {

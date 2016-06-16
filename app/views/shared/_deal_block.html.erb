@@ -2,33 +2,37 @@
   <span class="empresa">
     <% if current_user && ( deal.user == current_user or
                             deal.cousers.include?(current_user) )%>
-      <%= link_to deal.empresa, edit_deal_url(deal.id) %>
+      <%= link_to deal.empresa, '#' %>
     <% else %>
       <%= deal.empresa %>
     <% end %>
   </span>
-  <% if not @user or deal.cousers.include?(current_user) %>
-    <span class="deal-user"> - <%= deal.user.name %></span>
-  <% end %>
+  <span class="deal-user"> - <%= deal.user.name %></span>
 </div>
 <div class="deal deal-contenido">
   <span class="producto">
-    <%= link_to deal.producto.nombre, producto_path(deal.producto.id) %> - 
+    <span class="etiqueta">Producto:</span>
+    <%= link_to deal.producto.nombre, producto_path(deal.producto.id) %>
   </span>
+</div>
+<div class="deal deal-contenido">
   <span class="probabilidad">
     <% if p = deal.probabilidad %>
+      <span class="etiqueta">Probablidad inicial:</span>
       <%= deal.probabilidad %>%
     <% end %>
 </div>
 <% if deal.participacions.any? %>
 <div class="deal deal-companeros">
   <span class="etiqueta">Compañeros:</span>
+  <% compas = [] %>
   <% deal.participacions.each do |p| %>
-  <% if @user != p.user %><span class="companero"><%= p.user.name %> - </span><% end %>
+    <% if current_user != p.user then compas.append(p.user.name.split.first) end %>
   <% end %>
+  <span class="companero"><%= compas.join(", ") %></span>
 </div>
 <% end %>
 <div class="deal deal-fechas">
-  <span class="creacion"><span class="etiqueta">Creado: </span><%= deal.created_at.to_formatted_s(:d_m_y) %></span>
-  <span class="modificado"><span class="etiqueta"> - Últimos cambios: </span><%= deal.updated_at.to_formatted_s(:d_m_y) %></span>
+  <span class="creacion"><span class="etiqueta">Creado: </span><%= deal.created_at.to_formatted_s(:d_m) %></span>
+  <span class="modificado"><span class="etiqueta"> - Últimos cambios: </span><%= deal.updated_at.to_formatted_s(:d_m) %></span>
 </div>
