@@ -14,6 +14,7 @@ Rails.application.routes.draw do
     member do
       get :historial
       get :nueva_accion
+      post :posesion_toggle
     end
   end
   resources :productos, only: [:show, :index]

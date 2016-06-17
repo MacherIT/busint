@@ -4,6 +4,15 @@ class DealsController < ApplicationController
   before_action :correct_user, only: [:destroy, :update, :historial, :nueva_accion]
   before_action :user_editable, only: [:edit]
 
+  def posesion_toggle
+    redirect_to root_url and return unless @deal = Deal.find_by(id: params[:id])
+    @deal.toggle!(:posesion)
+    respond_to do |format|
+      format.html { redirect_to @deal }
+      format.js
+    end
+  end
+
   def historial
   end
 

@@ -15,13 +15,19 @@
     </div>
     <div class="col-md-6" id="deal-posesion">
       <span class="titulo">Posesión: </span>
-      <span class="posesion posesion-<%= @deal.posesion %>">
+      <span id="deal-posesion-dyn" class="posesion posesion-<%= @deal.posesion %>">
 	<% if @deal.posesion %>
 	  <%= "Macher" %>
 	<% else %>
 	  <%= "Cliente" %>
 	<% end %>
       </span>
+      <%= button_to 'Cambiar', url_for(action: :posesion_toggle, id: @deal.id), remote: true, class: 'btn btn-secondary auto-width', form_class: 'inline-form' %>
+<% if false %>
+      <%= check_box_tag 'Cambiar', @deal, @deal.posesion, data: { remote: true,
+	                                                          url: url_for(action: :posesion_toggle, id: @deal.id),
+	                                                          method: :post } %>
+<% end %>
     </div>
     <div id="deal-acciones">
       <h3>Acciones</h3>

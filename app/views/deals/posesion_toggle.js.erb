@@ -1,0 +1,3 @@
+$("#deal-posesion-dyn").html("<%= escape_javascript(if @deal.posesion; 'Macher'; else 'Cliente'; end) %>");
+$("#deal-posesion-dyn").removeClass('posesion-<%= !@deal.posesion %>')
+$("#deal-posesion-dyn").addClass('posesion-<%= @deal.posesion %>')
