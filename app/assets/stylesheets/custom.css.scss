@@ -319,6 +319,10 @@ input {
     margin: 0;
     float: right;
 }
+.btn.rojo {
+    background: $rojo_web;
+    border-color: #333;
+}
 .btn-new_deal {
     background: $rojo_web;
     border-color: #333;

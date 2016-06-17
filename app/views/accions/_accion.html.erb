@@ -1,5 +1,5 @@
 <% if accion.id %>
-<tr class="accion" id="accion-<%= accion.id %>">
+<tr class="accion clickable-row" id="accion-<%= accion.id %>" data-href="<%= edit_accion_path(accion) %>">
   <td class="usuario">
     <%= accion.user.name.split.first %>
   </td>

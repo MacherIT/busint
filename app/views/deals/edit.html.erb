@@ -39,7 +39,8 @@
   </div>
   <div class="col-md-2">
     <section class="deal_edit_btns">
-      <%= link_to "Volver", user_path(current_user), class: "btn btn-primary" %>
+      <%= button_to "Eliminar", deal_path(@deal), method: :delete, class: "btn btn-primary rojo" %>
+      <%= link_to "Volver", @deal, class: "btn btn-primary" %>
     </section>
   </div>
 </div>

@@ -37,6 +37,7 @@ class DealsController < ApplicationController
   end
 
   def edit
+    @deal = Deal.find_by(id: params[:id])
   end
 
   def index
@@ -55,9 +56,9 @@ class DealsController < ApplicationController
 
   def update
     if @deal.update_attributes(deal_params)
-      flash[:success] = "Deal actualizado."
+      flash.now[:success] = "Deal actualizado."
     else
-      flash[:danger] = "Tu deal no pudo ser guardado"
+      flash.now[:danger] = "Tu deal no pudo ser guardado"
     end
     render 'edit'
   end

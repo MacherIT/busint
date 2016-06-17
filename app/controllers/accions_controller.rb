@@ -10,9 +10,9 @@ class AccionsController < ApplicationController
       flash[:danger] = "No existe ese deal."
       redirect_to root_url and return
     end
-    @acc = @deal.accions.build(acciones_params)
-    @acc.user = User.find_by(id: params[:user_id])
-    if @acc.save
+    @accion = @deal.accions.build(acciones_params)
+    @accion.user = User.find_by(id: params[:user_id])
+    if @accion.save
       flash[:success] = "Acción guardada"
       actualizar_deal
       redirect_to deal_path(@deal)
@@ -23,12 +23,29 @@ class AccionsController < ApplicationController
   end
 
   def destroy
+    redirect_to root_url and return unless @accion = Accion.find_by(id: params[:id])
+    if @accion.destroy
+      flash[:success] = "Acción eliminada."
+      redirect_to @accion.deal
+    else
+      flash[:danger] = "La acción no pudo ser eliminada."
+      render 'edit'
+    end
   end
 
   def edit
+    @accion = Accion.find_by(id: params[:id])
   end
   
   def update
+    redirect_to root_url and return unless @accion = Accion.find_by(id: params[:id])
+    if @accion.update_attributes(acciones_params)
+      flash[:success] = "Acción actualizada."
+      actualizar_deal
+      redirect_to @accion.deal
+    else
+      render 'edit'
+    end
   end
 
   private
@@ -40,7 +57,7 @@ class AccionsController < ApplicationController
 
     # Actualiza el estado del deal correspondiente
     def actualizar_deal
-      @acc.deal.actualizar_estado
+      @accion.deal.actualizar_estado
       flash[:info] = "Estado del deal actualizado."
     end
       
