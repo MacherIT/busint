@@ -364,10 +364,15 @@ li.deal {
 #deal-acciones {
     margin-top: 65px;
 }
-#deal-main {
+.empresa-deal {
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
+#deal-main, #empresa-main {
     #deal-estado, #deal-posesion {
 	font-size: 150%;
 	font-weight: bold;
+	margin-bottom: 20px;
     }
 }
 .deal {
@@ -471,6 +476,15 @@ li.deal {
     display: flex;
 }
 
+/* Empresas */
+#empresa-resumen {
+    ul {
+	list-style: none;
+    }
+    h2 span {
+	color: #ccc;
+    }
+}
 
 /* Productos */
 li.producto {

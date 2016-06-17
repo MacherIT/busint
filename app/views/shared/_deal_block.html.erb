@@ -2,7 +2,7 @@
   <span class="empresa">
     <% if current_user && ( deal.user == current_user or
                             deal.cousers.include?(current_user) )%>
-      <%= link_to deal.empresa, '#' %>
+      <%= link_to deal.empresa.nombre, deal.empresa %>
     <% else %>
       <%= deal.empresa %>
     <% end %>

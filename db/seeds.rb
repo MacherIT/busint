@@ -44,12 +44,23 @@ productos.each do |p|
   Producto.create!(nombre: p)
 end
 
+# Empresas
+10.times do
+  nombre_legal = Faker::Company.name
+  nombre = nombre_legal.split(" ").first
+  tel = Faker::PhoneNumber.cell_phone
+  email = "info@#{nombre_legal.parameterize("_")}.com"
+  ciudad = rand(1..5)
+  dir = Faker::Address.street_address
+  Empresa.create(nombre_legal: nombre_legal, nombre: nombre, tel: tel, email: email, ciudad: ciudad, dir: dir)
+end
+
 # Deals
 users = User.all
 contador = 0
 10.times do
   posesion = rand(1..2).even?
-  empresa = Faker::Name.name
+  empresa = Empresa.all.sample
   fuente = Faker::Lorem.sentence(1)
   producto = Producto.all.sample
   probabilidad = rand(0..10)*10

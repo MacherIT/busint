@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  get 'posesion/update'
-
   root 'static_pages#inicio'
   get 'ayuda' => 'static_pages#ayuda'
   get 'registrarse' => 'users#new'
@@ -20,6 +18,7 @@ Rails.application.routes.draw do
   resources :productos, only: [:show, :index]
   resources :participacions, only: [:create, :destroy]
   resources :accions, only: [:new, :create, :destroy, :edit, :update]
+  resources :empresas
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

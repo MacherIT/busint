@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160616200830) do
+ActiveRecord::Schema.define(version: 20160617213927) do
 
   create_table "accions", force: :cascade do |t|
     t.integer  "deal_id"
@@ -34,16 +34,30 @@ ActiveRecord::Schema.define(version: 20160616200830) do
     t.text     "fuente"
     t.integer  "probabilidad"
     t.text     "estado",       default: "En progreso"
-    t.text     "empresa"
     t.datetime "created_at",                           null: false
     t.datetime "updated_at",                           null: false
     t.integer  "producto_id"
     t.boolean  "posesion",     default: true
+    t.integer  "empresa_id"
   end
 
   add_index "deals", ["producto_id"], name: "index_deals_on_producto_id"
   add_index "deals", ["user_id", "created_at"], name: "index_deals_on_user_id_and_created_at"
   add_index "deals", ["user_id"], name: "index_deals_on_user_id"
+
+  create_table "empresas", force: :cascade do |t|
+    t.string   "nombre"
+    t.string   "nombre_legal"
+    t.string   "tel"
+    t.string   "email"
+    t.integer  "ciudad"
+    t.string   "dir"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "empresas", ["nombre"], name: "index_empresas_on_nombre", unique: true
+  add_index "empresas", ["nombre_legal"], name: "index_empresas_on_nombre_legal", unique: true
 
   create_table "participacions", force: :cascade do |t|
     t.integer  "deal_id"

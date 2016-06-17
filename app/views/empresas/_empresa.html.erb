@@ -1,0 +1,6 @@
+<li>
+  <%= link_to empresa.nombre, empresa %>
+  <% if current_user.admin? %>
+    <%= link_to "Eliminar", empresa_path(empresa), method: :delete %>
+  <% end %>
+</li>

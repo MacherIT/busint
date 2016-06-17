@@ -1,0 +1,37 @@
+<% provide(:title, "Empresa") %>
+<h1>Empresa</h1>
+<div class="row">
+  <div class="col-md-8 col-offset-3" id="empresa-main">
+    <div id="empresa-resumen">
+      <%= render partial: 'empresa_block', locals: {empresa: @empresa} %>
+    </div>
+    <% if @deal %>
+      <div class="empresa-deal">Hay <%= "#{@deals} " "deal".pluralize(@deals) %>. Info del más reciente: </div>
+      <div class="col-md-6" id="deal-estado">
+        <span class="titulo">Estado: </span>
+	<span class="estado estado-<%= @deal.estado.parameterize('_') %>"><%= @deal.estado %></span>
+      </div>
+      <div class="col-md-6" id="deal-posesion">
+	<span class="titulo">Posesión: </span>
+	<span id="deal-posesion-dyn" class="posesion posesion-<%= @deal.posesion %>">
+	  <% if @deal.posesion %>
+	  <%= "Macher" %>
+	  <% else %>
+	  <%= "Cliente" %>
+	  <% end %>
+	</span>
+	<%= button_to 'Cambiar', url_for(action: :posesion_toggle, controller: :deals, id: @deal.id), remote: true, class: 'btn btn-secondary auto-width', form_class: 'inline-form' %>
+      </div>
+      <div id="deal-acciones">
+	<h3>Acciones</h3>
+	<table class="table table-condensed tabla-acciones">
+	  <theader></theader>
+	  <%= render @deal.accions %>
+	</table>
+      </div>
+    <% end %>
+  </div>
+  <div id="deal_btns" class="col-md-1">
+    <%= render 'btns' %>
+  </div>
+</div>
