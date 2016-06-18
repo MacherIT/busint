@@ -1,0 +1,32 @@
+<% provide(:title, "Nueva empresa") %>
+<h1>Nueva empresa</h1>
+<div class="col-md-8 col-md-offset-2 form-solo">
+  <%= form_for(@empresa) do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
+    <div class="form-group"> 
+      <%= f.label :nombre, "Nombre"%>
+      <%= f.text_field :nombre, class: 'form-control'  %>
+    </div>
+    <div class="form-group"> 
+      <%= f.label :nombre_legal, "Nombre legal"%>
+      <%= f.text_field :nombre_legal, class: 'form-control'  %>
+    </div>
+    <div class="form-group"> 
+      <%= f.label :tel, "Teléfono" %>
+      <%= f.text_field :tel, class: 'form-control'  %>
+    </div>
+    <div class="form-group"> 
+      <%= f.label :email, "Email" %>
+      <%= f.text_field :email, class: 'form-control'  %>
+    </div>
+    <div class="form-group"> 
+      <%= f.label :dir, "Dirección" %>
+      <%= f.text_field :dir, class: 'form-control' %>
+    </div>
+    <div class="form-group"> 
+      <%= f.label :ciudad, "Ciudad" %>
+      <%= f.select :ciudad, 1..5, class: 'form-control' %>
+    </div>    
+    <%= f.submit "Guardar el deal", class: "btn btn-primary" %>
+  <% end %>
+</div>
