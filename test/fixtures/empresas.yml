@@ -5,4 +5,28 @@ movistar:
   tel: 0299 44853469
   email: info@movistar.com.ar
   ciudad: 1
-  dir: Alverar 350
+  dir: Alvear 350
+
+claro:
+  nombre_legal: Claro S.A.
+  nombre: Claro
+  tel: 0299 48053469
+  email: info@claro.com.ar
+  ciudad: 2
+  dir: Urquiza 620
+
+nextel:
+  nombre_legal: Nextel S.A.
+  nombre: Nextel
+  tel: 0299 4485153
+  email: info@nextel.net.ar
+  ciudad: 3
+  dir: Roca 256
+
+personal:
+  nombre_legal: Personal S.A.
+  nombre: Personal
+  tel: 0299 4485151
+  email: info@personal.com.ar
+  ciudad: 4
+  dir: Sarmiento 12

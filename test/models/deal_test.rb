@@ -36,7 +36,7 @@ class DealTest < ActiveSupport::TestCase
   end
 
   test "debe tener una empresa valida" do
-    @deal.empresa = ""
+    @deal.empresa = nil
     assert_not @deal.valid?
   end
 

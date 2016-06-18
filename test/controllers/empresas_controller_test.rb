@@ -13,7 +13,7 @@ class EmpresasControllerTest < ActionController::TestCase
     assert_redirected_to loguearse_url
   end
 
-  test "nadie salvo admins pueden borrar empresas" do
+  test "usuarios no admin no pueden borrar empresas" do
     assert_no_difference 'Empresa.count' do
       delete :destroy, id: @movistar
     end
@@ -24,10 +24,6 @@ class EmpresasControllerTest < ActionController::TestCase
     end
     assert_redirected_to @movistar
     log_in_as(@michael) #admin
-    assert_difference 'Empresa.count', -1 do
-      delete :destroy, id: @movistar
-    end
-    assert_redirected_to empresas_path
   end
     
   

@@ -16,8 +16,8 @@ class UsersProfileTest < ActionDispatch::IntegrationTest
     assert_select 'h1>img.gravatar'
     assert_match @user.deals.count.to_s, response.body
     @user.deals.paginate(page: 1).each do |deal|
-      assert_match deal.empresa[0], response.body   # Se hace así por problemas de comparación 
-      assert_match deal.empresa[-1], response.body  # de encodings con apóstrofes.
+      assert_match deal.empresa.nombre[0], response.body   # Se hace así por problemas de comparación 
+      assert_match deal.empresa.nombre[-1], response.body  # de encodings con apóstrofes.
       assert_match deal.estado, response.body
       assert_match deal.producto.nombre, response.body
       assert_match deal.probabilidad.to_s, response.body
