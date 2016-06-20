@@ -52,7 +52,9 @@ end
   email = "info@#{nombre_legal.parameterize("_")}.com"
   ciudad = rand(1..5)
   dir = Faker::Address.street_address
-  Empresa.create(nombre_legal: nombre_legal, nombre: nombre, tel: tel, email: email, ciudad: ciudad, dir: dir)
+  unless Empresa.find_by(nombre: nombre)
+    Empresa.create(nombre_legal: nombre_legal, nombre: nombre, tel: tel, email: email, ciudad: ciudad, dir: dir)
+  end
 end
 
 # Deals
