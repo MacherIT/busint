@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :contactos
   root 'static_pages#inicio'
   get 'ayuda' => 'static_pages#ayuda'
   get 'registrarse' => 'users#new'

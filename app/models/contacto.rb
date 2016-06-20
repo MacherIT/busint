@@ -1,7 +1,7 @@
-class Empresa < ActiveRecord::Base
+class Contacto < ActiveRecord::Base
+  belongs_to :empresa
   has_many :deals
-  validates :nombre, presence: true
-  validates :ciudad, numericality: { only_integer: true, greater_than_or_equal_to: 1, less_than_or_equal_to: 5 }, allow_nil: true
+  before_save :downcase_email
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence: true,
                     length: { maximum: 255 },
