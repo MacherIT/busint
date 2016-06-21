@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 class User < ActiveRecord::Base
+  include PeopleHelper
+
   has_many :deals
   has_many :accions
   has_many :participacions, class_name: "Participacion", 
@@ -78,11 +80,6 @@ class User < ActiveRecord::Base
 
   private
     
-    # Transforma el email a minusculas
-    def downcase_email
-      self.email = email.downcase
-    end
-
     # Crea el activation_tokeny y digest
     def create_activation_digest
       self.activation_token = User.new_token

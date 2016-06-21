@@ -57,17 +57,34 @@ end
   end
 end
 
+# Contactos 
+cargos = ["Dueño", "Vendedor", "At. al Público", "Staff"]
+10.times do
+  nombre = Faker::Name.first_name
+  apellido = Faker::Name.last_name
+  cargo = cargos.sample
+  tel = Faker::PhoneNumber.cell_phone
+  dir = Faker::Address.street_address
+  empresa = Empresa.all.sample
+  email = "#{nombre}_#{apellido}@#{empresa.nombre}.com"
+  ciudad = rand(1..5)
+  familia = "Casado: #{["No", "Sí"].sample}; Hijos: #{rand(0..4)}."
+  bday = Faker::Date.forward(365).to_formatted_s(:d_m)
+  comentarios = Faker::Lorem.sentence(2,false,6)
+  contacto = Contacto.create!(nombre: nombre, apellido: apellido, cargo: cargo, tel: tel, dir: dir, email: email, ciudad: ciudad, bday: bday, empresa: empresa, familia: familia, comentarios: comentarios)
+end  
+
 # Deals
 users = User.all
 contador = 0
 10.times do
   posesion = rand(1..2).even?
-  empresa = Empresa.all.sample
+  contacto = Contacto.all.sample
   fuente = Faker::Lorem.sentence(1)
   producto = Producto.all.sample
   probabilidad = rand(0..10)*10
   user = users.sample
-  deal = user.deals.create!(empresa: empresa, fuente: fuente, producto: producto, probabilidad: probabilidad)
+  deal = user.deals.create!(contacto: contacto, fuente: fuente, producto: producto, probabilidad: probabilidad)
 end
 
 # Participaciones

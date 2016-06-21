@@ -1,4 +1,6 @@
 class Contacto < ActiveRecord::Base
+  include PeopleHelper
+
   belongs_to :empresa
   has_many :deals
   before_save :downcase_email

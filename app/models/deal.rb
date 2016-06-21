@@ -2,7 +2,8 @@
 class Deal < ActiveRecord::Base
   belongs_to :user 
   belongs_to :producto
-  belongs_to :empresa
+  belongs_to :contacto
+  has_one :empresa, through: :contacto
   has_many :participacions, class_name: "Participacion", 
                             foreign_key: "deal_id",
                             dependent: :destroy
@@ -15,7 +16,7 @@ class Deal < ActiveRecord::Base
   validates :producto_id, presence: true
   validates :fuente, presence: true
   validates :probabilidad, numericality: { only_integer: true, greater_than_or_equal_to: 0, less_than_or_equal_to: 100 }, allow_nil: true
-  validates :empresa_id, presence: true
+  validates :contacto_id, presence: true
   validates :estado, inclusion: { in: ["Ganado", "Perdido", "En progreso"], message: "El estado tiene que ser uno de los siguentes: 'Ganado', 'Perdido' o 'En progreso'."}, allow_nil: true
   
   # Invita a un companero al deal

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160620152732) do
+ActiveRecord::Schema.define(version: 20160621112135) do
 
   create_table "accions", force: :cascade do |t|
     t.integer  "deal_id"
@@ -56,9 +56,10 @@ ActiveRecord::Schema.define(version: 20160620152732) do
     t.datetime "updated_at",                           null: false
     t.integer  "producto_id"
     t.boolean  "posesion",     default: true
-    t.integer  "empresa_id"
+    t.integer  "contacto_id"
   end
 
+  add_index "deals", ["contacto_id"], name: "index_deals_on_contacto_id"
   add_index "deals", ["producto_id"], name: "index_deals_on_producto_id"
   add_index "deals", ["user_id", "created_at"], name: "index_deals_on_user_id_and_created_at"
   add_index "deals", ["user_id"], name: "index_deals_on_user_id"
