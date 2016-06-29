@@ -1,4 +1,5 @@
 class EmpresasController < ApplicationController
+  before_action :set_empresa, only: [:show, :edit, :update, :destroy, :deals, :nuevo_contacto]
   before_action :logged_in_user
   
   def index
@@ -6,7 +7,6 @@ class EmpresasController < ApplicationController
   end
   
   def destroy
-    redirect_to root_url and return unless @empresa = Empresa.find_by(id: params[:id])
     if current_user.admin?
       @empresa.destroy
       flash[:success] = 'La empresa fue eliminada.'
@@ -18,7 +18,6 @@ class EmpresasController < ApplicationController
   end
   
   def show
-    redirect_to root_url and return unless @empresa = Empresa.find_by(id: params[:id])
     @deal = @empresa.deals.order(updated_at: :desc).first
     @deals = @empresa.deals.count
   end
@@ -38,13 +37,10 @@ class EmpresasController < ApplicationController
     end
   end
     
-  
   def edit
-    redirect_to root_url and return unless @empresa = Empresa.find_by(params[:id])
   end
 
   def update
-    redirect_to root_url and return unless @empresa = Empresa.find_by(params[:id])
     if @empresa.update_attributes(empresa_params)
       flash[:success] = "Los datos de la empresa fueron actualizados."
       redirect_to @empresa
@@ -54,9 +50,26 @@ class EmpresasController < ApplicationController
     end
   end 
 
+  def deals
+    @deals = @empresa.deals
+  end
+
+  def nuevo_contacto
+    @contacto = @empresa.contactos.build
+    render new_contacto_path
+  end
+
+  def contacto
+    render 'contactos/create'
+  end
+
   private 
   
     def empresa_params
       params.require(:empresa).permit(:nombre_legal, :tel, :email, :dir, :ciudad, :nombre)
+    end
+    
+    def set_empresa
+      redirect_to root_url and return unless @empresa = Empresa.find_by(params[:id])      
     end
 end

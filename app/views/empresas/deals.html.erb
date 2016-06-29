@@ -1,0 +1,16 @@
+<% provide(:title, "Deals de #{@empresa.nombre}") %>
+<h1>Deals de <%= @empresa.nombre %></h1>
+<div class="row">
+  <div class="col-md-8 col-offset-2" id="deals-empresa-main">
+
+<% if @deals.any? %>
+  <div class="deals-propios">
+    <h3>Deals propios (<%= @deals.count %>)</h3>
+    <table class="table table-condensed tabla-deals">
+      <theader></theader>
+	<%= render partial: 'shared/deal', collection: @deals, as: :deal %>
+    </table>
+  </div>
+<% end %>
+  </div>
+</div>

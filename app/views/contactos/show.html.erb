@@ -1,4 +1,12 @@
-<p id="notice"><%= notice %></p>
-
-<%= link_to 'Edit', edit_contacto_path(@contacto) %> |
-<%= link_to 'Back', contactos_path %>
+<% provide(:title, "#{@contacto.nombre_completo}") %>
+<h1><%= @contacto.nombre_completo %></h1>
+<div class="row">
+  <div class="col-md-8 col-offset-3" id="empresa-main">
+    <div id="contacto-resumen">
+      <%= render partial: 'contacto_block', locals: {contacto: @contacto} %>
+    </div>
+  </div>
+  <div id="contacto_btns" class="col-md-1">
+    <%= render 'btns' %>
+  </div>
+</div>

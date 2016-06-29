@@ -1,10 +1,19 @@
 <div class="deal deal-empresa">
   <span class="empresa">
     <% if current_user && ( deal.user == current_user or
-                            deal.cousers.include?(current_user) )%>
+                            deal.cousers.include?(current_user) or current_user.admin? )%>
       <%= link_to deal.empresa.nombre, deal.empresa %>
     <% else %>
-      <%= deal.empresa %>
+      <%= deal.empresa.nombre %>
+    <% end %>
+  </span>
+
+  <span class="deal-contacto">
+    <% if current_user && ( deal.user == current_user or
+                            deal.cousers.include?(current_user) or current_user.admin? )%>
+      - <%= link_to deal.contacto.nombre_completo, deal.contacto %>
+    <% else %>
+      - <%= deal.contacto.nombre_completo %>
     <% end %>
   </span>
   <span class="deal-user"> - <%= deal.user.name %></span>

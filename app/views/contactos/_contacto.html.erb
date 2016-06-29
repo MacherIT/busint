@@ -1,0 +1,14 @@
+<tr id="contacto-<%= contacto.id %>" class="contacto clickable-row" data-href="<%= contacto_url(contacto) %>">
+  <td class="contacto contacto-empresa empresa">
+      <% if current_user.admin? %>
+        <%= link_to contacto.nombre_completo, contacto %>
+      <% else %>
+        <%= contacto.nombre_completo %>
+      <% end %>
+    </td>
+  <td class="contacto-empresa"><%= contacto.empresa.nombre %></td>
+  <td class="contacto-cargo"><%= contacto.cargo %></td>
+  <td class="contacto-tel"><%= contacto.tel %></td>
+  <td class="contacto-email"><%= contacto.email %></td>
+</tr>
+

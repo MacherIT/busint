@@ -1,52 +1,41 @@
 class ContactosController < ApplicationController
   before_action :set_contacto, only: [:show, :edit, :update, :destroy]
 
-  # GET /contactos
-  # GET /contactos.json
   def index
     @contactos = Contacto.all
   end
 
-  # GET /contactos/1
-  # GET /contactos/1.json
   def show
   end
 
-  # GET /contactos/new
+
   def new
-    @contacto = Contacto.new
   end
 
-  # GET /contactos/1/edit
   def edit
   end
 
-  # POST /contactos
-  # POST /contactos.json
   def create
     @contacto = Contacto.new(contacto_params)
-
     respond_to do |format|
       if @contacto.save
-        format.html { redirect_to @contacto, notice: 'Contacto was successfully created.' }
-        format.json { render :show, status: :created, location: @contacto }
+        flash[:success] = "El nuevo contacto fue guardado"
+        redirect_to @contacto
       else
-        format.html { render :new }
-        format.json { render json: @contacto.errors, status: :unprocessable_entity }
+        flash[:danger] = "El contacto no pudo ser guardado"
+        reder 'new'
       end
     end
   end
 
-  # PATCH/PUT /contactos/1
-  # PATCH/PUT /contactos/1.json
   def update
     respond_to do |format|
-      if @contacto.update(contacto_params)
-        format.html { redirect_to @contacto, notice: 'Contacto was successfully updated.' }
-        format.json { render :show, status: :ok, location: @contacto }
+      if @contacto.update_attributes(contacto_params)
+        flash[:success] = "Los datos de la empresa fueron actualizados."
+        redirect_to @contacto
       else
-        format.html { render :edit }
-        format.json { render json: @contacto.errors, status: :unprocessable_entity }
+        flash[:danger] = "No se pudieron actualizar los datos del contacto"
+        render 'edit'
       end
     end
   end
@@ -61,6 +50,16 @@ class ContactosController < ApplicationController
     end
   end
 
+  def deals
+    @deals = @contacto.deals
+  end
+  
+  def nuevo_deal
+  end
+  
+  def deal
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_contacto
@@ -69,6 +68,6 @@ class ContactosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def contacto_params
-      params[:contacto]
+      params.require(:contacto).permit(:nombre, :apellido, :cargo, :tel, :dir, :email, :ciudad, :bday, :empresa_id, :familia, :comentarios)
     end
 end

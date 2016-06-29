@@ -7,6 +7,7 @@
         <%= deal.empresa.nombre %>
       <% end %>
     </td>
+  <td class="deal-contacto"><%= deal.contacto.nombre_completo %></td>
   <td class="deal-user"><%= deal.user.name %></td>
 
   <td class="deal deal-contenido producto">
@@ -29,8 +30,8 @@
   <td class="deal deal-estado estado estado-<%= deal.estado.parameterize('_') %>">
     <%= deal.estado %>
   </td>
-  <td class="deal deal-posesion posesion-<%= @deal.posesion %>">
-    <% if @deal.posesion %>
+  <td class="deal deal-posesion posesion-<%= deal.posesion %>">
+    <% if deal.posesion %>
       <%= "Macher" %>
     <% else %>
       <%= "Cliente" %>

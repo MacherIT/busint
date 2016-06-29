@@ -9,4 +9,9 @@ class Contacto < ActiveRecord::Base
                     length: { maximum: 255 },
                     format: { with: VALID_EMAIL_REGEX },
                     uniqueness: { case_sensitive: false }
+
+  def nombre_completo
+    nombre + " " + apellido
+  end
+  
 end

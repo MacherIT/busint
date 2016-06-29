@@ -4,8 +4,8 @@
   <%= form_for(@deal) do |f| %>
     <%= render 'shared/error_messages', object: f.object %>
     <div class="form-group"> 
-      <%= f.label :empresa_id, "Empresa"%>
-      <%= f.select :empresa_id, Empresa.all.collect { |p| [p.nombre, p.id] }, class: 'form-control'  %>
+      <%= f.label :contacto_id, "Contacto"%>
+      <%= f.select :contacto_id, Contacto.all.collect { |p| [p.nombre_completo, p.id] }, class: 'form-control'  %>
     </div>
     <div class="form-group"> 
       <%= f.label :fuente, "Fuente del contacto" %>

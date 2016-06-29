@@ -14,6 +14,7 @@ $verde_logo2: #018580;
 $gris_nav: #ccc;
 $back_tabla_1: rgba(170, 228, 209, 0.68);
 $back_tabla_2: rgba(145, 221, 218, 0.71);
+$gris_claro: #eee;
 
 @mixin box_sizing {
   -moz-box-sizing:    border-box;
@@ -29,7 +30,8 @@ body {
 }
 .main-body {
   &>h1 {
-      margin-bottom: 40px;
+      color: rgba(51, 51, 51, 0.25);
+      margin-bottom: 20px;
   }
 }
 section {
@@ -53,10 +55,6 @@ textarea {
 	margin: 10px; 
     }
 }
-.extra-width {
-    width: 120%;
-}
-
 .tareas {
     text-align: left;
     ul {
@@ -202,8 +200,11 @@ aside {
 div.edit {
     margin-top: 30px;
 }
-.fecha-input select {
-    width: 70px;
+.fecha-input {
+    clear: both;
+    select {
+	width: 70px;
+    }
 }
 input, textarea, select, .uneditable-input {
   border: 1px solid #bbb;
@@ -323,9 +324,22 @@ input {
     background: $rojo_web;
     border-color: #333;
 }
+.btn.verde {
+    background: $verde_app;
+    border-color: #333;
+}
+.btn.azul {
+    background: $azul_asesoria;
+    border-color: #333;
+}
 .btn-new_deal {
     background: $rojo_web;
     border-color: #333;
+}
+.btn-group-vertical {
+    .btn {
+	margin-bottom: 0px !important;
+    }
 }
 .back-verde-linkable {
     background: rgba(131, 170, 48, 0.75) !important;
@@ -407,6 +421,9 @@ li.deal {
     color: gray;
     font-size: 120%;
 }
+.deal-contacto {
+    font-size: 120%;
+}
 .posesion-true {
     color: $rojo_web;
 }
@@ -484,6 +501,12 @@ li.deal {
     h2 span {
 	color: #ccc;
     }
+}
+.ultimo-deal {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: $gris_claro;
+    padding: 10px 15px;
 }
 
 /* Productos */

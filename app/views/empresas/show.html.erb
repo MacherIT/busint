@@ -7,29 +7,38 @@
     </div>
     <% if @deal %>
       <div class="empresa-deal">Hay <%= "#{@deals} " "deal".pluralize(@deals) %>. Info del más reciente: </div>
-      <div class="col-md-6" id="deal-estado">
-        <span class="titulo">Estado: </span>
-	<span class="estado estado-<%= @deal.estado.parameterize('_') %>"><%= @deal.estado %></span>
-      </div>
-      <div class="col-md-6" id="deal-posesion">
-	<span class="titulo">Posesión: </span>
-	<span id="deal-posesion-dyn" class="posesion posesion-<%= @deal.posesion %>">
-	  <% if @deal.posesion %>
-	  <%= "Macher" %>
-	  <% else %>
-	  <%= "Cliente" %>
-	  <% end %>
-	</span>
-	<%= button_to 'Cambiar', url_for(action: :posesion_toggle, controller: :deals, id: @deal.id), remote: true, class: 'btn btn-secondary auto-width', form_class: 'inline-form' %>
-      </div>
-      <div id="deal-acciones">
-	<h3>Acciones</h3>
-	<table class="table table-condensed tabla-acciones">
-	  <theader></theader>
-	  <%= render @deal.accions %>
-	</table>
+      <div class="ultimo-deal">
+	<div class="col-md-6" id="deal-estado">
+          <span class="titulo">Estado: </span>
+	  <span class="estado estado-<%= @deal.estado.parameterize('_') %>"><%= @deal.estado %></span>
+	</div>
+	<div class="col-md-6" id="deal-posesion">
+	  <span class="titulo">Posesión: </span>
+	  <span id="deal-posesion-dyn" class="posesion posesion-<%= @deal.posesion %>">
+	    <% if @deal.posesion %>
+	      <%= "Macher" %>
+	    <% else %>
+	      <%= "Cliente" %>
+	    <% end %>
+	  </span>
+	  <%= button_to 'Cambiar', url_for(action: :posesion_toggle, controller: :deals, id: @deal.id), remote: true, class: 'btn btn-secondary auto-width', form_class: 'inline-form' %>
+	</div>
+	<div id="deal-acciones">
+	  <h3>Acciones</h3>
+	  <table class="table table-condensed tabla-acciones">
+	    <theader></theader>
+	    <%= render @deal.accions %>
+	  </table>
+	</div>
       </div>
     <% end %>
+    <div class="empresa-contactos">
+      <h3>Contactos</h3>
+      <table class="table table-condensed tabla-contactos">
+	    <theader></theader>
+	    <%= render @empresa.contactos %>
+      </table>
+    </div>
   </div>
   <div id="deal_btns" class="col-md-1">
     <%= render 'btns' %>

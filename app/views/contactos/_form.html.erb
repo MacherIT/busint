@@ -1,17 +1,51 @@
 <%= form_for(@contacto) do |f| %>
-  <% if @contacto.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@contacto.errors.count, "error") %> prohibited this contacto from being saved:</h2>
-
-      <ul>
-      <% @contacto.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <div class="form-group"> 
+    <%= f.label :empresa_id, "Empresa"%>
+    <%= f.select :empresa_id, Empresa.all.collect { |e| [e.nombre, e.id] }, class: 'form-control'  %>
   </div>
-<% end %>
+  <div class="form-group"> 
+    <%= f.label :cargo, "Cargo"%>
+    <%= f.text_field :cargo, class: 'form-control'  %>
+  </div>
+  <div class="form-group"> 
+    <%= f.label :nombre, "Nombre"%>
+    <%= f.text_field :nombre, class: 'form-control'  %>
+  </div>
+  <div class="form-group"> 
+    <%= f.label :apellido, "Apellido"%>
+    <%= f.text_field :apellido, class: 'form-control'  %>
+  </div>
+  <div class="form-group"> 
+    <%= f.label :tel, "Teléfono"%>
+    <%= f.text_field :tel, class: 'form-control'  %>
+  </div>
+  <div class="form-group"> 
+    <%= f.label :email, "Email"%>
+    <%= f.text_field :email, class: 'form-control'  %>
+  </div>
+  <div class="form-group"> 
+    <%= f.label :dir, "Dirección"%>
+    <%= f.text_field :dir, class: 'form-control'  %>
+  </div>
+  <div class="form-group"> 
+    <%= f.label :ciudad, "Ciudad" %>
+    <%= f.select :ciudad, 1..5, class: 'form-control' %>
+  </div> 
+  <div class="form-group fecha-input"> 
+    <%= f.label :bday, "Cumpleaños"%>
+    <%= f.date_select :bday, order: [:day, :month], class: 'form-control'  %>
+  </div>
+  <div class="form-group"> 
+    <%= f.label :familia, "Familia"%>
+    <%= f.text_field :familia, class: 'form-control'  %>
+  </div>
+  <div class="form-group"> 
+    <%= f.label :comentarios, "Comentarios"%>
+    <%= f.text_field :comentarios, class: 'form-control'  %>
+  </div>
+
+
+    <%= f.submit "Guardar el deal", class: "btn btn-primary" %>
+  <% end %>
+</div>
