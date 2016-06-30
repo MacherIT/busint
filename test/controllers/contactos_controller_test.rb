@@ -2,7 +2,7 @@ require 'test_helper'
 
 class ContactosControllerTest < ActionController::TestCase
   setup do
-    @contacto = contactos(:one)
+    @contacto = contactos(:miguel)
   end
 
   test "should get index" do

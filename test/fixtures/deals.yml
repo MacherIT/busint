@@ -4,7 +4,7 @@ nextel:
         producto:       web
         probabilidad:   10
         estado:         "En progreso"
-        empresa:        nextel
+        contacto:       mariano
         updated_at:     <%= 10.minutes.ago %>
 
 claro:
@@ -13,7 +13,7 @@ claro:
         producto:       app
         probabilidad:   0
         estado:         "Perdido"
-        empresa:        claro
+        contacto:       leandro
         updated_at:     <%= 1.weeks.ago %>
 
 personal:
@@ -22,7 +22,7 @@ personal:
         producto:       mktg_dig
         probabilidad:   60
         estado:         "En progreso"
-        empresa:        personal
+        contacto:       viviana
         updated_at:     <%= 3.days.ago %>
 
 movistar:
@@ -31,7 +31,7 @@ movistar:
         producto:       neuro
         probabilidad:   100
         estado:         "Ganado"
-        empresa:        movistar
+        contacto:       miguel
         updated_at:     <%= Time.zone.now %>
 
 <% if false %>
@@ -39,7 +39,7 @@ movistar:
 <% contador = 1 %>
 <% 5.times do |n| %>
 deal_<%= n %>:
-  empresa:    movistar
+  contacto: miguel
   estado:     <%= estados.sample %>
   fuente:     <%= Faker::Lorem.sentence(1) %>
   producto:   web

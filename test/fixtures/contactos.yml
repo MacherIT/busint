@@ -1,11 +1,48 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-# This model initially had no columns defined.  If you add columns to the
-# model remove the '{}' from the fixture names and add the columns immediately
-# below each fixture, per the syntax in the comments below
-#
-one: {}
-# column: value
-#
-two: {}
-#  column: value
+miguel:
+   nombre: Miguel
+   apellido: Aguada
+   tel: 0299 45131644
+   ciudad: 1
+   dir: Misiones 321
+   email: miguel@movistar.com.ar
+   empresa: movistar
+   cargo: Gerente
+   familia: casado, 2 hijos
+   bday: <%= 45.days.ago %>
+
+leandro:
+   nombre: Leandro
+   apellido: Montesori
+   tel: 0299 4513745
+   ciudad: 2
+   dir: Entre Rios 356
+   email: leandro@claro.com.ar
+   empresa: claro
+   cargo: Empleado
+   familia: soltero
+   bday: <%= 65.days.ago %>
+
+mariano:
+   nombre: Mariano
+   apellido: Lopez
+   tel: 0299 4135312
+   ciudad: 3
+   dir: Neuquen 28
+   email: extel.@movistar.com.ar
+   empresa: nextel
+   cargo: Gerente nacional
+   familia: Casado, sin hijos
+   bday: <%= 157.days.ago %>
+
+viviana:
+   nombre: Viviana
+   apellido: Micrones
+   tel: 0299 4469236
+   ciudad: 4
+   dir: Chubut 9126
+   email: viviana@personal.com.ar
+   empresa: personal
+   cargo: At. al publico
+   familia: Divorciado, 4 hijos
+   bday: <%= 295.days.ago %>

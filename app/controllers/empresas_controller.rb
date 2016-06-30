@@ -70,6 +70,6 @@ class EmpresasController < ApplicationController
     end
     
     def set_empresa
-      redirect_to root_url and return unless @empresa = Empresa.find_by(params[:id])      
+      redirect_to root_url and return unless @empresa = Empresa.find_by(id: params[:id])      
     end
 end

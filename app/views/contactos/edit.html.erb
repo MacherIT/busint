@@ -1,6 +1,5 @@
-<h1>Editing Contacto</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @contacto %> |
-<%= link_to 'Back', contactos_path %>
+<% provide(:title, "Editar contacto") %>
+<h1>Editar contacto</h1>
+<div class="col-md-8 col-md-offset-2 form-solo">
+  <%= render 'contactos/form' %>
+</div>

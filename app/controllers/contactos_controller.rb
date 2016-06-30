@@ -1,5 +1,5 @@
 class ContactosController < ApplicationController
-  before_action :set_contacto, only: [:show, :edit, :update, :destroy]
+  before_action :set_contacto, only: [:show, :edit, :update, :destroy, :deals]
 
   def index
     @contactos = Contacto.all
@@ -10,6 +10,7 @@ class ContactosController < ApplicationController
 
 
   def new
+    @contacto ||= Contacto.new
   end
 
   def edit
@@ -17,26 +18,22 @@ class ContactosController < ApplicationController
 
   def create
     @contacto = Contacto.new(contacto_params)
-    respond_to do |format|
-      if @contacto.save
-        flash[:success] = "El nuevo contacto fue guardado"
-        redirect_to @contacto
-      else
-        flash[:danger] = "El contacto no pudo ser guardado"
-        reder 'new'
-      end
+    if @contacto.save
+      flash[:success] = "El nuevo contacto fue guardado"
+      redirect_to @contacto
+    else
+      flash[:danger] = "El contacto no pudo ser guardado"
+      reder 'new'
     end
   end
 
   def update
-    respond_to do |format|
-      if @contacto.update_attributes(contacto_params)
-        flash[:success] = "Los datos de la empresa fueron actualizados."
-        redirect_to @contacto
-      else
-        flash[:danger] = "No se pudieron actualizar los datos del contacto"
-        render 'edit'
-      end
+    if @contacto.update_attributes(contacto_params)
+      flash[:success] = "Los datos de la empresa fueron actualizados."
+      redirect_to @contacto
+    else
+      flash[:danger] = "No se pudieron actualizar los datos del contacto"
+      render 'edit'
     end
   end
 
@@ -63,7 +60,7 @@ class ContactosController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_contacto
-      @contacto = Contacto.find(params[:id])
+      @contacto = Contacto.find_by(id: params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
