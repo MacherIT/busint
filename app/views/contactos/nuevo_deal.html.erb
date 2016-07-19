@@ -1,0 +1,27 @@
+<% provide(:title, "Nuevo deal con #{@contacto.nombre_completo}") %>
+<h1>Nuevo Deal con <%= @contacto.nombre_completo %></h1>
+<div class="col-md-8 col-md-offset-2 form-solo">
+  <%= form_for(@contacto.deals.build) do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
+    <div class="form-group"> 
+      <%= f.hidden_field :contacto_id, value: @contacto.id %>
+    </div>
+    <div class="form-group"> 
+      <%= f.label :fuente, "Fuente del contacto" %>
+      <%= f.text_field :fuente, class: 'form-control'  %>
+    </div>
+    <div class="form-group"> 
+      <%= f.label :producto_id, "Producto" %>
+      <%= f.select :producto_id, Producto.all.collect { |p| [p.nombre, p.id] }, class: 'form-control'  %>
+    </div>
+    <div class="form-group"> 
+      <%= f.label :estado, "Estado" %>
+      <%= f.select :estado, ["Ganado", "Perdido", "En progreso"], class: 'form-control' %>
+    </div>
+    <div class="form-group"> 
+      <%= f.label :probabilidad, "Probabilidad" %>
+      <%= f.number_field :probabilidad, class: 'form-control' %>
+    </div>    
+    <%= f.submit "Guardar el deal", class: "btn btn-primary" %>
+  <% end %>
+</div>

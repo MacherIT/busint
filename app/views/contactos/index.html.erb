@@ -1,13 +1,16 @@
 <% provide(:title, 'Todos los contactos') %>
 <h1>Todos los contactos</h1>
 
-<div class="">
-  <table class="table table-condensed tabla-deals">
-    <theader></theader>
-    <%= render @contactos %>
-  </table>
-</div>
+<div class="row">
+  <div class="col-md-10" id="contacto-main">
+    <table class="table table-condensed tabla-deals">
+      <theader></theader>
+      <%= render @contactos %>
+    </table>
+  </div>
+  
+  <div id="contacto_btns" class="col-md-2">
+    <%= link_to "Nuevo contacto", new_contacto_path, class: "btn btn-primary" %>
+  </div>
 
-<div id="contacto_btns" class="col-md-1">
-  <%= link_to "Nuevo contacto", new_contacto_path, class: "btn btn-primary" %>
 </div>

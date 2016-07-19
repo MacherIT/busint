@@ -2,14 +2,14 @@
 <h1>Todas las empresas</h1>
 
 <div class="row">
-  <div class="col-md-8 col-offset-3" id="empresa-main">
+  <div class="col-md-10" id="empresa-main">
     <%= will_paginate %>
     <ul class="listado_index">
       <%= render @empresas %>
     </ul>
     <%= will_paginate %>
   </div>
-  <div id="empresa_btns" class="col-md-1">
+  <div id="empresa_btns" class="col-md-2">
     <%= link_to "Nueva empresa", new_empresa_path, class: "btn btn-primary" %>
   </div>
 </div>

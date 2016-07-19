@@ -1,11 +1,25 @@
 
 <% provide(:title, "Deals de #{@contacto.nombre_completo}") %>
 <h1>Deals de <%= @contacto.nombre_completo %></h1>
-<div class="contactos-deals">
-  <table class="table table-condensed tabla-deals">
-    <theader></theader>
-    <%= render partial: 'shared/deal', collection: @deals, as: :deal %>
-  </table>
+
+<div class="row">
+  <div class="col-md-10" id="empresa-main">
+  <% if @contacto.deals.any? %>
+    <div class="contactos-deals">
+      <table class="table table-condensed tabla-deals">
+	<theader></theader>
+	<%= render partial: 'shared/deal', collection: @deals, as: :deal %>
+      </table>
+    </div>
+  <% else %>
+    <p>No hay deals.</p>
+  <% end %>
+  </div>
+  <div id="contacto_btns" class="col-md-2">
+    <%= link_to "Nuevo deal", nuevo_deal_contacto_path, class: "btn btn-primary verde" %>
+  </div>
 </div>
+
+
 
 
