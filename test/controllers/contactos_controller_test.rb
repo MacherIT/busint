@@ -3,9 +3,11 @@ require 'test_helper'
 class ContactosControllerTest < ActionController::TestCase
   setup do
     @contacto = contactos(:miguel)
+    @admin = users(:michael)
   end
 
   test "should get index" do
+    log_in_as(@admin)
     get :index
     assert_response :success
     assert_not_nil assigns(:contactos)
@@ -25,6 +27,7 @@ class ContactosControllerTest < ActionController::TestCase
   end
 
   test "should show contacto" do
+    log_in_as(@admin)
     get :show, id: @contacto
     assert_response :success
   end
