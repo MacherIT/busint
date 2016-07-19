@@ -89,8 +89,8 @@ end
 
 # Participaciones
 10.times do
-  user = User.all.sample
-  deal = user.deals.sample
+  deal = Deal.all.sample
+  user = deal.user
   otro_user = User.all.sample
   while otro_user == user
     otro_user = User.all.sample

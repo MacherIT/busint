@@ -22,7 +22,6 @@ Rails.application.routes.draw do
     member do
       get :deals
       get :nuevo_deal
-      post :deal
     end
   end
   resources :empresas do

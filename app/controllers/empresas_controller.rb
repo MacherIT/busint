@@ -33,7 +33,7 @@ class EmpresasController < ApplicationController
       redirect_to @empresa
     else
       flash[:danger] = "La empresa no pudo ser guardada"
-      reder 'new'
+      render 'new'
     end
   end
     

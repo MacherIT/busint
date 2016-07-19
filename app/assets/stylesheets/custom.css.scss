@@ -267,7 +267,7 @@ input {
   }
 }
 .etiqueta {
-    font-style: italic;
+    /*font-style: italic;*/
     color: #999;
 }
 
@@ -509,10 +509,25 @@ li.deal {
     padding: 10px 15px;
 }
 
+/* Contactos */
+#contacto-resumen {
+    ul {
+	list-style: none;
+    }
+    h2 span {
+	color: #ccc;
+    }
+}
+
 /* Productos */
 li.producto {
     line-height: 200%;
 }
 .producto-nombre {
     font-family: Multicolore;
+}
+
+/* Index en gral */
+ul.listado_index {
+    list-style: none;
 }

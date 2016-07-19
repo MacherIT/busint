@@ -14,7 +14,6 @@ class Deal < ActiveRecord::Base
   default_scope -> { order(updated_at: :desc) }
   validates :user_id, presence: true
   validates :producto_id, presence: true
-  validates :fuente, presence: true
   validates :probabilidad, numericality: { only_integer: true, greater_than_or_equal_to: 0, less_than_or_equal_to: 100 }, allow_nil: true
   validates :contacto_id, presence: true
   validates :estado, inclusion: { in: ["Ganado", "Perdido", "En progreso"], message: "El estado tiene que ser uno de los siguentes: 'Ganado', 'Perdido' o 'En progreso'."}, allow_nil: true

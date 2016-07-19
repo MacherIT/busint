@@ -66,7 +66,7 @@ class DealsController < ApplicationController
   private
   
     def deal_params
-      params.require(:deal).permit(:fuente, :producto_id, :empresa_id, :probabilidad, :estado, cousers: []).slice(:fuente, :producto_id, :empresa_id, :probabilidad, :estado)
+      params.require(:deal).permit(:fuente, :producto_id, :contacto_id, :probabilidad, :estado, cousers: []).slice(:fuente, :producto_id, :contacto_id, :probabilidad, :estado)
     end
 
     # Pasa si el usuario es admin, owner o participante del deal.

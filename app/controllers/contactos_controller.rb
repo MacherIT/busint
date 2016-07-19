@@ -1,5 +1,5 @@
 class ContactosController < ApplicationController
-  before_action :set_contacto, only: [:show, :edit, :update, :destroy, :deals]
+  before_action :set_contacto, only: [:show, :edit, :update, :destroy, :deals, :nuevo_deal]
 
   def index
     @contactos = Contacto.all
@@ -23,7 +23,7 @@ class ContactosController < ApplicationController
       redirect_to @contacto
     else
       flash[:danger] = "El contacto no pudo ser guardado"
-      reder 'new'
+      render 'new'
     end
   end
 
@@ -42,8 +42,10 @@ class ContactosController < ApplicationController
   def destroy
     @contacto.destroy
     respond_to do |format|
-      format.html { redirect_to contactos_url, notice: 'Contacto was successfully destroyed.' }
-      format.json { head :no_content }
+      format.html {
+        flash[:success] = 'Contacto eliminado'
+        redirect_to contactos_path
+      }
     end
   end
 
@@ -54,9 +56,6 @@ class ContactosController < ApplicationController
   def nuevo_deal
   end
   
-  def deal
-  end
-
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_contacto

@@ -1,25 +1,13 @@
-<p id="notice"><%= notice %></p>
+<% provide(:title, 'Todos los contactos') %>
+<h1>Todos los contactos</h1>
 
-<h1>Listing Contactos</h1>
+<div class="">
+  <table class="table table-condensed tabla-deals">
+    <theader></theader>
+    <%= render @contactos %>
+  </table>
+</div>
 
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @contactos.each do |contacto| %>
-      <tr>
-        <td><%= link_to 'Show', contacto %></td>
-        <td><%= link_to 'Edit', edit_contacto_path(contacto) %></td>
-        <td><%= link_to 'Destroy', contacto, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Contacto', new_contacto_path %>
+<div id="contacto_btns" class="col-md-1">
+  <%= link_to "Nuevo contacto", new_contacto_path, class: "btn btn-primary" %>
+</div>

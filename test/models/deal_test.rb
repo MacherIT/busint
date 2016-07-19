@@ -17,11 +17,6 @@ class DealTest < ActiveSupport::TestCase
     assert_not @deal.valid?
   end
   
-  test "debe tener una fuente" do
-    @deal.fuente = ""
-    assert_not @deal.valid?
-  end
-
   test "debe tener una probabilidad del 0 al 100" do
     @deal.probabilidad = "cero"
     assert_not @deal.valid?
