@@ -48,13 +48,15 @@ end
 10.times do
   nombre_legal = Faker::Company.name
   nombre = nombre_legal.split(" ").first
+  while Empresa.find_by(nombre: nombre) do
+    nombre_legal = Faker::Company.name
+    nombre = nombre_legal.split(" ").first
+  end
   tel = Faker::PhoneNumber.cell_phone
-  email = "info@#{nombre_legal.parameterize("_")}.com"
+  email = "info@#{nombre_legal.parameterize("")}.com"
   ciudad = rand(1..5)
   dir = Faker::Address.street_address
-  unless Empresa.find_by(nombre: nombre)
-    Empresa.create(nombre_legal: nombre_legal, nombre: nombre, tel: tel, email: email, ciudad: ciudad, dir: dir)
-  end
+  Empresa.create!(nombre_legal: nombre_legal, nombre: nombre, tel: tel, email: email, ciudad: ciudad, dir: dir)
 end
 
 # Contactos 
@@ -66,7 +68,7 @@ cargos = ["Dueño", "Vendedor", "At. al Público", "Staff"]
   tel = Faker::PhoneNumber.cell_phone
   dir = Faker::Address.street_address
   empresa = Empresa.all.sample
-  email = "#{nombre}_#{apellido}@#{empresa.nombre}.com"
+  email = "#{nombre}#{apellido}@#{empresa.nombre.parameterize("")}.com"
   ciudad = rand(1..5)
   familia = "Casado: #{["No", "Sí"].sample}; Hijos: #{rand(0..4)}."
   bday = Faker::Date.forward(365).to_formatted_s(:d_m)
