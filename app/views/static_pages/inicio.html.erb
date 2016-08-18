@@ -8,6 +8,11 @@
       <%= render 'shared/user_info' %>
     </section>
   </div>
+  <div id="calendario">
+    <%= month_calendar do |date| %>
+      <%= date %>
+    <% end %>
+  </div>
 <% else %>
   <div class="center jumbotron">
     <h1>Business Intelligence</h1>
