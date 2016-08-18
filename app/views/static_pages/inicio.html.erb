@@ -9,8 +9,14 @@
     </section>
   </div>
   <div id="calendario">
-    <%= month_calendar do |date| %>
+    <h3 class="center">Calendario</h3>
+    <%= month_calendar events: @eventos, attribute: :fecha do |date, eventos| %>
       <%= date %>
+      <% eventos.each do |evento| %>
+         <div>
+	   <%= link_to evento.deal.empresa.nombre, evento.deal %>
+         </div>
+      <% end %>
     <% end %>
   </div>
 <% else %>

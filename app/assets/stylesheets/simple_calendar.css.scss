@@ -1,3 +1,5 @@
+@import 'colores';
+
 .simple-calendar {
   .day {}
 
@@ -9,7 +11,6 @@
   .wday-5 {}
   .wday-6 {}
 
-  .today {}
   .past {}
   .future {}
 
@@ -19,5 +20,32 @@
   .next-month { }
   .current-month {}
 
-  .has-events {}
+  .has-events {
+      background-color: $back_tabla_1 !important;
+  }
+
+  .today {
+      background-color: $back_tabla_2 !important;
+  }
+
+  table, thead tr th, .calendar-heading {
+      text-align: center;
+  }
+  .calendar-heading {
+      margin-bottom: 15px;
+  }
+  .calendar-title {
+      font-weight: bold;
+  }
+  table {
+      border: 1px solid $gris;
+  }
+  thead tr th {
+      border-bottom: 1px solid $gris;
+      border-left: 1px solid $gris;
+      border-right: 1px solid $gris;
+  }
+  td {
+      border: 1px solid $gris_nav;
+  }
 }

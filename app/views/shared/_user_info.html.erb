@@ -4,5 +4,5 @@
 <div class="col-md-8 user_info">
   <h3><%= current_user.name %></h3>
   <div><%= pluralize(current_user.deals.count, "deals") %></div>
-  <div><%= link_to "Ir a Mi Perfil", current_user, class: "btn btn-primary" %></div>
+  <div><%= link_to "Ir a Mis Deals", current_user, class: "btn btn-primary" %></div>
 </div>

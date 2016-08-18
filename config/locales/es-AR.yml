@@ -1,5 +1,8 @@
 ---
 es-AR:
+  simple_calendar:
+    previous: Anterior
+    next: Siguiente
   activerecord:
     errors:
       messages:

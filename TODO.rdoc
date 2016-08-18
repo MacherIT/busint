@@ -1,0 +1,4 @@
+= Tareas a hacer
+
+== Calendarios
+* Reemplazar la fecha entera por el número de día.
