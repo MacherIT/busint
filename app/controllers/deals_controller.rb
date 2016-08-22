@@ -52,6 +52,7 @@ class DealsController < ApplicationController
   def show
     @deal = Deal.find_by(id: params[:id])
     @accion = @deal.accions.build
+    @eventos = Accion.where(deal_id: @deal.id)
   end
 
   def update

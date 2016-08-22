@@ -329,7 +329,7 @@ input {
     }
 }
 .back-verde-linkable {
-    background: rgba(131, 170, 48, 0.75) !important;
+/*    background: rgba(131, 170, 48, 0.75) !important; */
     cursor: pointer;
 }
 li.deal {
@@ -517,4 +517,12 @@ li.producto {
 /* Index en gral */
 ul.listado_index {
     list-style: none;
+}
+
+/* Simple Calendar */
+.simple-calendar {
+    td {
+	height: 100px;
+	width: 14.28%;
+    }
 }

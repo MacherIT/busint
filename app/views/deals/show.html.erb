@@ -26,10 +26,21 @@
     </div>
     <div id="deal-acciones">
       <h3>Acciones</h3>
-      <table class="table table-condensed tabla-acciones">
+      <table class="table table-condensed table-striped tabla-acciones">
 	<theader></theader>
 	<%= render @deal.accions %>
       </table>
+    </div>
+    <div id="calendario">
+      <h3 class="center">Calendario</h3>
+      <%= month_calendar events: @eventos, attribute: :fecha do |date, eventos| %>
+        <%= date.strftime('%e') %>
+	<% eventos.each do |evento| %>
+          <div>
+	    <%= link_to evento.deal.empresa.nombre, evento.deal %>
+          </div>
+	<% end %>
+      <% end %>
     </div>
   </div>
   <div id="deal_btns" class="col-md-1">
