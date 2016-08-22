@@ -1,6 +1,7 @@
 class Accion < ActiveRecord::Base
   belongs_to :deal
   belongs_to :user
+  has_many :comentarios
   default_scope -> { order(fecha: :desc) }
   validates :deal_id, presence: true
   validates :user_id, presence: true

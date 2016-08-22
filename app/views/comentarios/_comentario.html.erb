@@ -1,0 +1,5 @@
+<li class="list-group-item comentario">
+  <p class="comentario-fecha"><%= comentario.created_at.to_formatted_s(:short) %></p>
+  <span class="comentario-user"><%= comentario.user.name %></span>
+  <%= comentario.texto %>
+</li>

@@ -71,7 +71,7 @@ if ::Rails.env == 'development'
     tel = Faker::PhoneNumber.cell_phone
     dir = Faker::Address.street_address
     empresa = Empresa.all.sample
-    email = "#{nombre}#{apellido}@#{empresa.nombre.parameterize("")}.com"
+    email = "#{nombre.parameterize("")}#{apellido.parameterize("")}@#{empresa.nombre.parameterize("")}.com"
     ciudad = rand(1..5)
     familia = "Casado: #{["No", "Sí"].sample}; Hijos: #{rand(0..4)}."
     bday = Faker::Date.forward(365).to_formatted_s(:d_m)
@@ -120,5 +120,14 @@ if ::Rails.env == 'development'
   end
   
   Deal.all.each.map { |d| d.actualizar_estado }
+
+  
+  # Comentarios
+  Accion.all.each do |acc|
+    acc.deal.user.comentarios.create!(accion_id: acc.id, texto: "Yo soy el dueño del deal y vengo a dejar un comentario.")
+    acc.deal.cousers.all.each do |cou|
+      cou.comentarios.create!(accion_id: acc.id, texto: "Yo participo también y quiero preguntar algo.")
+    end
+  end
   
 end

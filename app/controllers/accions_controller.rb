@@ -35,6 +35,7 @@ class AccionsController < ApplicationController
 
   def edit
     @accion = Accion.find_by(id: params[:id])
+    @comentarios = @accion.comentarios.paginate(page: params[:page], per_page: 10)
   end
   
   def update

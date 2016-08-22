@@ -1,0 +1,23 @@
+<%= form_for(@comentario, remote: true) do |f| %>
+
+  <%= f.hidden_field :accion_id %>
+
+  <div class="field">
+    <%= f.text_area :texto, autofocus: true %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Enviar", class:"btn btn-primary" %>
+  </div>
+
+  <% if @comentario.errors.any? %>
+    <div id="error_explanation">
+      <ul>
+      <% @comentario.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<% end %>

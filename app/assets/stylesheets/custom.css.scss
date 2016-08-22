@@ -319,6 +319,10 @@ input {
     background: $azul_asesoria;
     border-color: #333;
 }
+.btn.gris {
+    background: $gris;
+    border-color: #333;
+}
 .btn-new_deal {
     background: $rojo_web;
     border-color: #333;
@@ -524,5 +528,52 @@ ul.listado_index {
     td {
 	height: 100px;
 	width: 14.28%;
+    }
+}
+
+
+ul#mensajes-list {
+    li {
+	/*font-family: Josefin;*/
+	/*font-size: 16px;*/
+	span.mensaje-fecha, p.mensaje-fecha, div.mensaje-fecha {
+	    color: $gris;
+	    /*font-family: Montez;*/
+	    /*font-size: 18px;*/
+	}
+    }
+}
+li.comentario {
+    text-align: left;
+    .comentario-user {
+	font-weight: bold;
+    }
+    p.comentario-fecha {
+	text-align: right;
+	float: right;
+	margin-left: 1em;
+    }
+}
+.list-group-item {
+    border-right: 1px solid $gris;
+    border-left:  1px solid $gris;
+    border-bottom: 1px solid $gris;
+}
+.list-group-item:first-of-type {
+    border-top: 1px solid $gris;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+}
+.list-group-item:last-of-type {
+    border-bottom: 1px solid $gris;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.new_comentario {
+    width: 100%;
+    textarea {
+	width: 100%;
+/*	font-family: Josefin;
+	font-size: 16px; */
     }
 }

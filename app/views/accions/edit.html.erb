@@ -1,43 +1,57 @@
-<% provide(:title, "Editar acción") %>
-<h1>Editar acción</h1>
+<% provide(:title, "Acción con #{@accion.deal.contacto.nombre_completo}") %>
+<h1>Acción con <%= @accion.deal.contacto.nombre_completo  %> de <%= @accion.deal.contacto.empresa.nombre %></h1>
 <div class="row edit">
-  <div class="col-md-6 col-md-offset-3">
-    <%= form_for(@accion) do |f| %>
-      <%= render 'shared/error_messages', object: f.object %>
-      <div class="form-group"> 
-	<%= f.label :medio, "Medio"%>
-	<%= f.select :medio, ["Llamada", "Visita", "Social Media", "Email"], class: 'form-control'  %>
-      </div>
-      <div class="form-group"> 
-	<%= f.label :salida, "¿Quién la inició?"%>
-	<%= f.select :salida, options_for_select([['Usuario', true], ['Cliente', false]], 1), class: 'form-control'  %>
-      </div>
-      <div class="form-group"> 
-	<%= f.label :resultado, "Resultado"%>
-	<%= f.select :resultado, ["Sigue", "Posterga", "Cancela", "Contrata"], class: 'form-control'  %>
-      </div>
-      <div class="form-group fecha-input"> 
-	<%= f.label :fecha, "Fecha"%>
-	<%= f.datetime_select :fecha, class: 'form-control' %>
-      </div>
-      <div class="form-group"> 
-	<%= f.label :hecha, "¿Hecha?" %>
-	<%= f.select :hecha, [['Sí', true], ['No', false]], class: 'form-control'  %>
-      </div>
-      <div class="form-group"> 
-	<%= f.label :comentario, "Comentario"%>
-	<%= f.text_field :comentario, class: 'form-control'  %>
-      </div>
-      
-      <%= f.submit "Guardar", class: "btn btn-primary" %>
+  <div class="col-md-6">
+    <h3>Editar</h3>
+    <div id="accion-form">
+      <%= form_for(@accion) do |f| %>
+        <%= render 'shared/error_messages', object: f.object %>
+	<div class="form-group"> 
+	  <%= f.label :medio, "Medio"%>
+	  <%= f.select :medio, ["Llamada", "Visita", "Social Media", "Email"], class: 'form-control'  %>
+	</div>
+	<div class="form-group"> 
+	  <%= f.label :salida, "¿Quién la inició?"%>
+	  <%= f.select :salida, options_for_select([['Usuario', true], ['Cliente', false]], 1), class: 'form-control'  %>
+	</div>
+	<div class="form-group"> 
+	  <%= f.label :resultado, "Resultado"%>
+	  <%= f.select :resultado, ["Sigue", "Posterga", "Cancela", "Contrata"], class: 'form-control'  %>
+	</div>
+	<div class="form-group fecha-input"> 
+	  <%= f.label :fecha, "Fecha"%>
+	  <%= f.datetime_select :fecha, class: 'form-control' %>
+	</div>
+	<div class="form-group"> 
+	  <%= f.label :hecha, "¿Hecha?" %>
+	  <%= f.select :hecha, [['Sí', true], ['No', false]], class: 'form-control'  %>
+	</div>
+	<div class="form-group"> 
+	  <%= f.label :comentario, "Comentario inicial"%>
+	  <%= f.text_field :comentario, class: 'form-control'  %>
+	</div>
+	
+	<%= f.submit "Guardar", class: "btn btn-primary" %>
+	<%= button_to "Eliminar", accion_path(@accion), method: :delete, class: "btn btn-primary rojo" %>
+	<%= button_to "Volver", @accion.deal, method: :get, class: "btn btn-primary gris" %>
+
       <% end %>
+    </div>
   </div>
-  <div class="col-md-2">
-    <section class="deal_edit_btns btn-group-vertical">
-      <%= button_to "Eliminar", accion_path(@accion), method: :delete, class: "btn btn-primary rojo" %>
-      <%= button_to "Volver", @accion.deal, method: :get, class: "btn btn-primary" %>
-    </section>
+
+  <div class="col-md-6" id="accion-comentarios">
+    <!-- Comentarios -->
+    <h3>Comentarios</h3>
+    <div id="infinite-scrolling">
+      <%= will_paginate @comentarios, :previous_label => t("Anteriores"), :next_label => t("Siguientes") %>
+      </div>
+    <ul class="list-group" id="comentarios-list">
+      <%= render @comentarios %>	
+    </ul>
+    <% @comentario = @accion.comentarios.build %>
+    <%= render 'comentarios/form' %>
   </div>
+  
 </div>
 
   
