@@ -25,7 +25,10 @@
   }
 
   .today {
-      background-color: $back_tabla_2 !important;
+      background-color: $amarillo_fondo !important;
+      &, a {
+	  /*color: white;*/
+      }
   }
 
   table, thead tr th, .calendar-heading {

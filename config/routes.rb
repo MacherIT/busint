@@ -31,7 +31,7 @@ Rails.application.routes.draw do
       post :contacto
     end
   end
-  resources :comentarios, only: [:create, :update, :destroy]
+  resources :comentarios, only: [:create, :update, :destroy, :edit]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

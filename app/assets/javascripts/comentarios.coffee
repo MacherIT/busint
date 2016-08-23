@@ -1,3 +1,9 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
+$(document).on "page:change", ->
+    $(".comentario-form").hide();
+    $(".comentario-propio").dblclick -> 
+        url = $(this).data("ref");
+        id = $(this).data("comentario-id");
+        console.log('id: ' + id + ' - url: ' + url);
+        $('#comentario-id-' + id + '-texto').hide();
+        $('#comentario-id-' + id + '-form').show();
+

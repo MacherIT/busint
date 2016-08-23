@@ -32,10 +32,11 @@
 	</div>
 	
 	<%= f.submit "Guardar", class: "btn btn-primary" %>
-	<%= button_to "Eliminar", accion_path(@accion), method: :delete, class: "btn btn-primary rojo" %>
-	<%= button_to "Volver", @accion.deal, method: :get, class: "btn btn-primary gris" %>
-
       <% end %>
+      
+      <%= button_to "Eliminar", accion_path(@accion), method: :delete, class: "btn btn-primary rojo" %>
+      <%= button_to "Volver", @accion.deal, method: :get, class: "btn btn-primary gris" %>
+
     </div>
   </div>
 

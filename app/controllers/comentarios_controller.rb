@@ -1,5 +1,6 @@
 class ComentariosController < ApplicationController
   before_action :logged_in_user
+  before_action :set_comentario, only: [:destroy, :update]
 
   def create
     if not @comentario = current_user.comentarios.create(comentarios_params)
@@ -11,10 +12,10 @@ class ComentariosController < ApplicationController
     end
   end
 
+  def edit
+  end
+
   def update
-    unless @comentario = current_user.comentarios.find_by(accion_id: params[:accion_id])
-      redirect_to deal_path(@comentario.accion.deal)
-    end
     @comentario.texto = comentarios_params[:texto]
     unless @comentario.save
       flash.now[:danger] = "El comentario no pudo ser actualizado."
@@ -26,9 +27,6 @@ class ComentariosController < ApplicationController
   end
 
   def destroy
-    unless @comentario = current_user.comentarios.find_by(accion_id: params[:accion_id])
-      redirect_to deal_path(@comentario.accion.deal)
-    end
     unless @comentario.destroy
       flash.now[:danger] = "El comentario no pudo ser borrado."
     end
@@ -45,5 +43,11 @@ class ComentariosController < ApplicationController
       params.require(:comentario).permit(:accion_id, :texto)
     end
 
-
+    # Setea el comentario o redirecciona
+    def set_comentario
+      unless @comentario = current_user.comentarios.find(params[:id])
+        redirect_to root_path
+      end
+    end
+      
 end

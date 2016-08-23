@@ -81,7 +81,6 @@ if ::Rails.env == 'development'
   
   # Deals
   users = User.all
-  contador = 0
   10.times do
     posesion = rand(1..2).even?
     contacto = Contacto.all.sample

@@ -1,0 +1,6 @@
+id = <%= @comentario.id %>
+
+$("#comentario-id-" + id + "-texto").html("<%= @comentario.texto %>");
+$("#comentario-id-" + id + "-texto").show();
+$("#comentario-id-" + id + "-form").hide();
+

@@ -25,7 +25,7 @@
       <%= button_to 'Cambiar', url_for(action: :posesion_toggle, id: @deal.id), remote: true, class: 'btn btn-secondary auto-width', form_class: 'inline-form' %>
     </div>
     <div id="deal-acciones">
-      <h3>Acciones</h3>
+      <h3 class="center">Acciones</h3>
       <table class="table table-condensed table-striped tabla-acciones">
 	<theader></theader>
 	<%= render @deal.accions %>
@@ -38,6 +38,12 @@
 	<% eventos.each do |evento| %>
           <div>
 	    <%= link_to evento.deal.empresa.nombre, evento.deal %>
+	    <%= link_to edit_accion_path(evento) do %>
+	     <%= content_tag :p do %>
+	       <%= evento.medio %>
+	       <%= icono(evento)[:salida] %>
+	     <% end %>
+	   <% end %>
           </div>
 	<% end %>
       <% end %>

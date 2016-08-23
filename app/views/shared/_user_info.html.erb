@@ -1,8 +1,12 @@
 <div class="col-md-4">
-  <%= link_to gravatar_for(current_user, size:300), current_user %>
+  <%= link_to gravatar_for(current_user, size:150), current_user %>
 </div>
 <div class="col-md-8 user_info">
   <h3><%= current_user.name %></h3>
   <div><%= pluralize(current_user.deals.count, "deals") %></div>
   <div><%= link_to "Ir a Mis Deals", current_user, class: "btn btn-primary" %></div>
+  <div id="user-info-botones">
+    <%= link_to "Nuevo contacto", new_contacto_path, class: "btn btn-primary" %>
+    <%= link_to "Nueva empresa", new_empresa_path, class: "btn btn-primary" %>
+  </div>
 </div>

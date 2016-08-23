@@ -4,9 +4,10 @@
     <%= accion.user.name.split.first %>
   </td>
   <td class="direccion">
-    <% if accion.salida? %>Salida
+    <%= icono(accion)[:salida] %>
+<!--     <% if accion.salida? %>Salida
     <% else %>Entrada
-    <% end %>
+    <% end %> -->
   </td>
   <td class="medio">
     <%= accion.medio %>
@@ -15,7 +16,8 @@
     <%= accion.resultado %>
   </td>
   <td class="hecha">
-    <% if accion.hecha %>Hecha<% else %>No hecha<% end %>
+    <%= icono(accion)[:hecha] %>
+<!--    <% if accion.hecha %>Hecha<% else %>No hecha<% end %> -->
   </td>
   <td class="comentario">
     <%= accion.comentario %>

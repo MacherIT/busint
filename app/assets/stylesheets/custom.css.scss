@@ -161,11 +161,11 @@ aside {
 }
 
 .gravatar {
-  float: left;
-  margin-right: 10px;
-    width: 90%;
+    float: right;
+    margin-right: 10px;
+    /*width: 90%;*/
     border: 2px solid #333;
-    border-radius: 47.5%;
+    border-radius: 50%;
 }
 .gravatar-100px {
     max-width: 100px;
@@ -577,3 +577,9 @@ li.comentario {
 	font-size: 16px; */
     }
 }
+
+/* Glyphicons */
+.glyphicon-arrow-left { color: $verde_logo1; }
+.glyphicon-arrow-right { color: $azul_mktg; }
+.glyphicon-ok { color: $verde_app; }
+.glyphicon-remove { color: $rojo_web; }
