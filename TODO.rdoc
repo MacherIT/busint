@@ -8,6 +8,6 @@
 * Asegurarse de que en los deals y mensajes solo puedan hacer cosas los que participen.
 
 == Comentarios
-* Hacer los js.erb de comentarios#update y #destroy.
+
 
 == Calendarios

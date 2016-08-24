@@ -5,7 +5,7 @@
 
 <span id="comentario-id-<%= comentario.id %>-form" class="comentario-form">
   <%= form_for(comentario, remote: true) do |f| %>
-    <%= f.text_area :texto, placeholder: comentario.texto %>
+    <%= f.text_area :texto, placeholder: comentario.texto, id: "comentario-id-#{comentario.id}_texto" %>
     <%= f.submit "Guardar", class:"btn btn-primary" %>
   <% end %>
   <%= button_to 'Borrar', comentario, method: :delete, class: "btn btn-primary rojo", remote: true %>
