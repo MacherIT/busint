@@ -47,6 +47,8 @@ GEM
     bootstrap-toggle-rails (2.2.1.0)
     bootstrap-will_paginate (0.0.10)
       will_paginate
+    bootswatch-rails (3.3.5)
+      railties (>= 3.1)
     builder (3.2.2)
     byebug (3.4.0)
       columnize (~> 0.8)
@@ -304,6 +306,7 @@ DEPENDENCIES
   bootstrap-sass (= 3.2.0.0)
   bootstrap-toggle-rails (~> 2.2, >= 2.2.1.0)
   bootstrap-will_paginate (= 0.0.10)
+  bootswatch-rails
   byebug (= 3.4.0)
   carrierwave (= 0.10.0)
   coffee-rails (= 4.1.0)

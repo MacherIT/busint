@@ -1,7 +1,8 @@
 @import "bootstrap-sprockets";
+@import "bootswatch/slate/variables";
 @import "bootstrap";
+@import "bootswatch/slate/bootswatch";
 @import 'colores';
-
 
 @mixin box_sizing {
   -moz-box-sizing:    border-box;
