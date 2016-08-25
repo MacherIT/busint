@@ -2,7 +2,6 @@
 
 == Interfaz
 * Automatizar la creación de contacto y empresa si no existen.
-* Averiguar cómo bindearle acciones a elementos del DOM nuevos (creación de comentarios).
 
 == Permisos
 * Asegurarse de que en los deals y mensajes solo puedan hacer cosas los que participen.

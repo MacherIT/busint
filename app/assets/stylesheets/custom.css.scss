@@ -17,7 +17,7 @@ body {
 }
 .main-body {
   &>h1 {
-      color: rgba(51, 51, 51, 0.25);
+      color: $gris_titulo;
       margin-bottom: 20px;
   }
 }
@@ -53,13 +53,13 @@ textarea {
   float: left;
   margin-right: 10px;
   font-size: 1.7em;
-  color: #fff;
+  color: white;
   text-transform: uppercase;
   letter-spacing: -1px;
   padding-top: 9px;
   font-weight: bold;
   &:hover {
-      color: #fff;
+      color: white;
       text-decoration: none;
       filter: hue-rotate(45deg);
   }
@@ -76,12 +76,12 @@ textarea {
 	padding-top: 20px;
 	padding-bottom: 20px;
 	padding-right: 1em;
-	border-top: 1px solid #eaeaea;
-	color: #dddddd;
+	border-top: 1px solid $gris_borde;
+	color: $gris_claro;
 	a {
-	    color: #dddddd;
+	    color: $gris_claro;
 	    &:hover {
-		color: #222;
+		color: $negro;
 	    }
 	}
 	small {
@@ -110,7 +110,7 @@ textarea {
 }
 
 .btn-secondary {
-    border: 1px solid #bbbbbb;
+    border: 1px solid $gris_titulo;
     border-radius: 3px;
     padding: 0.5em;
 }
@@ -118,9 +118,9 @@ textarea {
 /* sidebar */
 #form-sidebar {
     padding: 1em;
-    border: 2px solid #333;
+    border: 2px solid $negro;
     border-radius: 5px;
-    background: #eee;
+    background: $negro;
     h1, h2, h3, h4, h5, h6 {
 	margin-top: 10px;
 	margin-bottom: 20px;
@@ -164,7 +164,7 @@ aside {
     float: right;
     margin-right: 10px;
     /*width: 90%;*/
-    border: 2px solid #333;
+    border: 2px solid $negro;
     border-radius: 50%;
 }
 .gravatar-100px {
@@ -194,7 +194,7 @@ div.edit {
     }
 }
 input, textarea, select, .uneditable-input {
-  border: 1px solid #bbb;
+  border: 1px solid $gris_borde;
   width: 100%;
   margin-bottom: 15px;
   @include box_sizing;
@@ -255,7 +255,7 @@ input {
 }
 .etiqueta {
     /*font-style: italic;*/
-    color: #999;
+    color: $gris_titulo;
 }
 
 /* Sidebar users */
@@ -264,7 +264,7 @@ input {
 }
 .sidebar-menu {
     list-style: none;
-    border: 1px solid #333;
+    border: 1px solid $negro;
     border-radius: 5px;
     padding: 0;
     text-align: center;
@@ -309,23 +309,23 @@ input {
 }
 .btn.rojo {
     background: $rojo_web;
-    border-color: #333;
+    border-color: $negro;
 }
 .btn.verde {
     background: $verde_app;
-    border-color: #333;
+    border-color: $negro;
 }
 .btn.azul {
     background: $azul_asesoria;
-    border-color: #333;
+    border-color: $negro;
 }
 .btn.gris {
     background: $gris;
-    border-color: #333;
+    border-color: $negro;
 }
 .btn-new_deal {
     background: $rojo_web;
-    border-color: #333;
+    border-color: $negro;
 }
 .btn-group-vertical {
     .btn {
@@ -343,7 +343,7 @@ li.deal {
 .deal_form {
     border-radius: 5px;
     margin-top: 0px;
-    background: #eee;
+    background: $gris_claro;
     h1, h2, h3, h4, h5 {
 	margin-left: 15px;
 	color: $verde_logo1;
@@ -360,7 +360,7 @@ li.deal {
 }
 li.deal {
     margin-top: 1em;
-    border-top: 1px solid #e8e8e8;
+    border-top: 1px solid $gris_claro;
     padding: 10px 0 0 0;
     &:first-child {
 	margin-top: 2em;
@@ -382,14 +382,14 @@ li.deal {
 }
 .deal {
     .btn-edit_deal {
-	background: rgb(66, 139, 202);	
+	background: $azul-edit_deal;
     }
     .btn-new_accion {
 	background: $verde_app;
     }
     .btn {
-	color: #333;
-	border: 1px solid #333;
+	color: $negro;
+	border: 1px solid $negro;
 	padding: 0.2em 0.5em !important;
 	a:hover {
 	    text-decoration: none;
@@ -454,15 +454,15 @@ li.deal {
     position: relative;
 }
 .btn-echar {
-    background: #eee;
+    background: $gris_claro;
     &:hover {
-	background: #d9534f;
+	background: $hover_echar;
     }
 }
 .btn-invitar {
-    background: #eee;
+    background: $gris_claro;
     &:hover {
-	background: #428bca;
+	background: $hover_invitar;
     }
 }
 .titulo-compa {
@@ -490,11 +490,11 @@ li.deal {
 	list-style: none;
     }
     h2 span {
-	color: #ccc;
+	color: $gris_nav;
     }
 }
 .ultimo-deal {
-    border: 1px solid #ccc;
+    border: 1px solid $gris_nav;
     border-radius: 5px;
     background: $gris_claro;
     padding: 10px 15px;
@@ -506,7 +506,7 @@ li.deal {
 	list-style: none;
     }
     h2 span {
-	color: #ccc;
+	color: $gris_nav;
     }
 }
 
