@@ -5,6 +5,9 @@
 @import 'colores';
 @import 'bootstrap_overwrites';
 
+$border-radius: 4px;
+$margin-contr: 10px;
+
 @mixin box_sizing {
   -moz-box-sizing:    border-box;
   -webkit-box-sizing: border-box;
@@ -57,6 +60,17 @@ a.dropdown-toggle, div.dropdown {
     min-height: 1px;
     background-color: white;
 }
+
+/* Users/show */
+.contr {
+    margin: $margin-contr;
+}
+#contr-botones {
+    a {
+	margin: 0px;
+    }
+}
+
 
 
 section {
@@ -257,6 +271,28 @@ input, textarea, select, .uneditable-input {
 label {
     margin-right: 20px;
 }
+.input-group-btn {
+    vertical-align: bottom;
+}
+.input-group {  
+}
+.btn-buscar {
+    padding: 1px 3px;
+    background-color: $verde_app;
+    border: 1px solid $verde_app;
+}
+
+input#busqueda {
+    color: $gris_claro;
+    margin-bottom: 0px;
+    background-color: transparent;
+    border-left: 1px solid $verde_app;
+    border-top: 1px solid $verde_app;
+    border-bottom: 1px solid $verde_app;
+    border-top-left-radius: $border-radius;
+    border-bottom-left-radius: $border-radius;
+}
+
 /*input, select, .uneditable-input {
   max-width: 150px;
 }*/
@@ -379,7 +415,8 @@ input {
     border-color: $negro;
 }
 .btn-new_deal {
-    background: $rojo_web;
+    background: $azul_asesoria;
+    /*background: $rojo_web;*/
     border-color: $negro;
 }
 .btn-group-vertical {
@@ -461,14 +498,17 @@ li.deal {
     font-family: Multicolore;
 }
 .empresa {
-    font-size: 120%;
+    /*font-size: 120%;*/
 }
 .deal-user {
-    color: gray;
-    font-size: 120%;
+    /*color: gray;
+    font-size: 120%;*/
 }
 .deal-contacto {
-    font-size: 120%;
+    /*font-size: 120%;*/
+}
+.deal-posesion {
+    font-weight: bold;
 }
 .posesion-true {
     color: $rojo_web;
@@ -497,12 +537,19 @@ li.deal {
     margin-top: 60px;
 }
 .tabla-deals, .tabla-codeals {
-    tr:nth-child(even) {
+    width: calc(100% - 2 * #{$margin-contr});
+    color: $gris_nav;
+    tbody tr {
+	background-color: $gris_tabla;
+	border: 0.3em solid $gris;
+	border-radius: $border-radius;
+    }
+/*    tr:nth-child(even) {
 	background: $back_tabla_1;
     }
     tr:nth-child(odd) {
 	background: $back_tabla_2;
-    }
+    } */
 }
 .btn-compa {
     width: 50%;

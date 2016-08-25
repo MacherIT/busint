@@ -1,25 +1,39 @@
 <tr id="deal-<%= deal.id %>" class="deal clickable-row" data-href="<%= deal_url(deal) %>">
+  <td class="deal deal-estado estado estado-<%= deal.estado.parameterize('_') %>">
+    <%= deal.estado %>
+  </td>
   <td class="deal deal-empresa empresa">
       <% if current_user && ( deal.user == current_user or
 	                      deal.cousers.include?(current_user) )%>
+<% if false%>
         <%= link_to deal.empresa.nombre, deal.empresa %>
+<% end %>
+
+        <%= deal.empresa.nombre %>
       <% else %>
         <%= deal.empresa.nombre %>
       <% end %>
     </td>
   <td class="deal-contacto"><%= deal.contacto.nombre_completo %></td>
+  <td class="center"> - </td>
   <td class="deal-user"><%= deal.user.name %></td>
 
   <td class="deal deal-contenido producto">
     <% if @user %>
-      <%= link_to deal.producto.nombre, producto_path(deal.producto.id) %>
+      <%= deal.producto.nombre %>
     <% end %>
   </td>
+
+<% if false %>
   <td class="deal deal-contenido probabilidad">
     <% if p = deal.probabilidad %>
       <%= deal.probabilidad %>%
     <% end %>
   </td>
+<% end %>
+
+
+<% if false %>
   <td class="deal deal-companeros">
     <% compas = [] %>
     <% deal.participacions.each do |p| %>
@@ -27,9 +41,9 @@
     <% end %>
   <span class="companero"><%= compas.join(", ") %></span>
   </td>
-  <td class="deal deal-estado estado estado-<%= deal.estado.parameterize('_') %>">
-    <%= deal.estado %>
-  </td>
+<% end %>
+
+
   <td class="deal deal-posesion posesion-<%= deal.posesion %>">
     <% if deal.posesion %>
       <%= "Macher" %>
@@ -37,6 +51,8 @@
       <%= "Cliente" %>
     <% end %>
   </td>
+  <td class="center"> - <!-- Comentarios --></td>
+  <td class="center"> - <!-- Pendientes --></td>
   <td class="deal deal-fechas modificado">
     <% if deal.accions.any? %>
       <%= deal.accions.first.fecha.to_formatted_s(:d_m) %>

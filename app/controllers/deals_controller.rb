@@ -13,6 +13,12 @@ class DealsController < ApplicationController
     end
   end
 
+  def buscar
+    respond_to do |format|
+      format.js
+    end
+  end
+
   def historial
   end
 
