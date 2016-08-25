@@ -1,0 +1,22 @@
+<nav class="navbar invis">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav nav-pills nav-stacked" role="navigation">
+        <li class="invis center"><%= link_to "Inicio",  root_path, class: "invis" %></li>
+        <li class="invis center"><%= link_to "Mi perfil", current_user, class: "invis" %></li>
+        <li class="invis center"><%= link_to "Contactos", users_path, class: "invis" %></li>
+        <li class="invis center"><%= link_to "Actividades", '#', class: "invis" %></li>
+        <li class="invis center"><%= link_to "Deals", deals_path, class: "invis" %></li>
+	<li class="invis center"><%= link_to "Empresas", empresas_path, class: "invis" %></li>
+	<li class="invis center"><%= link_to "Contactos", contactos_path, class: "invis" %></li>
+      </ul>
+    </div>
+  </div>
+</nav>

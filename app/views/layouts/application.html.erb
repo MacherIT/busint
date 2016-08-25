@@ -8,27 +8,55 @@
     <%= render 'layouts/shim'%>
   </head>
   <body>
-    <%= render 'layouts/header'%>
-    <div class="container" id="cuerpo">
-      <div class="main-body">
-	<% flash.each do |message_type, message| %>
-          <div class="alert alert-<%= message_type %>">
-	    <%= message %>
+    <!-- If not logged-->
+    <% if not logged_in? %>
+      <%= render 'not_logged_in' %>
+    <% else %>
+      <!-- If logged -->
+      <!-- <%= render 'layouts/header'%> -->
+      <div class="container-fluid" id="cuerpo">
+	<!-- Row Superior -->
+	<div class="row">
+	  <div id="contr-logo" class="col-sm-3">
+	    <%= link_to image_tag("macher.png", alt: "BusInt"), root_path, id: "logo" %>
 	  </div>
-	<% end %>
-	<%= yield %>
-      </div>
-
-<% if false %>
-      <% if logged_in? %>
-        <div class="col-md-2" id="users_sidebar">
-          <%= render 'layouts/users_sidebar' %>
+	  <div id="contr-notificaciones" class="col-sm-6">
+	    NOTIFICACIONES
+	  </div>
+	  <div id="contr-iconos" class="col-sm-3">
+	    ICONOS PARA ACCIONES COMUNES
+	  </div>
 	</div>
-      <% end %>
-<% end %>
-
-    </div>
-    <%= render 'layouts/footer' %>
-    <%= debug(params) if Rails.env.development? %>
+	<!-- Row Principal -->
+	<div id="main-row" class="row">
+	  <div id="contr-sidebar" class="col-sm-3">
+	    <div class="">
+	      <div id="contr-user-card">
+		<%= render 'users/user_card' %>
+	      </div>
+	      <div class="divider"></div>
+	      <div id="contr-main-menu">
+		<%= render 'layouts/main_menu' %>
+	      </div>
+	    </div>
+	  </div> <!-- /contr-sidebar -->
+	  <div id="contr-main-body" class="col-sm-9">
+	    <div class="modulo">
+	      <% flash.each do |message_type, message| %>
+              <div class="alert alert-<%= message_type %>">
+		<%= message %>
+	      </div>
+	      <% end %>
+	      <!-- Contenido -->
+	      <%= yield %>
+	    </div>
+	  </div>
+	</div>
+	<div id="contr-footer" class="row">
+	  <%= render 'layouts/footer' %>
+	</div>
+      </div>
+      <%= debug(params) if Rails.env.development? %>
+    <% end %>
   </body>
 </html>

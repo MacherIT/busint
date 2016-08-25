@@ -1,11 +1,14 @@
-<% if logged_in? %>
-  <div class="center">
+<!-- <% if logged_in? %> -->
+<!--  <div class="center">
     <h1>Business Intelligence</h1>
     <h3>Inteligencia para los negocios</h3>
-  </div>
+  </div> -->
   <div>
     <section class="user_info">
-      <%= render 'shared/user_info' %>
+      <div id="user-botones">
+	<%= link_to "Nuevo contacto", new_contacto_path, class: "btn btn-primary" %>
+	<%= link_to "Nueva empresa", new_empresa_path, class: "btn btn-primary" %>
+      </div>
     </section>
   </div>
   <div id="calendario">
@@ -25,6 +28,7 @@
       <% end %>
     <% end %>
   </div>
+<!-- 
 <% else %>
   <div class="center jumbotron">
     <h1>Business Intelligence</h1>
@@ -35,6 +39,6 @@
     <div>
       ¿Sos un agente nuevo? <%= link_to "Registrate", registrarse_path %>
     </div>
-  </div>
-<% end %>
+  </div> -->
+<!--<% end %>-->
   

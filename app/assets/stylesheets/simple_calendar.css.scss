@@ -41,14 +41,17 @@
       font-weight: bold;
   }
   table {
-      border: 1px solid $gris;
+      border: 1px solid $gris !important;
   }
   thead tr th {
-      border-bottom: 1px solid $gris;
-      border-left: 1px solid $gris;
-      border-right: 1px solid $gris;
+      background-color: $gris_nav !important;
+      color: $gris;
+      border-bottom: 1px solid black !important;
+      border-top: 1px solid black !important;
+      border-left: 1px solid black !important;
+      border-right: 1px solid black !important;
   }
   td {
-      border: 1px solid $gris_nav;
+      border: 1px solid $gris_nav !important;
   }
 }

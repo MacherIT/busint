@@ -1,8 +1,9 @@
 @import "bootstrap-sprockets";
-@import "bootswatch/slate/variables";
+@import "bootswatch/darkly/variables";
 @import "bootstrap";
-@import "bootswatch/slate/bootswatch";
+@import "bootswatch/darkly/bootswatch";
 @import 'colores';
+@import 'bootstrap_overwrites';
 
 @mixin box_sizing {
   -moz-box-sizing:    border-box;
@@ -10,18 +11,54 @@
   box-sizing:         border-box;
 }
 
+/* Arreglos temporales */
+#contr-notificaciones, #contr-iconos {
+    min-height: 70px;
+}
+
 
 /* universal */
 
 body {
-  padding-top: 60px;
+    /*padding-top: 60px;*/
+    background: black;
 }
-.main-body {
+div#main-row div.modulo {
+    background: $gris;
+}
+div#contr-sidebar, div#contr-iconos, div#contr-notificaciones {
+    background: $gris_azul;
+}
+
+#contr-main-body {
   &>h1 {
       color: $gris_titulo;
-      margin-bottom: 20px;
+      /*margin-bottom: 20px;*/
   }
 }
+#contr-user-card {
+    a {
+	font-family: 'Multicolore';
+	color: white;
+	&:hover {
+	    text-decoration: none;
+	    color: $verde_logo1;
+	}
+    }
+}
+
+/* Dropdowns */
+a.dropdown-toggle, div.dropdown {
+    display: inline !important;
+}
+
+/* Divider */ 
+.divider {
+    min-height: 1px;
+    background-color: white;
+}
+
+
 section {
   overflow: auto;
 }
@@ -50,24 +87,35 @@ textarea {
     }
 }
 
+/* Margenes para que se vea el fondo negro abajo */
+.row {
+    margin-bottom: 20px;
+}
+.col-izq {
+    margin-right: $grid-gutter-width;
+}
+.col-der {
+    margin-left: $grid-gutter-width;
+}
+
+
+#contr-logo {
+    text-align: center;
+    padding: 10px;
+    background-color: $fondo_logo;
+}
 #logo {
-  float: left;
-  margin-right: 10px;
-  font-size: 1.7em;
-  color: white;
-  text-transform: uppercase;
-  letter-spacing: -1px;
-  padding-top: 9px;
-  font-weight: bold;
+    img {
+	max-height: 50px;
+}
   &:hover {
       color: white;
-      text-decoration: none;
       filter: hue-rotate(45deg);
   }
 }
 
 #cuerpo {
-    margin-top: 2em;
+    /*margin-top: 2em;*/
 }
 
 .footer {
@@ -101,8 +149,15 @@ textarea {
 	}
 }
 
-.navbar img {
+.navbar {
+    img {
 	max-width: 70px;
+    }
+}
+.invis {
+    background: rgba(0,0,0,0) !important;
+    background-image: none !important;
+    border: 0px !important;
 }
 
 .btn-primary {
@@ -127,7 +182,7 @@ textarea {
 	margin-bottom: 20px;
     }
 }
-div.user_info {
+.user_info {
     padding-top: 30px;
     text-align: center;
 }
@@ -162,8 +217,7 @@ aside {
 }
 
 .gravatar {
-    float: right;
-    margin-right: 10px;
+    margin: 10px;
     /*width: 90%;*/
     border: 2px solid $negro;
     border-radius: 50%;
