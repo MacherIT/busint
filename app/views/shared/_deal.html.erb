@@ -55,13 +55,13 @@
   <td class="center"> - <!-- Pendientes --></td>
   <td class="deal deal-fechas modificado">
     <% if deal.accions.any? %>
-      <%= deal.accions.first.fecha.to_formatted_s(:d_m) %>
+      <%= l deal.accions.first.fecha, format: :date_short %>
     <% end %>
   </td>
 
 <% if false %>
   <td class="deal deal-fechas modificado">
-    <%= deal.updated_at.to_formatted_s(:d_m) %>
+    <%= l deal.updated_at, format: :date_short %>
   </td>
   <td class="deal deal_edit">
     <%= link_to "Editar", edit_deal_path(deal), class: "btn btn-secondary btn-edit_deal" %>

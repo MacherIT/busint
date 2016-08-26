@@ -2,7 +2,11 @@
 <div class="row">
   <div id="contr-botones" class="col-sm-6">
     <div class="contr">
+    <% if @user != current_user %>
+      <h5> Deals de <%= @user.name %></h5>
+    <% else %>
       <%= link_to "Nuevo Deal", new_deal_path, html: { method: :get }, class: "btn btn-primary btn-new_deal" %>
+    <% end %>
     </div>
   </div>
   <div id="contr-busqueda" class="col-sm-6">

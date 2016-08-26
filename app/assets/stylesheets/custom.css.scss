@@ -528,14 +528,14 @@ li.deal {
 .estado-en_progreso {
     color: $azul_mktg;
 }
-.deals-propios {
+.deals-propios, .codeals {
+    clear: both;
+    margin-top: 20px;
+}
+/*.codeals {
     clear: both;
     margin-top: 60px;
-}
-.codeals {
-    clear: both;
-    margin-top: 60px;
-}
+}*/
 .tabla-deals, .tabla-codeals {
     width: calc(100% - 2 * #{$margin-contr});
     color: $gris_nav;
