@@ -19,6 +19,12 @@ class DealsController < ApplicationController
     end
   end
 
+  def filtrar
+    respond_to do |format|
+      format.js
+    end
+  end
+
   def historial
   end
 

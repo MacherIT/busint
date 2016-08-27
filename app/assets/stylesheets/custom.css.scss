@@ -28,6 +28,8 @@ body {
 }
 div#main-row div.modulo {
     background: $gris;
+    margin-left: 0px !important;
+    margin-right: 0px !important;
 }
 div#contr-sidebar, div#contr-iconos, div#contr-notificaciones {
     background: $gris_azul;
@@ -52,7 +54,7 @@ div#contr-sidebar, div#contr-iconos, div#contr-notificaciones {
 
 /* Dropdowns */
 a.dropdown-toggle, div.dropdown {
-    display: inline !important;
+    display: inline-block !important;
 }
 
 /* Divider */ 
@@ -65,12 +67,39 @@ a.dropdown-toggle, div.dropdown {
 .contr {
     margin: $margin-contr;
 }
+.contr-der {
+/*    padding-left: 0px;
+    margin-left: 15px;*/
+    border-left: 5px solid black;
+}
+.contr-izq {
+/*    padding-right: 0px;
+    margin-right: 15px;*/
+}
 #contr-botones {
     a {
 	margin: 0px;
     }
 }
-
+.torta-stats {
+    width: 80%;
+    margin: 10px calc(10%);
+    height: 100px;
+    text-align: center;
+    p {
+	font-size: 22px;
+	margin-top: 30px;
+    }
+}
+.tareas-list {
+    list-style: none;
+    a {
+	text-decoration: none;
+	color: $gris_nav;
+    }
+}
+.glyphicon-checked { color: $azul_mktg; }
+.glyphicon-unchecked { color: $rojo_web; }
 
 
 section {
@@ -292,6 +321,28 @@ input#busqueda {
     border-top-left-radius: $border-radius;
     border-bottom-left-radius: $border-radius;
 }
+
+.contr-titulo {
+    float: left;
+}
+.contr-filtros {
+    float: right;
+    margin-top: 10.5px;
+    input, select {
+	padding: 1px 3px;
+	background-color: $azul_mktg;
+	border: 1px solid $azul_mktg;
+	border-radius: $border-radius;
+	margin-bottom: 0px;
+	color: $gris_claro;
+	margin-right: 5px;
+	max-width: 12em;
+    }
+    input#filtrar {
+	margin-left: 5px;
+    }
+}
+
 
 /*input, select, .uneditable-input {
   max-width: 150px;

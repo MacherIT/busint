@@ -1,4 +1,5 @@
 <% provide(:title, @user.name) %>
+
 <div class="row">
   <div id="contr-botones" class="col-sm-6">
     <div class="contr">
@@ -20,7 +21,7 @@
 </div>
 
 <% if @user.deals.any? %>
-  <div class="deals-propios row">
+  <div class="deals-propios modulo row">
     <div class="col-sm-12 contr">
       <h3>Mis deals (<%= @user.deals.count %>)</h3>
       <table class="table table-condensed tabla-deals">
@@ -40,13 +41,45 @@
 	</thead>
 	<%= render partial: 'shared/deal', collection: @deals, as: :deal %>
       </table>
+    </div> <!-- /col-sm-12 -->
+
+    <div id="deals-stats" class="row">
+      <div class="col-sm-4">
+	<div class="torta-stats"><p>Stats 1</p></div>
+      </div>
+      <div class="col-sm-4">
+	<div class="torta-stats"><p>Stats 2</p></div>
+      </div>
+      <div class="col-sm-4">
+	<div class="torta-stats"><p>Stats 3</p></div>
+      </div>
     </div>
+
   </div>
 <% end %>
 
 
+<div class="modulo row">
+  <div id="cumplimiento" class="col-md-6 contr-izq">
+    <div class="contr-titulo"><h5>Cumplimiento de fechas</h5></div>
+    <div class="contr-filtros">
+      <%= form_tag :filtrar_deal, method: :get, remote: true, class: "input-group" do %>
+        <%= select_tag :periodo, options_for_select(1..12), prompt: "Período", class: "" %>
+	<span class="input-group-btn"><%= submit_tag "Filtrar", class: "btn btn-buscar", id: "filtrar" %></span>
+      <% end %>
+    </div>
+  </div>
+  <div id="tareas" class="col-md-6 contr-der">
+    <h5>Tareas</h5>
+    <ul class="tareas-list">
+      <%= render partial: 'accions/li', collection: @tareas, as: 'accion' %>
+    </ul>
+  </div>
+
+</div>
+
 <% if @codeals.any? %>
-  <div class="codeals row">
+  <div class="codeals modulo row">
     <div class="col-sm-12 contr">
       <h3>Participaciones (<%= @codeals.count %>)</h3>
       <table class="table table-condensed tabla-codeals">

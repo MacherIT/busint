@@ -17,10 +17,10 @@
       <div class="container-fluid" id="cuerpo">
 	<!-- Row Superior -->
 	<div class="row">
-	  <div id="contr-logo" class="col-sm-3">
+	  <div id="contr-logo" class="col-sm-2">
 	    <%= link_to image_tag("macher.png", alt: "BusInt"), root_path, id: "logo" %>
 	  </div>
-	  <div id="contr-notificaciones" class="col-sm-6">
+	  <div id="contr-notificaciones" class="col-sm-7">
 	    NOTIFICACIONES
 	  </div>
 	  <div id="contr-iconos" class="col-sm-3">
@@ -29,7 +29,7 @@
 	</div>
 	<!-- Row Principal -->
 	<div id="main-row" class="row">
-	  <div id="contr-sidebar" class="col-sm-3">
+	  <div id="contr-sidebar" class="col-sm-2">
 	    <div class="">
 	      <div id="contr-user-card">
 		<%= render 'users/user_card' %>
@@ -40,19 +40,19 @@
 	      </div>
 	    </div>
 	  </div> <!-- /contr-sidebar -->
-	  <div id="contr-main-body" class="col-sm-9">
-	    <div class="modulo">
+	  <div id="contr-main-body" class="col-sm-10">
+	    <!-- <div class="modulo"> -->
 	      <% flash.each do |message_type, message| %>
-              <div class="alert alert-<%= message_type %>">
+              <div class="modulo alert alert-<%= message_type %>">
 		<%= message %>
 	      </div>
 	      <% end %>
 	      <!-- Contenido -->
 	      <%= yield %>
-	    </div>
+	  <!-- </div> -->
 	  </div>
 	</div>
-	<div id="contr-footer" class="row">
+	<div id="contr-footer">
 	  <%= render 'layouts/footer' %>
 	</div>
       </div>

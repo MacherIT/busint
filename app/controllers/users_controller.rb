@@ -17,6 +17,7 @@ class UsersController < ApplicationController
     @deal = @user.deals.build
     @deals = @user.deals.paginate(page: params[:page])
     @codeals = @user.codeals.paginate(page: params[:page])
+    @tareas = Accion.where(user_id: @user.id, fecha: Date.today..(Date.today + 7.days)  ).reverse_order.paginate(page: params[:tareas_page], per_page: 8)
   end
 
   def create
@@ -65,6 +66,13 @@ class UsersController < ApplicationController
     # Confirma que el usuario es admin
     def admin_user
       redirect_to(root_url) unless current_user.admin?
+    end
+
+    # Devuelve un string para un query de acciones de esta semana
+    def esta_semana(comienzo = 0, fin = 7)
+      min = Date.today + comienzo.day
+      max = Date.today + fin.days
+      "fecha <= #{min}  and fecha >= #{max} "
     end
       
 end

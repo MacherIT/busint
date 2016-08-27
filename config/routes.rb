@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   post 'loguearse' => 'sessions#create'
   delete 'desloguearse' => 'sessions#destroy'
   get 'buscar_deal' => 'deals#buscar'
+  get 'filtrar_deal' => 'deals#filtrar'
   resources :users
   resources :account_activations, only: [:edit]
   resources :password_resets, only: [:edit, :new, :update, :create]

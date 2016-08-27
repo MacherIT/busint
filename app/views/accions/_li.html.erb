@@ -1,0 +1,10 @@
+<li>
+  <%= content_tag :a, href: edit_accion_path(accion) do %>
+    <% if accion.hecha %>
+      <span class="glyphicon glyphicon-checked"></span>
+    <% else %>
+      <span class="glyphicon glyphicon-unchecked"></span>
+    <% end %>
+    <%= l accion.fecha, format: :date_short %>: <%= accion.medio %> con <%= accion.deal.contacto.empresa.nombre %>.
+    <% end %>
+</li>
