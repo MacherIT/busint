@@ -1,5 +1,9 @@
 = Tareas a hacer
 
+== Urgente
+* Hacer el switch de hecha a no hecha con 'toggle', xq jquery no cambia el data-hecha después de la primera vez que aparece. O probar eliminando el nodo y creando uno nuevo.
+* Agregar parcial _not_logged_in.
+
 == Interfaz
 * Automatizar la creación de contacto y empresa si no existen.
 

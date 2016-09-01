@@ -1,0 +1,9 @@
+<% if @accion.reload.hecha %>
+    $("span#accion-id-<%= @accion.id %>").removeClass("glyphicon-unchecked");
+    $("span#accion-id-<%= @accion.id %>").addClass("glyphicon-check");
+    $("span#accion-id-<%= @accion.id %>").attr("data-hecha", "false");
+<% else %>
+    $("span#accion-id-<%= @accion.id %>").removeClass("glyphicon-check");
+    $("span#accion-id-<%= @accion.id %>").addClass("glyphicon-unchecked");
+    $("span#accion-id-<%= @accion.id %>").attr("data-hecha", "true");
+<% end %>    

@@ -91,15 +91,20 @@ a.dropdown-toggle, div.dropdown {
 	margin-top: 30px;
     }
 }
-.tareas-list {
+#tareas-list {
     list-style: none;
     a {
 	text-decoration: none;
 	color: $gris_nav;
     }
 }
-.glyphicon-checked { color: $azul_mktg; }
+.glyphicon-check { color: $azul_mktg; }
 .glyphicon-unchecked { color: $rojo_web; }
+.glyphicon-check, .glyphicon-unchecked {
+    &:hover {
+	cursor: pointer;
+    }
+}
 
 
 section {

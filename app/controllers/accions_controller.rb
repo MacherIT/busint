@@ -40,12 +40,19 @@ class AccionsController < ApplicationController
   
   def update
     redirect_to root_url and return unless @accion = Accion.find_by(id: params[:id])
-    if @accion.update_attributes(acciones_params)
-      flash[:success] = "Acción actualizada."
-      actualizar_deal
-      redirect_to @accion.deal
-    else
-      render 'edit'
+    respond_to do |format|
+      format.html {
+        if @accion.update_attributes(acciones_params)
+          actualizar_deal
+          flash[:success] = "Acción actualizada."
+          redirect_to @accion.deal
+        else
+          render 'edit'
+        end
+      }
+      format.js {
+        @accion.update_attributes(hecha: request[:hecha])
+      }
     end
   end
 

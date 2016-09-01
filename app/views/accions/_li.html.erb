@@ -1,10 +1,10 @@
 <li>
+  <% if accion.hecha %>
+    <span id="accion-id-<%= accion.id %>" class="glyphicon glyphicon-check accionToggleHecha" data-ref="<%= accion_path(accion) %>" data-id="<%= accion.id %>" data-hecha=false></span>
+  <% else %>
+    <span id="accion-id-<%= accion.id %>" class="glyphicon glyphicon-unchecked accionToggleHecha" data-ref="<%= accion_path(accion) %>" data-id="<%= accion.id %>" data-hecha=true></span>
+  <% end %>
   <%= content_tag :a, href: edit_accion_path(accion) do %>
-    <% if accion.hecha %>
-      <span class="glyphicon glyphicon-checked"></span>
-    <% else %>
-      <span class="glyphicon glyphicon-unchecked"></span>
-    <% end %>
     <%= l accion.fecha, format: :date_short %>: <%= accion.medio %> con <%= accion.deal.contacto.empresa.nombre %>.
-    <% end %>
+  <% end %>
 </li>
